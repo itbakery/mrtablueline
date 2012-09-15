@@ -152,6 +152,23 @@
         "show" : true // this parameter ensures the modal is shown immediately
       });
     });
+
+    $('#activityflexslider').flexslider({
+        animation: "slide",
+        animationSpeed: 2000,
+        controlsContainer: ".flex-container",
+    });
+    //Flexslider 2
+    $('#mainflexslider').flexslider({
+        animation: "slide",
+        controlsContainer: ".flex-container",
+        slideshow: false,
+        start: function(slider) {
+           setTimeout(slider.resume, 3000);
+        }
+    });
+
+
   //]]>
 </script>
 
