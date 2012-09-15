@@ -89,6 +89,14 @@ $(document).ready(function() {
            slide = false;
        }
    });
+
+   //tootip
+
+    $("[rel=nofollow]").tooltip({
+        placement: 'bottom',
+        animation: true
+    });
+
 });
 
 
