@@ -23,7 +23,7 @@ class HomeController < ApplicationController
       marker.picture({
       "picture" => '/images/mrtastationicon.png',
      "width" =>  32,
-     "height" => 32
+     "height" => 37
       })
     end
     @announce_jsons = Geopoint.where(geoable_type: "Announce").to_a.to_gmaps4rails
