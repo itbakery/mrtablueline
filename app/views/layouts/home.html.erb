@@ -98,11 +98,62 @@
 	</div>
 </div>
 <!--atest -->
+<div id="dialog" class="modal hide fade">
+    <div class="modal-header">
+          <a href="#" class="close">&times;</a>
+          <h3> Showing Modal </h3>
+    </div>
+    <div class="modal-body">
+        I need to show up!
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn primary">Done</a>
+    </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="myModalLabel">Welcome to MRTA Blue Line Website</h3>
+</div>
+<div class="modal-body">
+  <%= image_tag  url_for("undertest.png") %>
+</div>
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+</div>
+</div>
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
     <%= yield :scripts %>
+<script>
+  //<![CDATA[
+    $(function() {
+      // wire up the buttons to dismiss the modal when shown
+      $("#myModal").bind("show", function() {
+        $("#myModal a.btn").click(function(e) {
+          // do something based on which button was clicked
+          // we just log the contents of the link element for demo purposes
+          console.log("button pressed: "+$(this).html());
+          // hide the dialog box
+          $("#myModal").modal('hide');
+        });
+      });
+      // remove the event listeners when the dialog is hidden
+      $("#myModal").bind("hide", function() {
+          // remove event listeners on the buttons
+          $("#myModal a.btn").unbind();
+      });
+      // finally, wire up the actual modal functionality and show the dialog
+      $("#myModal").modal({
+        "backdrop" : "static",
+        "keyboard" : true,
+        "show" : true // this parameter ensures the modal is shown immediately
+      });
+    });
+  //]]>
+</script>
 
   </body>
 </html>

@@ -61,16 +61,17 @@ module Mrtablueline
     # config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
+    #config.assets.compile = false
     config.assets.enabled = true
-    config.assets.digest =  true
-    config.server_static_assets = false
-    config.assets.initialize_on_precompile = false
+    #config.assets.digest =  true
+    #config.server_static_assets = false
+    #config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     #config.assets.precompile += Ckeditor.assets
     #config.assets.precompile = [/^[-_a-zA-Z0-9]*\..*/]
-    config.assets.precompile += %w(Ckeditor.assets  fonts/thsarabunnew.css)
+    config.assets.precompile += %w(Ckeditor.assets  fonts/thsarabunnew.css jquery.flexslider.js)
     config.threadsafe!
   end
 end
