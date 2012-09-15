@@ -61,7 +61,7 @@ module Mrtablueline
     # config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
-    config.assets.compile = false
+    config.assets.compile = true
     config.assets.enabled = true
     config.assets.digest =  true
     config.server_static_assets = false
