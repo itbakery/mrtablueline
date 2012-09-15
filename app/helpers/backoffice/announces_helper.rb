@@ -1,0 +1,2 @@
+module Backoffice::AnnouncesHelper
+end

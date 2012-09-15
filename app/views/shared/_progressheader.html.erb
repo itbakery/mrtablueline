@@ -1,0 +1,19 @@
+<header id="overview" class="jumbotron subhead" style="padding-bottom: 0px;">
+  <%= image_tag "mrtalogo.png", :height => "10%", :width => "10%", :class=>"pull-right" %>
+  <%= image_tag "mascot.jpg", :height => "5%", :width => "5%", :class=>"pull-right" %>
+  <h2>โครงการรถไฟฟ้าสายสีน้ำเงิน : MRTA - Blue Line</h2>
+  <h3  style="color: red;">
+    ช่วงหัวลำโพง-บางแค และช่วงบางซื่อ-ท่าพระ
+  </h3>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <% @pageroots.each   do |page|%>
+        <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
+      <% end %>
+      <li><%= link_to "ความก้าวหน้า",progresses_path, :class => "menuheader" %> </li>
+      <li><a href="/progresses/effect" class="menuheader">ผลกระทบ</a></li>
+      <li><%= link_to "แผนที่รวม",mrtamap_path, :class => "menuheader" %> </li>
+
+    </ul>
+  </div>
+</header>

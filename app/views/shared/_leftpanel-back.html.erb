@@ -1,0 +1,25 @@
+<div id="myCarousel" class="carousel slide">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <%= image_tag 'blueline1.png' %>
+    </div>
+    <div class="item">
+      <%= image_tag 'blueline2.png' %>
+    </div>
+    <div class="item">
+      <%= image_tag 'blueline3.png' %>
+    </div>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+  <% content_for :script do %>
+    <script type="text/javascript">
+      $('.carousel').carousel();
+      </script>
+    <% end %>
+<h2 class="menuheader">กิจกรรมประชาสัมพันธ์</h2>
+     <%= render :partial => 'shared/viewactivity' %>
+

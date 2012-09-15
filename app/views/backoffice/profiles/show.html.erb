@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name th:</b>
+  <%= @profile.name_th %>
+</p>
+
+<p>
+  <b>Name en:</b>
+  <%= @profile.name_en %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @profile.position %>
+</p>
+
+<p>
+  <b>Mobile:</b>
+  <%= @profile.mobile %>
+</p>
+
+
+<%= link_to 'Edit', edit_backoffice_profile_path(@profile) %> |
+<%= link_to 'Back', backoffice_profiles_path %>

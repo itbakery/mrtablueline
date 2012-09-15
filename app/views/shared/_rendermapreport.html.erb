@@ -1,0 +1,110 @@
+<%= gmaps("markers" => {"data" => @json, "options" => {"draggable" => true}}, "map_options" => {  "center_on_user" => true, "processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+    <% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+        var markersArray = [];
+        var marker;
+         //infobox
+         Gmaps.map.infobox = function(boxText) {
+            return {
+              content: boxText
+              ,disableAutoPan: false
+              ,maxWidth: 0
+              ,pixelOffset: new google.maps.Size(-140, 0)
+              ,zIndex: null
+              ,boxStyle: {
+              background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat"
+                ,opacity: 0.75
+                ,width: "380px"
+              }
+              ,closeBoxMargin: "10px 2px 2px 2px"
+              ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+              ,infoBoxClearance: new google.maps.Size(1, 1)
+              ,isHidden: false
+              ,pane: "floatPane"
+              ,enableEventPropagation: false
+            }};
+
+        // On click, clear markers, place a new one, update coordinates in the form
+        Gmaps.map.callback = function() {
+            google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function(event) {
+              clearOverlays();
+              placeMarker(event.latLng);
+              updateFormLocation(event.latLng);
+            });
+
+            for (var i = 0; i <  this.markers.length; ++i) {
+              google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+                Gmaps.map.HandleDragend(this.getPosition());
+            });
+            };
+
+        };
+        //dragend
+        Gmaps.map.HandleDragend = function(pos) {
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+            latLng: pos
+          }, function(responses) {
+            if (responses && responses.length > 0) {
+               //format address
+               //alert(responses[0].formatted_address);
+               //find country name
+               for (var i=0; i < responses[0].address_components.length; i++) {
+                  var addr = responses[0].address_components[i];
+                  var getCountry;
+                  var city;
+                  if (addr.types[0] == 'country') getCountry = addr.long_name;
+                  if (addr.types[0] == 'locality') city = addr.long_name
+                  //alert(getCountry);
+
+                    }
+                    //alert(getCountry);
+                    $('#report_geopoint_attributes_city').val(city);
+                    $('#report_geopoint_attributes_country').val(getCountry);
+                    $('#report_geopoint_attributes_name').val(responses[0].formatted_address);
+            } else {
+            alert('Cannot determine address at this location.');
+            }
+          });
+        };
+        //alert message
+
+        // Update form attributes with given coordinates
+        function updateFormLocation(latLng) {
+            $('#report_geopoint_attributes_latitude').val(latLng.lat());
+            $('#report_geopoint_attributes_longitude').val(latLng.lng());
+            $('#report_geopoint_attributes_gmaps_zoom').val(Gmaps.map.serviceObject.getZoom());
+
+        }
+        // Add a marker with an open infowindow
+        function placeMarker(latLng) {
+                marker = new google.maps.Marker({
+                position: latLng,
+                map: Gmaps.map.serviceObject,
+                draggable: true
+            });
+            markersArray.push(marker);
+            // Set and open infowindow
+            var infowindow = new google.maps.InfoWindow({
+                content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
+            });
+            infowindow.open(Gmaps.map.serviceObject,marker);
+            // Listen to drag & drop
+            google.maps.event.addListener(marker, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+            });
+        }
+        // Removes the overlays from the map
+        function clearOverlays() {
+          if (markersArray) {
+            for (var i = 0; i < markersArray.length; i++ ) {
+              markersArray[i].setMap(null);
+            }
+          }
+          markersArray.length = 0;
+        }
+
+    </script>
+<% end %>

@@ -1,0 +1,55 @@
+<%= gmaps("markers" => {"data" => @json, "options" => {"draggable" => true}}, "map_options" => { "type" => "HYBRID", "center_on_user" => true, "processing" => "json", "auto_zoom" => false, "zoom" => 30, "auto_adjust" => true, "detect_location" => true}) %>
+    <% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+        var markersArray = [];
+        // On click, clear markers, place a new one, update coordinates in the form
+        Gmaps.map.callback = function() {
+            google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function(event) {
+              clearOverlays();
+              placeMarker(event.latLng);
+              updateFormLocation(event.latLng);
+            });
+
+            for (var i = 0; i <  this.markers.length; ++i) {
+              google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+            });
+            };
+
+        };
+        // Update form attributes with given coordinates
+        function updateFormLocation(latLng) {
+            $('#admin_geonode_latitude').val(latLng.lat());
+            $('#admin_geonode_longitude').val(latLng.lng());
+            $('#location_attributes_gmaps_zoom').val(Gmaps.map.serviceObject.getZoom());
+        }
+        // Add a marker with an open infowindow
+        function placeMarker(latLng) {
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: Gmaps.map.serviceObject,
+                draggable: true
+            });
+            markersArray.push(marker);
+            // Set and open infowindow
+            var infowindow = new google.maps.InfoWindow({
+                content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
+            });
+            infowindow.open(Gmaps.map.serviceObject,marker);
+            // Listen to drag & drop
+            google.maps.event.addListener(marker, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+            });
+        }
+        // Removes the overlays from the map
+        function clearOverlays() {
+          if (markersArray) {
+            for (var i = 0; i < markersArray.length; i++ ) {
+              markersArray[i].setMap(null);
+            }
+          }
+          markersArray.length = 0;
+        }
+    </script>
+<% end %>
+

@@ -1,0 +1,51 @@
+
+<div class="span9">
+ <h1>Listing pages</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/pages/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/pages/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+
+
+<table class="table table-bordered">
+  <tr>
+    <th>Title</th>
+    <th>Parent</th>
+     <th>Order</th>
+    <th>Approved</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% if @pages %>
+  <% @pages.each do |page| %>
+    <tr>
+      <td><%= page.title %></td>
+      <td><%= page.parent.title if page.parent %></td>
+      <td><%= page.order %></td>
+      <td><%= page.approved %></td>
+      <td><%= link_to 'Show', [:backoffice,page] , :class => "btn btn-mini"%></td>
+      <td><%= link_to 'Edit', edit_backoffice_page_path(page) , :class => "btn btn-mini"%></td>
+      <td><%= link_to 'Destroy', [:backoffice,page], method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-mini"%></td>
+    </tr>
+  <% end %>
+<% end %>
+</table>
+
+<br />
+
+<!-- <%= link_to 'New Page', new_backoffice_page_path %>  -->
+</div>
+

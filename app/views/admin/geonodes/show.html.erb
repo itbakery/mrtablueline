@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @admin_geonode.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @admin_geonode.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @admin_geonode.country %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @admin_geonode.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @admin_geonode.longitude %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @admin_geonode.gmaps %>
+</p>
+
+<%= gmaps4rails @json %>
+<%= link_to 'Edit', edit_admin_geonode_path(@admin_geonode) %> |
+<%= link_to 'Back', admin_geonodes_path %>

@@ -1,0 +1,15 @@
+<header id="overview" class="jumbotron subhead" style="padding-bottom: 0px;">
+  <h1>MRTA - Blue Line</h1>
+
+  <p class="lead">
+    โครงการรถไฟฟ้าสายสีน้ำเงิน ช่วงหัวลำโพง-บางแค และช่วงบางซื่อ-ท่าพระ
+  </p>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <% @pageroots.each   do |page|%>
+        <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
+      <% end %>
+
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,93 @@
+<%= form_for([:backoffice,@company], :html =>{:multipart => true, :class => "well form-horizontal" }) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <div class="control-label">
+      <%= f.label :name_th %>
+    </div>
+    <div class="controls">
+      <%= f.text_field :name_th %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :name_en %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :name_en %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :mission %>
+    </div>
+    <div class="controls">
+    <%= f.text_area :mission %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :address %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :address %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :tel %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :tel %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :contact %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :contact %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :telcontact %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :telcontact %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :callcenter %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :callcenter %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :logo %>
+    </div>
+    <div class="controls">
+    <%= f.file_field :logo %>
+    </div>
+  </div>
+
+ <div class="form-actions">
+    <%= f.submit :class=>"btn btn-primary" %>
+   <a href="/backoffice/companies" class="btn">Back to list</a>
+ </div>
+<% end %>

@@ -1,0 +1,34 @@
+<div class="flex-container">
+  <div id="activityflexslider" class="flexslider">
+    <ul class="slides">
+      <% @activities.in_groups_of(5,false) do |row_activity|  %>
+        <li>
+          <% row_activity.each do |activity| %>
+            <div class="content">
+                <% doc = Nokogiri::HTML(activity.content) %>
+                <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
+                <% doc.xpath("//img").each {|x| x.remove} %>
+
+                <div class="image">
+                  <img src=<%=img_srcs.first %> width="120" height="60" />
+                </div>
+                <h5 class="title"> <a href="activities/<%=activity._id%>"> <%= activity.title %> </a></h5>
+                <div class="description">
+                  <!--
+                  <%=raw doc.css("p").first %>
+                  -->
+                  <%= activity.intro %>
+                </div>
+
+                <div class="date">
+                  <!-- by: <%=activity.user.name if activity.user %> ,<%= activity.created_at.strftime("created at:  %m/%d/%Y  %I:%M%p") %>  -->
+                  <%= activity.created_at.strftime(":%m/%d/%Y") %>, จำนวนครั้งที่อ่าน <%=activity.hit_count %> ,ip ล่าสุด <%= activity.hits.last.user_ip if activity.hits.last%>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+          <% end %>
+        </li>
+      <% end  %>
+    </ul>
+  </div>
+</div>

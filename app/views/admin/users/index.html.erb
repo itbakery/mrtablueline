@@ -1,0 +1,48 @@
+<div class="span9">
+<h1>List User</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/admin/users/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/admin/users/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Avatar</th>
+    <th>Name</th>
+    <th>SignUp</th>
+    <th>confirmed</th>
+    <th>Roles</th>
+    <th>Roles Management</th>
+    <th></th>
+    <th></th>
+    <th></th>
+   </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= image_tag user.profile.avatar.url(:thumb50x50) unless user.profile.nil?%></td>
+      <td><%= user.name %></td>
+      <td></td>
+      <td><%=user.confirmed_at.strftime("%d %b. %Y") unless user.confirmed_at.nil?  %></td>
+      <td><%= user.roles.map(&:name)%></td>
+      <td></td>
+      <td><%= link_to 'Show', [:admin,user] , :class => "btn btn-mini"%></td>
+      <td><%= link_to 'Edit', edit_admin_user_path(user) , :class => "btn btn-mini"%></td>
+      <td><%= link_to 'Destroy', [:admin,user], method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-mini"%></td>
+    </tr>
+    <% end %>
+</table>
+</div>
+
+<%= link_to 'New User', new_admin_user_path %>

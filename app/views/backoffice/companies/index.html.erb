@@ -1,0 +1,48 @@
+<h1>Listing companies</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/companies/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/companies/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table class="table table-bordered">
+  <tr>
+    <th>logo+Name th</th>
+    <th>Contact</th>
+    <th>Telcontact</th>
+    <th>Callcenter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= image_tag company.logo.url(:thumb50x50) %><%= company.name_th %></td>
+    <td><%= company.contact %></td>
+    <td><%= company.telcontact %></td>
+    <td><%= company.callcenter %></td>
+    <td><%= link_to 'Show', [:backoffice,company], :class => "btn btn-mini" %></td>
+    <% if can? :update, company %>
+      <td><%= link_to 'Edit', edit_backoffice_company_path(company) , :class => "btn btn-mini"%></td>
+    <% end %>
+    <% if can? :destroy, company  %>
+    <td><%= link_to 'Destroy', [:backoffice,company], method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-mini"%></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Company', new_backoffice_company_path , :class => "btn btn-mini"%>

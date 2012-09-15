@@ -1,0 +1,24 @@
+<div class="span3">
+  <div style="padding: 8px 0;" class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header">Navigator</li>
+      <li><a href="/backoffice/reports"><i class="icon-book"></i>Reports</a></li>
+      <li><a href="/backoffice/activities"><i class="icon-book"></i>Activities</a></li>
+      <li><a href="/backoffice/announces"><i class="icon-pencil"></i>Announcements</a></li>
+      <li><a href="/backoffice/mediatypes"><i class="icon-cog"></i>MediaTypes</a></li>
+      <li><a href="#"><i class="icon-flag"></i>Manual</a></li>
+      <% if can? :manage, :all %>
+          <li class="nav-header">Admin Area</li>
+          <li class="active"><a href="/backoffice/pages"><i class="icon-white icon-home"></i>Pages</a></li>
+          <li><a href="/admin/users"><i class="icon-user"></i>User</a></li>
+          <li><a href="/backoffice/profiles"><i class="icon-user"></i> Profiles</a></li>
+          <li><a href="/backoffice/companies"><i class="icon-cog"></i>Companys</a></li>
+          <li><a href="/backoffice/stations"><i class="icon-cog"></i>Stations</a></li>
+          <li class="divider"></li>
+      <% end %>
+    </ul>
+  </div>
+</div><!--/span-->
+<div class="span9 columns">
+  <%= yield %>
+</div>

@@ -1,0 +1,49 @@
+<%= form_for(@company, :html =>{:multipart => true}) do |f| %>
+  <% if @company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@company.errors.count, "error") %> prohibited this company from being saved:</h2>
+
+      <ul>
+      <% @company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_th %><br />
+    <%= f.text_field :name_th %>
+  </div>
+  <div class="field">
+    <%= f.label :name_en %><br />
+    <%= f.text_field :name_en %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel %>
+  </div>
+  <div class="field">
+    <%= f.label :contact %><br />
+    <%= f.text_field :contact %>
+  </div>
+  <div class="field">
+    <%= f.label :telcontact %><br />
+    <%= f.text_field :telcontact %>
+  </div>
+  <div class="field">
+    <%= f.label :callcenter %><br />
+    <%= f.text_field :callcenter %>
+  </div>
+   <div class="field">
+    <%= f.label :logo %><br />
+    <%= f.file_field :logo %>
+  </div>
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

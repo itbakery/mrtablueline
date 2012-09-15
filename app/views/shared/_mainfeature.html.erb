@@ -1,0 +1,20 @@
+<div class="flex-container">
+  <div id="mainflexslider" class="flexslider">
+    <ul class="slides">
+      <% @activities.in_groups_of(1,false) do |row_activity|  %>
+        <li>
+          <% row_activity.each do |activity| %>
+            <div class="content">
+                <% doc = Nokogiri::HTML(activity.content) %>
+                <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
+                <p class="crop">
+                  <img src=<%=img_srcs.first %>  />
+                </p>
+                <p class="flex-caption"> <a href="activities/<%=activity._id%>" class="featurefont"> <%= activity.title %> </a></p>
+            </div>
+          <% end %>
+        </li>
+      <% end  %>
+    </ul>
+  </div>
+</div>

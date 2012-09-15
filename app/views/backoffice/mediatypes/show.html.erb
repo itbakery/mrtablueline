@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<p>
+<%= image_tag @mediatype.medialogo.url(:thumb260x180) %>
+</p>
+
+<p>
+  <b>Name th:</b>
+  <%= @mediatype.name_th %>
+</p>
+
+<p>
+  <b>Name en:</b>
+  <%= @mediatype.name_en %>
+</p>
+
+
+<%= link_to 'Edit', edit_backoffice_mediatype_path(@mediatype) %> |
+<%= link_to 'Back', backoffice_mediatypes_path %>

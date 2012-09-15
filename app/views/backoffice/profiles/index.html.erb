@@ -1,0 +1,48 @@
+<h1>Listing profiles</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/profiles/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/profiles/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Avatar + Name th</th>
+    <th>Name en</th>
+    <th>Position</th>
+    <th>Mobile</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @profiles.each do |profile| %>
+  <tr>
+    <td><%= image_tag profile.avatar.url(:thumb50x50) %><%= profile.name_th %></td>
+    <td><%= profile.name_en %></td>
+    <td><%= profile.position %></td>
+    <td><%= profile.mobile %></td>
+    <td><%= link_to 'Show', [:backoffice,profile] %></td>
+    <% if can? :update, profile %>
+    <td><%= link_to 'Edit', edit_backoffice_profile_path(profile) %></td>
+    <% end %>
+    <% if can? :destroy, profile %>
+    <td><%= link_to 'Destroy', [:backoffice,profile], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Profile', new_backoffice_profile_path %>

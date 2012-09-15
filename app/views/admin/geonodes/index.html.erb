@@ -1,0 +1,35 @@
+<h1>Listing admin_geonodes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>City</th>
+    <th>Country</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Gmaps</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @admin_geonodes.each do |admin_geonode| %>
+  <tr>
+    <td><%= admin_geonode.name %></td>
+    <td><%= admin_geonode.city %></td>
+    <td><%= admin_geonode.country %></td>
+    <td><%= admin_geonode.latitude %></td>
+    <td><%= admin_geonode.longitude %></td>
+    <td><%= admin_geonode.gmaps %></td>
+    <td><%= link_to 'Show', admin_geonode %></td>
+    <td><%= link_to 'Edit', edit_admin_geonode_path(admin_geonode) %></td>
+    <td><%= link_to 'Destroy', admin_geonode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= gmaps("markers" => {"data" => @jsons, "options" => {"list_container" => "markers_list", "do_clustering" => true } }   ) %>
+
+<ul id="markers_list"> </ul>
+<%= link_to 'New Geonode', new_admin_geonode_path %>

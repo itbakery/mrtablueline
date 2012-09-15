@@ -1,0 +1,90 @@
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/reports/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/reports/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<p id="notice"><%= notice %></p>
+<div class="well">
+<p>
+  <b>Effect:</b>
+  <ul>
+  <% @report.effects.each do |effect| %>
+    <li><%= effect.name %>
+  <% end %>
+  </ul>
+</p>
+
+  <p>
+    <b>Title:</b>
+    <%= @report.title %>
+  </p>
+
+  <p>
+    <b>Content:</b>
+    <%=raw @report.content %>
+  </p>
+
+  <p>
+    <b>Publishon:</b>
+    <%= @report.publishon %>
+  </p>
+
+  <p>
+    <b>Publishoff:</b>
+    <%= @report.publishoff %>
+  </p>
+
+  <p>
+    <b>Approved:</b>
+    <%= @report.approved %>
+  </p>
+
+  <p>
+    <b>Approvedby:</b>
+    <%= @report.approvedby %>
+  </p>
+</div>
+    <%= @report.geopoint.name %>
+    <%= @report.geopoint.city%>
+    <%= @report.geopoint.country %>
+    <%= @report.geopoint.latitude %>
+    <%= @report.geopoint.longitude %>
+    <%= @report.geopoint.gmaps %>
+  <% @json= @report.geopoint.to_gmaps4rails %>
+<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+    <% @report.images.each do  |img| %>
+      <a class="fancybox" href="<%=img.image.url %>" title="<%= img.title %>" rel="gallery1"  ><%= image_tag img.image.url(:thumb160x120) %></a>
+    <% end %>
+
+<div style="clear:both"></div>
+  <% if can? :update, @report %>
+     <%= link_to 'Edit', edit_backoffice_report_path(@report) %> |
+  <% end %>
+<%= link_to 'Back', backoffice_reports_path %>
+
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="modal-gallery" class="modal modal-gallery hide fade">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn btn-primary modal-next">Next <i class="icon-arrow-right icon-white"></i></a>
+        <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i> Previous</a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> Slideshow</a>
+        <a class="btn modal-download" target="_blank"><i class="icon-download"></i> Download</a>
+    </div>
+</div>

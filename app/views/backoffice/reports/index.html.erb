@@ -1,0 +1,62 @@
+<h1>Listing reports</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/reports/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/reports/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table class="table table-bordered">
+  <tr>
+    <th>No</th>
+    <th>Title</th>
+    <th>Station</th>
+    <th>Publishon</th>
+    <th>Publishoff</th>
+    <th>Approved</th>
+    <th>Approvedby</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reports.each do |report| %>
+  <tr>
+        <td><%= report.created_at.strftime("%m/%d/%Y") %></td>
+    <td><%= report.title %>  <br> โดย <small> <%= report.user.name if report.user %> </small></td>
+    <td><%= report.station.name if report.station %></td>
+    <td><%= report.publishon %></td>
+    <td><%= report.publishoff %></td>
+    <td><%= report.approved %></td>
+    <td><%= report.approvedby %></td>
+    <td><%= link_to 'Show', [:backoffice,report] , :class => "btn btn-mini"%></td>
+    <% if can? :update, report %>
+       <td><%= link_to 'Edit', edit_backoffice_report_path(report) , :class => "btn btn-mini"%></td>
+    <% end %>
+    <% if can? :destroy, report %>
+      <td><%= link_to 'Destroy', [:backoffice,report], method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-mini"%></td>
+    <% end %>
+  <% if can? :manage , report %>
+          <%  if report.approved %>
+            <% msg = 'unapproved' %>
+          <% else %>
+            <% msg = 'approved' %>
+          <% end %>
+          <td><%= link_to "#{msg}", approve_backoffice_report_path(report) ,:class => "btn btn-mini" %></td>
+    <% end %>
+    </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Report', new_backoffice_report_path %>

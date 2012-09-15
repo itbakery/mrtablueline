@@ -1,0 +1,46 @@
+<%= form_for([:backoffice,@mediatype], :html =>{:multipart => true, :class => "well form-horizontal" }) do |f| %>
+  <% if @mediatype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mediatype.errors.count, "error") %> prohibited this mediatype from being saved:</h2>
+
+      <ul>
+      <% @mediatype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="control-group">
+    <div class="control-label">
+    <%= f.label :name_th %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :name_th %>
+    </div>
+  </div>
+
+    <div class="control-group">
+    <div class="control-label">
+    <%= f.label :name_en %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :name_en %>
+    </div>
+  </div>
+
+    <div class="control-group">
+    <div class="control-label">
+    <%= f.label :medialogo %>
+    </div>
+    <div class="controls">
+    <%= f.file_field :medialogo %>
+    </div>
+  </div>
+
+ <div class="form-actions">
+    <%= f.submit :class=>"btn btn-primary" %>
+   <a href="/backoffice/mediatypes" class="btn">Back to list</a>
+ </div>
+
+<% end %>

@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @report.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @report.content %>
+</p>
+
+<p>
+  <b>Publishon:</b>
+  <%= @report.publishon %>
+</p>
+
+<p>
+  <b>Publishoff:</b>
+  <%= @report.publishoff %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @report.approved %>
+</p>
+
+<p>
+  <b>Approvedby:</b>
+  <%= @report.approvedby %>
+</p>
+
+  <% @report.geopoints.each do |geo| %>
+    <%= geo.name %>
+    <%= geo.city%>
+    <%= geo.country %>
+    <%= geo.latitude %>
+    <%= geo.longitude %>
+    <%= geo.gmaps %>
+  <% end %>
+  <% @jsons = @report.geopoints.to_gmaps4rails %>
+<% @report.images.each do  |img| %>
+  <%= image_tag img.image.url %>
+<%= image_tag img.image.url(:thumb50x50) %>
+<%= image_tag img.image.url(:thumb160x120) %>
+<%= image_tag img.image.url(:thumb260x180) %>
+<%= image_tag img.image.url(:thumb360x268) %>
+
+<% end %>
+
+  <%= gmaps4rails(@jsons) %>
+
+  <% if can? :update, @report %>
+     <%= link_to 'Edit', edit_report_path(@report) %> |
+  <% end %>
+<%= link_to 'Back', reports_path %>

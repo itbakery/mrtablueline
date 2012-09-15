@@ -1,0 +1,41 @@
+<h1>Listing mediatypes</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/mediatypes/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/mediatypes/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table>
+  <tr>
+    <th>logo + Name th</th>
+    <th>Name en</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @mediatypes.each do |mediatype| %>
+  <tr>
+    <td><%= image_tag mediatype.medialogo.url(:thumb50x50) %><%= mediatype.name_th %></td>
+    <td><%= mediatype.name_en %></td>
+    <td><%= link_to 'Show', [:backoffice,mediatype] %></td>
+    <td><%= link_to 'Edit', edit_backoffice_mediatype_path(mediatype) %></td>
+    <td><%= link_to 'Destroy', [:backoffice,mediatype], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<!--
+<%= link_to 'New Mediatype', new_backoffice_mediatype_path %>
+-->

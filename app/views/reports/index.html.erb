@@ -1,0 +1,37 @@
+<h1>Listing reports</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Content</th>
+    <th>Publishon</th>
+    <th>Publishoff</th>
+    <th>Approved</th>
+    <th>Approvedby</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reports.each do |report| %>
+  <tr>
+    <td><%= report.title %></td>
+    <td><%= report.content %></td>
+    <td><%= report.publishon %></td>
+    <td><%= report.publishoff %></td>
+    <td><%= report.approved %></td>
+    <td><%= report.approvedby %></td>
+    <td><%= link_to 'Show', report %></td>
+    <% if can? :update, report %>
+       <td><%= link_to 'Edit', edit_report_path(report) %></td>
+    <% end %>
+    <% if can? :destroy, report %>
+      <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
+    </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Report', new_report_path %>

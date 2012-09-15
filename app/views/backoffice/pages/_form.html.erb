@@ -1,0 +1,70 @@
+<%= form_for([:backoffice,@page] , :html => {:class => "well form-horizontal"}) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :title %>
+    </div>
+    <div class="controls">
+    <%= f.collection_select :parent_id, Page.all, :id, :title , :include_blank => true %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :title %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :title %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :lang %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :lang %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :order %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :order %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :content %>
+    </div>
+    <div class="controls">
+    <%= f.text_area :content %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :approved %>
+    </div>
+    <div class="controls">
+    <%= f.check_box :approved %>
+    </div>
+  </div>
+
+
+
+   <div class="form-actions">
+    <%= f.submit :class=>"btn btn-primary" %>
+   <a href="/backoffice/pages" class="btn">Back to list</a>
+ </div>
+
+<% end %>

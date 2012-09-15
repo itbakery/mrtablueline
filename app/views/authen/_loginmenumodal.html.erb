@@ -1,0 +1,12 @@
+<ul class="nav pull-right">
+  <% if user_signed_in? %>
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete' ,:class => 'btn btn-danger btn-small') %>
+  <% else %>
+        <a type="button" class='btn btn-success btn-small' href="#login_modal" data-toggle="modal"><i class="icon-user icon-white"></i>Log In</a>
+  <% end %>
+  <% if user_signed_in? %>
+      <a type="button" class='btn btn-warning btn-small' href="#edit_modal" data-toggle="modal"><i class="icon-edit icon-white"></i>Edit</a>
+  <% else %>
+        <a type="button" class='btn btn-primary btn-small' href="#signup_modal" data-toggle="modal"><i class="icon-pencil icon-white"></i>Sign Up</a>
+  <% end %>
+</ul>

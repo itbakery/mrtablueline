@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @image.title %>
+</p>
+
+<%= image_tag @image.image.url %>
+<%= image_tag @image.image.url(:thumb50x50) %>
+<%= image_tag @image.image.url(:thumb160x120) %>
+<%= image_tag @image.image.url(:thumb260x180) %>
+<%= image_tag @image.image.url(:thumb360x268) %>
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

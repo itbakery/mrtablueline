@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @effect.name %>
+</p>
+<p>
+  <b>Name:</b>
+  <%= @effect.name_th %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @effect.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_backoffice_effect_path(@effect) %> |
+<%= link_to 'Back', backoffice_effects_path %>

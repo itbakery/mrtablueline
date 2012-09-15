@@ -1,0 +1,47 @@
+<div class="span3" style="margin-top: 5px;">
+  <div style="padding: 8px 0;" class="well bluebox">
+    <ul class="nav nav-list">
+      <!--
+      <li class="nav-header">Navigators</li>
+        -->
+      <% if @page.children.to_a.empty? %>
+        <% @page.siblings.asc(:order).each   do |page|%>
+          <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
+        <% end %>
+
+      <% else %>
+        <% @page.children.asc(:order).each do |page| %>
+          <li><%= link_to h(page.title),page , :class => "menuheader" %></li>
+          <% page.children.each do |subpage| %>
+            <li style="margin-left: 30px;"><%= link_to h(subpage.title),subpage %> </li>
+          <% end %>
+        <% end %>
+      <% end %>
+
+
+
+
+    </ul>
+  </div>
+</div><!--/span-->
+
+
+
+
+<div class="span9" style="margin-top: 5px;">
+  <div class="content-box">
+    <div class="box-header">
+      <span>   <%= @page.title %> </span>
+    </div>
+
+    <div class="box-body">
+      <div class="box-info">
+        <%= @page.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @page.created_at  %>
+      </div>
+      <div class="content-format">
+        <%=raw @page.content %>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+</div>

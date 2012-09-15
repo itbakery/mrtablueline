@@ -1,0 +1,57 @@
+<div class="span4" style="margin-top: 5px;">
+  <div style="padding: 8px 0;" class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header"><h4>รายชื่อสถานีรถไฟฟ้า</h4></li>
+      <% if @stations %>
+        <% @stations.each_with_index   do |station,index|%>
+          <li style="line-height: 2em;">
+            <div style="float: left; width: 60%">
+              <a href="/progresses/station/<%= station.id %>" class="menuheader"><%= index +1  %>).<%= station.name %></a>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-small btn-warning" type="button"> <%= station.reports.count%>  </button>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+      <div style="clear: both;"></div>
+
+    </ul>
+  </div>
+</div><!--/span-->
+
+<div class="span8" style="margin-top: 5px;">
+  <p id="notice"><%= notice %>
+<div class="well">
+  <h4> รายงานความคืบหน้าโครงการประจำ <%= @station.name  %> </h4>
+  <h3 style="font-weight: bold; border-bottom: 2px solid #EEEEEE;"> <%= @report.title %> </h3>
+  <div class="small"> <%= @report.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @report.created_at%> <br></div>
+  <div class="small">
+    <%= @report.geopoint.name %>
+    <%= @report.geopoint.city%>
+    <%= @report.geopoint.country %>
+    [ ละติจูด: <%= @report.geopoint.latitude %> , ลองติจูด:<%= @report.geopoint.longitude %> ]
+  </div>
+  <div class="content-p well" style="margin-top: 20px;">
+    <p><%=raw @report.content %></p>
+  </div>
+  <div class="content-p" style="margin-top: 20px;">
+    <h4>ตำแหน่งการรายงานผล</h4>
+  <% @json= @report.geopoint.to_gmaps4rails %>
+<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+
+  </div>
+  <div class="content-p" style="margin-top: 20px;">
+    <h4>ภาพประกอบรายงาน</h4>
+        <% @report.images.each do  |img| %>
+      <a class="fancybox" href="<%=img.image.url %>" title="<%= img.title %>" rel="gallery1"  ><%= image_tag img.image.url(:thumb160x120) %></a>
+    <% end %>
+
+  </div>
+
+
+</div>
+
+
+</div>

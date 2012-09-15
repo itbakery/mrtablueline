@@ -1,0 +1,28 @@
+<h2 class="menuheader">กิจกรรมประชาสัมพันธ์ล่าสุด</h2>
+<div class="flex-container">
+  <div class="flexslider">
+    <ul class="slides">
+      <% @activities.in_groups_of(5,false) do |row_activity|  %>
+        <li>
+          <% row_activity.each do |activity| %>
+            <div class="content">
+                <% doc = Nokogiri::HTML(activity.content) %>
+                <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
+                <% doc.xpath("//img").each {|x| x.remove} %>
+
+                <div class="image" style="margin-left:10px;">
+                  <img src=<%=img_srcs.first %> width="120" height="60" />
+                </div>
+                <h5 class="titlerightbar"> <a href="<%=activity._id%>"> <%= activity.title %> </a></h5>
+                <div class="daterightbar">
+                 :<%=activity.user.name if activity.user %> <%= activity.created_at.strftime(" %m/%d/%Y  %I:%M%p") %>
+                </div>
+
+            </div>
+            <div style="clear:both"></div>
+          <% end %>
+        </li>
+      <% end  %>
+    </ul>
+  </div>
+</div>

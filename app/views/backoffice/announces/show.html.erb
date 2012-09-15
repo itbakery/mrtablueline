@@ -1,0 +1,68 @@
+<p id="notice"><%= notice %></p>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/announces/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/announces/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+
+<p>
+  <b>Effect:</b>
+  <ul>
+  <% @announce.effects.each do |effect| %>
+    <li><%= effect.name %> </li>
+  <% end %>
+  </ul>
+</p>
+<p>
+  <b>Title:</b>
+  <%= @announce.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=raw @announce.content %>
+</p>
+
+<p>
+  <b>Publishon:</b>
+  <%= @announce.publishon %>
+</p>
+
+<p>
+  <b>Publishoff:</b>
+  <%= @announce.publishoff %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @announce.approved %>
+</p>
+
+<p>
+  <b>Approvedby:</b>
+  <%= @announce.approvedby %>
+</p>
+    <%= @announce.geopoint.name %>
+    <%= @announce.geopoint.city%>
+    <%= @announce.geopoint.country %>
+    <%= @announce.geopoint.latitude %>
+    <%= @announce.geopoint.longitude %>
+    <%= @announce.geopoint.gmaps %>
+  <% @json= @announce.geopoint.to_gmaps4rails %>
+<%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+<% if can? :update, @announce %>
+  <%= link_to 'Edit', edit_backoffice_announce_path(@announce) %> |
+<% end %>
+<%= link_to 'Back', backoffice_announces_path %>

@@ -1,0 +1,44 @@
+<div class="span9">
+ <h1>Listing stations</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/stations/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/stations/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+
+</ul>
+
+
+<h1>Listing stations</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stations.each do |station| %>
+  <tr>
+    <td><%= station.name %></td>
+    <td><%= link_to 'Show', [:backoffice,station] %></td>
+    <td><%= link_to 'Edit', edit_backoffice_station_path(station) %></td>
+    <td><%= link_to 'Destroy', [:backoffice,station], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= paginate @stations , :theme => 'twitter-bootstrap' %>
+<%= link_to 'New Station', new_backoffice_station_path %>
+</div>

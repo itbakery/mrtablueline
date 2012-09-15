@@ -1,0 +1,49 @@
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/stations/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/stations/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+
+<p id="notice"><%= notice %></p>
+<div class="well">
+<p>
+  <b>Name:</b>
+  <%= @station.name %>
+</p>
+<p>
+  <b>mapicon:</b>
+  <%= image_tag @station.mapicon_url(:icon16) %>
+  <%= image_tag @station.mapicon_url(:icon32) %>
+</p>
+
+
+<p>
+  <b>Content:</b>
+  <%=raw @station.content %>
+</p>
+
+</div>
+
+    <%= @station.geopoint.name %>
+    <%= @station.geopoint.city%>
+    <%= @station.geopoint.country %>
+    <%= @station.geopoint.latitude %>
+    <%= @station.geopoint.longitude %>
+    <%= @station.geopoint.gmaps %>
+  <% @json= @station.geopoint.to_gmaps4rails %>
+<%= gmaps("markers" => {"data" => @json, "options" => {"draggable" => true}}, "map_options" => { "processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+
+<%= link_to 'Edit', edit_backoffice_station_path(@station) %> |
+<%= link_to 'Back', backoffice_stations_path %>

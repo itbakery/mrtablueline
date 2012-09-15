@@ -1,0 +1,2 @@
+module Backoffice::ActivitiesHelper
+end

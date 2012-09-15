@@ -1,0 +1,50 @@
+<div class="span3">
+  <div style="padding: 8px 0;" class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header">List header</li>
+      <li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>
+      <li><a href="#"><i class="icon-book"></i> Library</a></li>
+      <li><a href="#"><i class="icon-pencil"></i> Applications</a></li>
+      <li class="nav-header">Another list header</li>
+      <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+      <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+      <li class="divider"></li>
+      <li><a href="#"><i class="icon-flag"></i> Help</a></li>
+    </ul>
+  </div>
+</div><!--/span-->
+
+<div class="span9">
+  <h1>Listing pages <%=current_user.name%></h1>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Lang</th>
+     <th>Order</th>
+    <th>Content</th>
+    <th>Approved</th>
+    <th>Versions</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @pages.each do |page| %>
+  <tr>
+    <td><%= page.title %></td>
+    <td><%= page.lang %></td>
+     <td><%= page.order %></td>
+    <td><%= page.content %></td>
+    <td><%= page.approved %></td>
+    <td><%= page.versions %></td>
+    <td><%= link_to 'Show', page %></td>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Page', new_page_path %>
+</div>
+

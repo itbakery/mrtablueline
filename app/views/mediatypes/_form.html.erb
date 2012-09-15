@@ -1,0 +1,30 @@
+<%= form_for(@mediatype) do |f| %>
+  <% if @mediatype.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mediatype.errors.count, "error") %> prohibited this mediatype from being saved:</h2>
+
+      <ul>
+      <% @mediatype.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name_th %><br />
+    <%= f.text_field :name_th %>
+  </div>
+  <div class="field">
+    <%= f.label :name_en %><br />
+    <%= f.text_field :name_en %>
+  </div>
+  <div class="field">
+    <%= f.label :medialogo %><br />
+    <%= f.file_field :medialogo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

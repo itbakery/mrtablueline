@@ -1,0 +1,2 @@
+module Backoffice::ApplicationHelper
+end

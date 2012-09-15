@@ -1,0 +1,46 @@
+<h2>Sign up <small> -- Register New register ? </small><h2>
+    <div class="row">
+    <% resource.build_profile %>
+    <%= form_for(resource, :as => resource_name,:html=>{:multipart => true }, :url => registration_path(resource_name)) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="span3">
+        <%= f.label :company_id %>
+        <%= f.collection_select :company_id, Company.all , :id, :name_th , :prompt => "Select Company"%>
+
+        <%= f.label :username %>
+        <%= f.text_field :name %>
+
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="span4">
+        <%= f.fields_for :profile do |p| %>
+          <div >
+            <%= p.label :name_th %>  <%= p.text_field :name_th %>
+          </div>
+          <div >
+            <%= p.label :name_en %> <%= p.text_field :name_en %>
+          </div>
+          <div >
+            <%= p.label :position %> <%= p.text_field :position %>
+          </div>
+          <div >
+            <%= p.label :mobile %><%= p.text_field :mobile %>
+          </div>
+          <div >
+            <%= p.label :avatar %><%= p.file_field :avatar %>
+          </div>
+        <% end %>
+      <div><%= f.submit "Sign up" ,:class=> "btn" %></div>
+      </div>
+
+    <% end %>
+    </div>
+    <%= render "devise/shared/links" %>

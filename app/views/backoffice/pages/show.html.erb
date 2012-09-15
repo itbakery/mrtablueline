@@ -1,0 +1,54 @@
+<div class="span3">
+  <div style="padding: 8px 0;" class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header">List header</li>
+      <% @page.children.each do |page| %>
+        <li><%= link_to h(page.title),page %></li>
+        <% page.children.each do |subpage| %>
+          <li style="margin-left: 25px;"><%= link_to h(subpage.title),subpage %> </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div><!--/span-->
+
+
+
+
+<div class="span9">
+ <p id="notice"><%= notice %></p>
+ 
+<% if can? :update, @page %>
+    <p>
+      <b>Title:</b>
+      <%= @page.title %>
+    </p>
+    <p>
+      <b>Approved:</b>
+      <%= @page.approved %>
+    </p>
+    <p>
+      <b>Lang:</b>
+      <%= @page.lang %>
+    </p>
+    <p>
+      <b>Lang:</b>
+      <%= @page.order %>
+    </p>    
+    <p>
+      <b>Content:</b>
+    </p>  
+<%end%>
+
+<p>
+  <%=raw @page.content %>
+
+</p>
+
+<% if can? :update, @page %>
+  <%= link_to 'Edit', edit_page_path(@page) %> |
+<% end %>
+<br/>
+<%= link_to 'Back', pages_path %>
+</div>
+

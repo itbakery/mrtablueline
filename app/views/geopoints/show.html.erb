@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @geopoint.name %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @geopoint.city %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @geopoint.country %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @geopoint.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @geopoint.longitude %>
+</p>
+
+<p>
+  <b>Gmaps:</b>
+  <%= @geopoint.gmaps %>
+</p>
+<%= gmaps("markers" => {"data" => @json}, "map_options" => { "center_on_user" => true, "processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+<%= link_to 'Edit', edit_geopoint_path(@geopoint) %> |
+<%= link_to 'Back', geopoints_path %>
+
+<% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+
+          Gmaps.map.infobox = function(boxText) {
+            return {
+              content: boxText
+              ,disableAutoPan: false
+              ,maxWidth: 0
+              ,pixelOffset: new google.maps.Size(-140, 0)
+              ,zIndex: null
+              ,boxStyle: {
+              background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat"
+                ,opacity: 0.75
+                ,width: "380px"
+              }
+              ,closeBoxMargin: "10px 2px 2px 2px"
+              ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+              ,infoBoxClearance: new google.maps.Size(1, 1)
+              ,isHidden: false
+              ,pane: "floatPane"
+              ,enableEventPropagation: false
+            }};
+
+    </script>
+<% end %>

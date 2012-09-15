@@ -1,0 +1,2 @@
+module GeopointsHelper
+end

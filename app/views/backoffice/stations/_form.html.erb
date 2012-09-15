@@ -1,0 +1,171 @@
+<%= form_for([:backoffice,@station], :html => {:multipart => true}) do |f| %>
+  <% if @station.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@station.errors.count, "error") %> prohibited this station from being saved:</h2>
+
+      <ul>
+      <% @station.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :mapicon %><br />
+    <%= f.file_field :mapicon %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+
+   <%= f.fields_for :geopoint do |geo| %>
+     <table class="well">
+       <tr>
+         <td>
+    <%= geo.label :name %> <%= geo.text_field :name %> <br>
+    <%= geo.label :city %> <%= geo.text_field :city %> <br>
+    <%= geo.label :country %><%= geo.text_field :country %> <br>
+    <%= geo.label :latitude %><%= geo.text_field :latitude %> <br>
+    <%= geo.label :longitude %><%= geo.text_field :longitude %> <br>
+    <%= geo.label :gmaps_zoom %><%= geo.text_field :gmaps_zoom %> <br>
+    <%= geo.label :gmaps %><%= geo.text_field :gmaps %> <br>
+
+         </td>
+         <td>
+<%= gmaps("markers" => {"data" => @json, "options" => {"draggable" => true}}, "map_options" => { "processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+
+
+         </td>
+       </tr>
+     </table>
+   <%end  %>
+
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+    <% content_for :scripts do %>
+    <script type="text/javascript" charset="utf-8">
+        var markersArray = [];
+        var marker;
+         //infobox
+         Gmaps.map.infobox = function(boxText) {
+            return {
+              content: boxText
+              ,disableAutoPan: false
+              ,maxWidth: 0
+              ,pixelOffset: new google.maps.Size(-140, 0)
+              ,zIndex: null
+              ,boxStyle: {
+              background: "url('http://google-maps-utility-library-v3.googlecode.com/svn/tags/infobox/1.1.5/examples/tipbox.gif') no-repeat"
+                ,opacity: 0.75
+                ,width: "380px"
+              }
+              ,closeBoxMargin: "10px 2px 2px 2px"
+              ,closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
+              ,infoBoxClearance: new google.maps.Size(1, 1)
+              ,isHidden: false
+              ,pane: "floatPane"
+              ,enableEventPropagation: false
+            }};
+
+        // On click, clear markers, place a new one, update coordinates in the form
+        Gmaps.map.callback = function() {
+            //google.maps.event.addListener(Gmaps.map.serviceObject, 'click', function(event) {
+            //  clearOverlays();
+            //  placeMarker(event.latLng);
+            //  updateFormLocation(event.latLng);
+            // });
+
+            for (var i = 0; i <  this.markers.length; ++i) {
+              google.maps.event.addListener(Gmaps.map.markers[i].serviceObject, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+                Gmaps.map.HandleDragend(this.getPosition());
+            });
+            };
+
+        };
+        //dragend
+        Gmaps.map.HandleDragend = function(pos) {
+          var geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+            latLng: pos
+          }, function(responses) {
+            if (responses && responses.length > 0) {
+               //format address
+               //alert(responses[0].formatted_address);
+               //find country name
+               for (var i=0; i < responses[0].address_components.length; i++) {
+                  var addr = responses[0].address_components[i];
+                  var getCountry;
+                  var city;
+                  if (addr.types[0] == 'country') getCountry = addr.long_name;
+                  if (addr.types[0] == 'locality') city = addr.long_name
+                  //alert(getCountry);
+
+                    }
+                    //alert(getCountry);
+                    (function ($) {
+                    $('#station_geopoint_attributes_city').val(city);
+
+                    $('#station_geopoint_attributes_country').val(getCountry);
+                    $('#station_geopoint_attributes_name').val(responses[0].formatted_address);
+                    })(jQuery);
+            } else {
+            alert('Cannot determine address at this location.');
+            }
+          });
+        };
+        //alert message
+
+        // Update form attributes with given coordinates
+        function updateFormLocation(latLng) {
+
+          (function ($) {
+           $('#station_geopoint_attributes_latitude').val(latLng.lat());
+           $('#station_geopoint_attributes_longitude').val(latLng.lng());
+           $('#station_geopoint_attributes_gmaps_zoom').val(Gmaps.map.serviceObject.getZoom());
+
+           })(jQuery);
+
+        }
+// Add a marker with an open infowindow
+        function placeMarker(latLng) {
+                marker = new google.maps.Marker({
+                position: latLng,
+                map: Gmaps.map.serviceObject,
+                draggable: true
+            });
+            markersArray.push(marker);
+            // Set and open infowindow
+            var infowindow = new google.maps.InfoWindow({
+                content: '<div class="popup"><h2>Awesome!</h2><p>Drag me and adjust the zoom level.</p>'
+            });
+            infowindow.open(Gmaps.map.serviceObject,marker);
+            // Listen to drag & drop
+            google.maps.event.addListener(marker, 'dragend', function() {
+                updateFormLocation(this.getPosition());
+            });
+        }
+        // Removes the overlays from the map
+        function clearOverlays() {
+          if (markersArray) {
+            for (var i = 0; i < markersArray.length; i++ ) {
+              markersArray[i].setMap(null);
+            }
+          }
+          markersArray.length = 0;
+        }
+
+    </script>
+<% end %>

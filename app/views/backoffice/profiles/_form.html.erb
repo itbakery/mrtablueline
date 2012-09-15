@@ -1,0 +1,59 @@
+<%= form_for([:backoffice,@profile], :html=> {:multiple => true, :class => "well form-horizontal"}) do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @profile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :name_th %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :name_th %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :name_en %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :name_en %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :position %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :position %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :mobile %>
+    </div>
+    <div class="controls">
+    <%= f.text_field :mobile %>
+    </div>
+  </div>
+  <div class="control-group">
+    <div class="control-label">
+    <%= f.label :avatar %>
+        <%= image_tag @profile.avatar.url(:thumb360x268) unless @profile.nil?%>
+    </div>
+    <div class="controls">
+    <%= f.file_field :avatar %>
+    </div>
+  </div>
+ <div class="form-actions">
+    <%= f.submit :class=>"btn btn-primary" %>
+   <a href="/backoffice/companies" class="btn">Back to list</a>
+ </div>
+<% end %>

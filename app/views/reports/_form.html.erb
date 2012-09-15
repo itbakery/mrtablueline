@@ -1,0 +1,69 @@
+<%= nested_form_for(@report,:html=>{:multipart => true }) do |f| %>
+  <% if @report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% @report.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :publishon %><br />
+    <%= f.text_field :publishon %>
+  </div>
+  <div class="field">
+    <%= f.label :publishoff %><br />
+    <%= f.text_field :publishoff %>
+  </div>
+  <div class="field">
+    <%= f.label :approved %><br />
+    <%= f.check_box :approved %>
+  </div>
+  <div class="field">
+    <%= f.label :approvedby %><br />
+    <%= f.text_field :approvedby %>
+  </div>
+
+
+
+  <%= f.fields_for :geopoints do |geo| %>
+    <%= geo.label :name %> <%= geo.text_field :name %> <br/>
+    <%= geo.label :city %> <%= geo.text_field :city %> <br/>
+    <%= geo.label :country %><%= geo.text_field :country %> <br />
+    <%= geo.label :latitude %><%= geo.text_field :latitude %> <br />
+    <%= geo.label :longitude %><%= geo.text_field :longitude %> <br />
+      <%= geo.label :gmaps %><%= geo.text_field :gmaps %>
+
+      <%= geo.link_to_remove "Remove this Geo" %>
+   <%end  %>
+   <p><%= f.link_to_add "Add geopoint", :geopoints %></p>
+
+  <%= f.fields_for :images do |image| %>
+  <div class="field">
+    <%= image.label :title %><br />
+    <%= image.text_field :title %>
+  </div>
+  <div class="field">
+    <%= image.label :image %><br />
+    <%= image.file_field :image %>
+  </div>
+ <%= image.link_to_remove  "remove Image"  %>
+  <% end %>
+
+  <p><%= f.link_to_add "Add images", :images %></p>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

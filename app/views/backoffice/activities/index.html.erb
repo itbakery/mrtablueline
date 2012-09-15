@@ -1,0 +1,65 @@
+<h1>Listing activities</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/activities/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/activities/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+<table class="table table-bordered">
+  <tr>
+    <th>No</th>
+    <th>Title</th>
+    <th>Publishon</th>
+    <th>Publishoff</th>
+    <th>Approved</th>
+    <th>Approvedby</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% if @activities %>
+    <% @activities.each do |activity| %>
+      <tr>
+        <td><%= activity.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= activity.title %> <br> โดย <small> <%= activity.user.name if activity.user %> </small></td>
+        <td><%= activity.publishon %></td>
+        <td><%= activity.publishoff %></td>
+        <td><%= activity.approved %></td>
+        <td><%= activity.approvedby %></td>
+        <td><%= link_to 'Show', [:backoffice,activity], :class => "btn btn-mini" %></td>
+
+        <% if can? :update, activity %>
+          <td><%= link_to 'Edit', edit_backoffice_activity_path(activity) , :class => "btn btn-mini" %></td>
+        <% end %>
+
+        <% if can? :destroy, activity %>
+          <td><%= link_to 'Destroy', [:backoffice,activity], method: :delete, data: { confirm: 'Are you sure?' } ,:class => "btn btn-mini" %></td>
+        <% if can? :manage , activity %>
+          <%  if activity.approved %>
+            <% msg = 'unapproved' %>
+          <% else %>
+            <% msg = 'approved' %>
+          <% end %>
+          <td><%= link_to "#{msg}", approve_backoffice_activity_path(activity), :class => "btn btn-mini" %></td>
+        <% end %>
+
+        <% end %>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<br />
+<%= link_to 'New Activity', new_backoffice_activity_path %>
+

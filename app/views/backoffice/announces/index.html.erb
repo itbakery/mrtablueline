@@ -1,0 +1,66 @@
+<h1>Listing announcements</h1>
+<ul class="nav nav-tabs">
+          <li class="icon index_collection_link active" rel="" title="">
+            <a href="/backoffice/announces/" class="pjax">
+              <i class="icon-th-list"></i>
+              <span>List</span>
+            </a>
+          </li>
+
+          <li class="icon new_collection_link " rel="" title="">
+            <a href="/backoffice/announces/new" class="pjax">
+              <i class="icon-plus"></i>
+              <span>Add new</span>
+            </a>
+          </li>
+</ul>
+
+
+<table class="table table-bordered">
+  <tr>
+    <th>No</th>
+    <th>Title</th>
+    <th>Publishon</th>
+    <th>Publishoff</th>
+    <th>Approved</th>
+    <th>Approvedby</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<% if @announces %>
+  <% @announces.each do |announce| %>
+    <tr>
+      <td><%= announce.created_at.strftime("%m/%d/%Y") %></td>
+      <td><%= announce.title %> <br> โดย <small> <%= announce.user.name if announce.user%> </small></td>
+      <td><%= announce.publishon %></td>
+      <td><%= announce.publishoff %></td>
+      <td><%= announce.approved %></td>
+      <td><%= announce.approvedby %></td>
+      <td><%= link_to 'Show', [:backoffice,announce] , :class => "btn btn-mini"%></td>
+      <% if can? :update , announce %>
+        <td><%= link_to 'Edit', edit_backoffice_announce_path(announce), :class => "btn btn-mini" %></td>
+      <% end %>
+      <% if can? :destroy, announce %>
+        <td><%= link_to 'Destroy', [:backoffice,announce], method: :delete, data: { confirm: 'Are you sure?' } , :class => "btn btn-mini"%></td>
+      <% end %>
+      <% if can? :manage , announce %>
+        <%  if announce.approved %>
+          <% msg = 'unapproved' %>
+        <% else %>
+          <% msg = 'approved' %>
+        <% end %>
+
+        <td><%= link_to "#{msg}", approve_backoffice_announce_path(announce) , :class => "btn btn-mini"%></td>
+      <% end %>
+
+    </tr>
+  <% end %>
+
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Announcement', new_backoffice_announce_path %>

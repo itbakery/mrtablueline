@@ -1,0 +1,15 @@
+<div class="content-box">
+  <div class="box-header">
+    <span> <%= @activity.title %> </span>
+  </div>
+
+  <div class="box-body">
+    <div class="box-info">
+      <%= @activity.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @activity.created_at%>
+    </div>
+    <div class="content-format">
+      <%=raw @activity.content %>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>

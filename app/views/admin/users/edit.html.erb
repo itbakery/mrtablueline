@@ -1,0 +1,52 @@
+
+<h2>Edit User <small> -- Edit New register ? </small><h2>
+    <div class="row">
+    <% resource = @user %>
+    <%= form_for([:admin,resource],:html=>{:multipart => true }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="span3">
+        <p> User Info </p>
+        <%= f.label :company_id %>
+        <%= f.collection_select :company_id, Company.all , :id, :name_th , :prompt => "Select Company"%>
+         <%= f.collection_select :role_ids, Role.global, :_id,:name, :prompt => "Select Role" %>
+        <%= f.label :username %>
+        <%= f.text_field :name %>
+
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="span3">
+        <p> Profile </p>
+        <%= f.fields_for :profile do |p| %>
+          <div >
+            <%= p.label :name_th %>  <%= p.text_field :name_th %>
+          </div>
+          <div >
+            <%= p.label :name_en %> <%= p.text_field :name_en %>
+          </div>
+          <div >
+            <%= p.label :position %> <%= p.text_field :position %>
+          </div>
+          <div >
+            <%= p.label :mobile %><%= p.text_field :mobile %>
+          </div>
+          <div >
+            <%= p.label :avatar %><%= p.file_field :avatar %>
+          </div>
+        <% end %>
+      <div><%= f.submit "Edit User" ,:class=> "btn" %></div>
+      </div>
+      <div class="span2">
+        <p> Avatar </p>
+        <%= image_tag @user.profile.avatar.url(:thumb360x268) unless @user.profile.nil?%>
+      </div>
+    <% end %>
+    </div>
+    <!-- <%= render "devise/shared/links" %>  -->

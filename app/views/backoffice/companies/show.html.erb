@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+<p>
+<%= image_tag @company.logo.url(:thumb260x180) %>
+</p>
+<p>
+  <b>Name th:</b>
+  <%= @company.name_th %>
+</p>
+
+<p>
+  <b>Name en:</b>
+  <%= @company.name_en %>
+</p>
+<p>
+  <b>mission:</b>
+  <%=raw @company.mission %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @company.address %>
+</p>
+
+<p>
+  <b>Tel:</b>
+  <%= @company.tel %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @company.contact %>
+</p>
+
+<p>
+  <b>Telcontact:</b>
+  <%= @company.telcontact %>
+</p>
+
+<p>
+  <b>Callcenter:</b>
+  <%= @company.callcenter %>
+</p>
+
+
+<%= link_to 'Edit', edit_backoffice_company_path(@company) %> |
+<%= link_to 'Back', backoffice_companies_path %>

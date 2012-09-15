@@ -1,0 +1,51 @@
+<div class="span9">
+<p id="notice"><%= notice %></p>
+<p class="well">
+  <b>Title:</b>
+  <%= @activity.title %>
+  <br>
+  <b>Intro:</b>
+  <%= @activity.intro %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=raw @activity.content %>
+</p>
+
+<p>
+  <b>Publishon:</b>
+  <%= @activity.publishon %>
+</p>
+
+<p>
+  <b>Publishoff:</b>
+  <%= @activity.publishoff %>
+</p>
+
+<p>
+  <b>Approved:</b>
+  <%= @activity.approved %>
+</p>
+
+<p>
+  <b>Approvedby:</b>
+  <%= @activity.approvedby %>
+</p>
+<p>
+  <b>FromMedia:</b>
+  <% if  @activity.mediatype  %>
+      <%= image_tag @activity.mediatype.medialogo.url(:thumb160x120)  %>
+    <% else %>
+      <p>Sorry no image for media!!!</p>
+  <% end %>
+</p>
+<p>
+  <b>issued:</b>
+  <%= @activity.issue_no %>
+</p>
+
+<%= link_to 'Edit', edit_backoffice_activity_path(@activity) %> |
+<%= link_to 'Back', backoffice_activities_path %>
+
+</div>

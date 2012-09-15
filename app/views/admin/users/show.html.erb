@@ -1,0 +1,11 @@
+<h2> Show User </h2>
+<table class="">
+  <tr>
+    <td><%= image_tag @user.profile.avatar.url(:thumb360x268) unless @user.profile.nil?%></td>
+    <td><%= @user.profile %></td>
+    <td>
+      <h4>Username:<%= @user.name %></h4>
+      <h4>Email:<%= @user.email %></h4>
+    </td>
+  </tr>
+</table>
