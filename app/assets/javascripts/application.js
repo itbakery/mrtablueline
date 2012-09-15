@@ -92,11 +92,7 @@ $(document).ready(function() {
 
    //tootip
 
-    $("[rel=nofollow]").tooltip({
-        placement: 'bottom',
-        animation: true
-    });
-
+    $("a").tooltip();
 });
 
 
