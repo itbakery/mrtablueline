@@ -80,6 +80,6 @@ Mrtablueline::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   #config.assets.precompile += %w(Ckeditor.assets,fonts/thsarabunnew.css)
-  config.assets.precompile += %w(Ckeditor.assets fonts/thsarabunnew.css jquery.flexslider.js)
+  config.assets.precompile += %w(Ckeditor.assets fonts/thsarabunnew.css jquery.flexslider.js flexslider.css)
 
 end
