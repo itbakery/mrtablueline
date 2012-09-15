@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <% title "Welcome to official Website of MRTA - Blue Line Website" %>
+    <title><%= content_for?(:title) ? yield(:title) : "MRTA - Blue Line" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= stylesheet_link_tag "fonts/thsarabunnew.css", :media => "all" %>
+    <%= stylesheet_link_tag "flexslider.css", :media => "all" %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'images/apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'images/favicon.ico', :rel => 'shortcut icon' %>
+  </head>
+  <body>
+
+    <%= render :partial => 'shared/navigator' %>
+
+    <div class="container container-main">
+      <%= render :partial => 'shared/progressheader' %>
+      <%= render :partial => 'shared/message' %>
+      <div class="content">
+        <div class="row" style="margin-top: 5px;">
+          <div class="span8">
+          <%= render :partial => 'shared/leftpanel' %>
+          </div>
+          <div class="span4">
+            <div class="myleftbar">
+              <%= render :partial => 'shared/rightpanel' %>
+            </div>
+          </div>
+        </div>
+      </div><!--/content-->
+    </div> <!-- /container -->
+
+
+<div id="footer_button">
+	ประกาศ และ รายงานผล
+</div>
+<div id="footer_higher">
+	<div id="footer_content">
+		<div class="footbox">
+			Footer box
+		</div>
+		<div class="footbox">
+			Footer box
+		</div>
+		<div class="footbox">
+			Footer box
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="footer_lower">  <!-- footer -->
+    <div class="footer-body">
+      <div id="footer-wrapper" >
+        <div class="content-notation" id="contact-emergency"></div>
+        <div class="caption">
+          <p>175 ถ.พระราม 9 ห้วยขวาง กรุงเทพฯ 10320 <br> โทร. 0 2716 4000 โทรสาร. 0 2716 4019</p>
+        </div>
+      </div>
+    </div>
+	<div id="footer_info">
+		<div id="copyright">
+			&copy; การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย
+175 ถ.พระราม 9 ห้วยขวาง กรุงเทพฯ 10320
+โทร. 0 2716 4000
+		</div>
+		<div id="attr">
+		   <a href=""></a>.
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!--atest -->
+<div id="dialog" class="modal hide fade">
+    <div class="modal-header">
+          <a href="#" class="close">&times;</a>
+          <h3> Showing Modal </h3>
+    </div>
+    <div class="modal-body">
+        I need to show up!
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn primary">Done</a>
+    </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+<h3 id="myModalLabel">Welcome to MRTA Blue Line Website</h3>
+</div>
+<div class="modal-body">
+  <%= image_tag  url_for("undertest.png") %>
+</div>
+<div class="modal-footer">
+<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+</div>
+</div>
+    <!-- Javascripts
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_include_tag "application" %>
+    <%= yield :scripts %>
+<script>
+  //<![CDATA[
+    $(function() {
+      // wire up the buttons to dismiss the modal when shown
+      $("#myModal").bind("show", function() {
+        $("#myModal a.btn").click(function(e) {
+          // do something based on which button was clicked
+          // we just log the contents of the link element for demo purposes
+          console.log("button pressed: "+$(this).html());
+          // hide the dialog box
+          $("#myModal").modal('hide');
+        });
+      });
+      // remove the event listeners when the dialog is hidden
+      $("#myModal").bind("hide", function() {
+          // remove event listeners on the buttons
+          $("#myModal a.btn").unbind();
+      });
+      // finally, wire up the actual modal functionality and show the dialog
+      $("#myModal").modal({
+        "backdrop" : "static",
+        "keyboard" : true,
+        "show" : true // this parameter ensures the modal is shown immediately
+      });
+    });
+  //]]>
+</script>
+
+  </body>
+</html>

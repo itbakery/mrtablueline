@@ -17,16 +17,16 @@ set :rvm_type, :user
 set :rvm_bin_path, "/home/deploy/.rvm/bin"
 set :rvm_ruby_string, "ruby-1.9.3-p194@mrtablueline"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
-set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
+#set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
 
 ssh_options[:forward_agent] = true
 role :web, "203.146.127.169"
 role :app, "203.146.127.169"
 role :db, "203.146.127.169", :primary => true
 
+after "deploy:update_code", "deploy:bundle_install"
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
-after "deploy:update_code", "deploy:bundle_install"
 
 namespace :deploy do
 # desc "Skipping asset compilation with Capistrano"

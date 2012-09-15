@@ -64,7 +64,7 @@ module Mrtablueline
     config.assets.enabled = true
     config.assets.digest =  true
     config.server_static_assets = false
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
