@@ -3,27 +3,8 @@
 <%= image_tag 'banner1.png' %>
 <div style="clear:both;margin-top:10px;"></div>
 <h2 class="menuheader-green">ประกาศผลกระทบ </h2>
-
-<%= form_tag home_index_path, :method => :get , :remote => true ,:class => "well lightyellowbox" do %>
-  <div class="collapse-group">
-  <div class="input-append pull-rigth">
-    <%= text_field_tag :search, params[:search], :class => "input-medium" %>
-    <button class="btn" type="submit">Search</button>
-    <button class="btn advancesearch" type="button">Options</button>
-  </div>
-  <p class="collapse">
-   <% Effect.all.to_a.each do |effect| %>
-    <%= check_box_tag "search[effect_ids][]", effect.id %> <%= effect.name_th %>
-  <% end %>
-
-  </p>
-  </div>
-<% end %>
-<div id="announces">
-show search hear
-</div>
 <%= render :partial => 'shared/announce_stuff' %>
-
+<!--
 <div class="tabbable tabs-left lightyellowbox well" >
   <ul class="nav nav-tabs" id="effectTab">
     <li><a href="#traffic" data-toggle="tab"><i class="icon-road"></i>จราจร</a></li>
@@ -42,6 +23,7 @@ show search hear
       <% end %>
       </ul>
     </div>
+
     <div class="tab-pane active" id="sound">
       <ul>
         <% if @sounds %>
@@ -83,4 +65,4 @@ show search hear
     </div>
   </div>
 </div>
-
+-->
