@@ -42,6 +42,12 @@ class Ability
         can :destroy, Announce do |a|
           a.try(:user) == user
         end
+        can :update, Activity do |a|
+          a.try(:user) == user
+        end
+        can :destroy, Activity do |a|
+          a.try(:user) == user
+        end
 
       end
     end

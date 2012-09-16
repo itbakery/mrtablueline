@@ -6,9 +6,9 @@ class Backoffice::ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     if (current_user.has_role? :admin) or (current_user.has_role? :mrtaadmin)
-      @activities = Activity.all.desc(:created_at).to_a
+      @activities = Activity.unscoped.all.desc(:created_at).to_a
     else
-      @activities = current_user.activities.desc(:created_at).to_a
+      @activities = current_user.activities.unscoped.desc(:created_at).to_a
 
     end
 

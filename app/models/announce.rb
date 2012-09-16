@@ -3,6 +3,15 @@ class Announce
   include Mongoid::Document
   include Mongoid::Timestamps
   include Log
+
+  default_scope where(state: :published)
+  scope :range,  ->(start, finish){
+    where(:created_at => {'$gte' => start,'$lt' => finish}) if start && finish
+  }
+  #Announce.effect_in("Drain")
+  scope :effect_in, ->(effect){
+    includes(:effects).where(:"effects.name" == effect)
+  }
   has_one :geopoint, as: :geoable, dependent: :destroy
   has_many :hits, as: :hitable, dependent: :destroy
   accepts_nested_attributes_for :geopoint, :allow_destroy => true
@@ -18,6 +27,18 @@ class Announce
   field :approvedby, type: String
   field :versions, type: String
   field :state, type: String
+  #Event.daily(start, finish)
+  #Event.daily(4.months.ago,Time.now)
+  def self.daily(start, finish)
+    daily_events = {}
+    self.range(start, finish).each do |event|
+      date_str = event.created_at.to_date.to_s
+      daily_events[date_str] ||= 0
+      daily_events[date_str] += 1
+    end
+    return daily_events
+  end
+
   #State transisstions
   include  Stateflow
   stateflow do
