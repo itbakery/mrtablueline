@@ -4,7 +4,7 @@ class Announce
   include Mongoid::Timestamps
   include Log
 
-  #default_scope where(state: :published)
+  scope :published, ->(){where(state: :published)}
   scope :range,  ->(start, finish){
     where(:created_at => {'$gte' => start,'$lt' => finish}) if start && finish
   }
@@ -55,6 +55,9 @@ class Announce
     event     :archive do
       transitions :from => :published, :to => :archived
     end
+  end
+  def self.all!
+    Mongoid::Criteria.new self
   end
   def self.search(search)
     if search

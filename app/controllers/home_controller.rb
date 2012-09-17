@@ -33,4 +33,8 @@ class HomeController < ApplicationController
       format.html  {render :layout => "mapdisplay"}
     end
   end
+  def underconstruction
+    render :layout => "underconstruction"
+
+  end
 end
