@@ -56,9 +56,6 @@ class Announce
       transitions :from => :published, :to => :archived
     end
   end
-  def self.all!
-    Mongoid::Criteria.new self
-  end
   def self.search(search)
     if search
       where(title: /#{search}/)

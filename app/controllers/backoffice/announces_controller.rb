@@ -49,7 +49,7 @@ class Backoffice::AnnouncesController < ApplicationController
 
   # GET /announces/1/edit
   def edit
-    Announce.all!
+    Announce
     @announce = Announce.find(params[:id]) rescue nil
     @alleffects = Effect.all.to_a
     @json = @announce.geopoint.to_gmaps4rails
@@ -76,7 +76,7 @@ class Backoffice::AnnouncesController < ApplicationController
   # PUT /announces/1
   # PUT /announces/1.json
   def update
-    @announce = Announce.unscoped.find(params[:id])
+    @announce = Announce.find(params[:id])
 
     respond_to do |format|
       if @announce.update_attributes(params[:announce])
