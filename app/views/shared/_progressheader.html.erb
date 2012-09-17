@@ -10,9 +10,9 @@
       <% @pageroots.each   do |page|%>
         <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
       <% end %>
-      <li><%= link_to "ความก้าวหน้า",progresses_path, :class => "menuheader" %> </li>
+      <li><%= link_to "ความคืบหน้า",progresses_path, :class => "menuheader" %> </li>
       <li><a href="/progresses/effect" class="menuheader">ผลกระทบ</a></li>
-      <li><%= link_to "แผนที่รวม",mrtamap_path, :class => "menuheader" %> </li>
+      <li><%= link_to "แผนที่",mrtamap_path, :class => "menuheader" %> </li>
 
     </ul>
   </div>
