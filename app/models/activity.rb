@@ -3,7 +3,7 @@ class Activity
   include Mongoid::Document
   include Mongoid::Timestamps
   include Log
-  default_scope where(state: :published)
+  #default_scope where(state: :published)
   has_many :hits, as: :hitable, dependent: :destroy
   before_save :refresh_version
   before_update :refresh_version

@@ -6,9 +6,9 @@ class Backoffice::AnnouncesController < ApplicationController
   # GET /announces.json
   def index
     if (current_user.has_role? :admin) or (current_user.has_role? :mrtaadmin)
-      @announces = Announce.all.desc(:created_at).to_a
+      @announces = Announce.unscoped.all.desc(:created_at).to_a
     else
-      current_user.announces.desc(:created_at).to_a
+      @announces = current_user.announces.unscoped.desc(:created_at).to_a
     end
 
 
@@ -49,7 +49,7 @@ class Backoffice::AnnouncesController < ApplicationController
 
   # GET /announces/1/edit
   def edit
-    @announce = Announce.find(params[:id])
+    @announce = Announce.unscoped.find(params[:id])
     @alleffects = Effect.all.to_a
     @json = @announce.geopoint.to_gmaps4rails
   end
@@ -75,7 +75,7 @@ class Backoffice::AnnouncesController < ApplicationController
   # PUT /announces/1
   # PUT /announces/1.json
   def update
-    @announce = Announce.find(params[:id])
+    @announce = Announce.unscoped.find(params[:id])
 
     respond_to do |format|
       if @announce.update_attributes(params[:announce])
