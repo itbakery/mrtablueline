@@ -1,6 +1,8 @@
 <h2 class="mainheader">กิจกรรมล่าสุด
   <div class="pull-right">
-    <small style="color: #FFFFFF;"> <%=t I18n.l(Date.today, :format => :long) %> </small>
+    <% t = ->(date){"#{date.year+543}"} %>
+    <% y = t.call(Date.today) %>
+    <small style="color: #FFFFFF;"> <%=t I18n.l(Date.today, :format => :long) %>   </small>
   </div>
 </h2>
 <%= render :partial => 'shared/mainfeature' %>
