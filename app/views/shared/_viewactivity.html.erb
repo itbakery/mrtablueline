@@ -22,7 +22,9 @@
 
                 <div class="date">
                   <!-- by: <%=activity.user.name if activity.user %> ,<%= activity.created_at.strftime("created at:  %m/%d/%Y  %I:%M%p") %>  -->
-                  <%= activity.created_at.strftime(":%m/%d/%Y") %>, จำนวนครั้งที่อ่าน <%=activity.hit_count %> ,ip ล่าสุด <%= activity.hits.last.user_ip if activity.hits.last%>
+                  <!-- <%= activity.created_at.strftime(":%m/%d/%Y") %>, จำนวนครั้งที่อ่าน <%=activity.hit_count %> ,ip ล่าสุด <%= activity.hits.last.user_ip if activity.hits.last%>  -->
+
+                  <%=t I18n.l(activity.created_at, :format => :long) %>
                 </div>
             </div>
             <div style="clear:both"></div>
