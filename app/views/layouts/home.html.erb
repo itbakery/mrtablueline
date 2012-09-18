@@ -50,9 +50,7 @@
           <%= render :partial => 'shared/leftpanel' %>
           </div>
           <div class="span4">
-            <div class="myleftbar-x">
               <%= render :partial => 'shared/rightpanel' %>
-            </div>
           </div>
         </div>
       </div><!--/content-->
@@ -151,6 +149,16 @@
         "keyboard" : true,
         "show" : true // this parameter ensures the modal is shown immediately
       });
+
+          if ($.browser.msie && $.browser.version.substr(0,1)<7)
+          {
+                $('li').has('ul').mouseover(function(){
+                        $(this).children('ul').show();
+                        }).mouseout(function(){
+                        $(this).children('ul').hide();
+                        })
+          }
+
     });
   //]]>
 </script>

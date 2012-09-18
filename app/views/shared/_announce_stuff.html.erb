@@ -1,7 +1,7 @@
 <div class="announce_stuff">
   <div class="widget">
 
-    <div class="traffic">
+    <div class="traffic" style="margin-left: 10px;">
       <div class="stat">
         <a rel="nofollow" target="_blank" title="ผลกระทบด้านจราจร" href="">
           <span class="count">1234</span>
@@ -29,7 +29,7 @@
     </div>
     <div class="clear">
     </div>
-    <div class="dust">
+    <div class="dust" style="margin-left: 10px; ">
       <div class="stat">
         <a rel="nofollow" target="_blank" title="ผลกระทบด้านฝุ่น" href="">
           <span class="count">311</span>
@@ -60,27 +60,24 @@
     <div id="clear">
 
     </div>
-    <div id="announcesearch" class="well" style="margin-top: 10px;">
-     <%= form_tag home_index_path, :method => :get , :remote => true  do %>
-      <div class="collapse-group">
-        <div class="input-append pull-rigth">
-          <%= text_field_tag :search, params[:search], :class => "input-medium" %>
-          <button class="btn" type="submit">Search</button>
-          <button class="btn advancesearch" type="button">Options</button>
+    <div id="announcesearch" class="well" style="margin-top: 10px; ">
+      <%= form_tag home_index_path, :method => :get , :remote => true  do %>
+        <div class="collapse-group">
+          <div class="input-append pull-rigth">
+            <%= text_field_tag :search, params[:search], :class => "input-medium" %>
+            <button class="btn" type="submit">Search</button>
+            <button class="btn advancesearch" type="button">Options</button>
+          </div>
+          <p class="collapse">
+            <% Effect.all.to_a.each do |effect| %>
+              <%= check_box_tag "search[effect_ids][]", effect.id %> <%= effect.name_th %>
+            <% end %>
+          </p>
         </div>
-        <p class="collapse">
-          <% Effect.all.to_a.each do |effect| %>
-            <%= check_box_tag "search[effect_ids][]", effect.id %> <%= effect.name_th %>
-          <% end %>
-
-        </p>
+      <% end %>
+      <div id="announces">
+        <!-- show search hear  -->
       </div>
-    <% end %>
-    <div id="announces">
-      <!-- show search hear  -->
-    </div>
-
-
     </div>
     <!--extext box -->
   </div>

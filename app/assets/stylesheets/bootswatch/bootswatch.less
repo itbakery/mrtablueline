@@ -13,18 +13,26 @@
 
 .navbar {
 
-	font-family: @headingsFontFamily;
+	font-family: @serifFontFamily;
 
 	.navbar-inner {
-		#gradient > .vertical-three-colors(@navbarBackground, @navbarBackground, 90%, @navbarBackgroundHighlight);
+	//	#gradient > .vertical-three-colors(@navbarBackground, @navbarBackground, 90%, @navbarBackgroundHighlight);
 	}
 
 	.brand {
-		padding: 15px 20px;
+	font-family: @sansFontFamily;
+		padding: 7px 20px 5px 3px;
+		color: @white;
+        font-size: 1.6em;
+        font-weight: bold;
+
 	}
 
 	.nav > li > a {
 		padding: 16px 10px 14px;
+		color: @yellow;
+        font-size: 1.3em;
+        font-weight: bold;
 	}
 
 	.nav li.dropdown.active > .dropdown-toggle,

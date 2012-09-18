@@ -1,19 +1,24 @@
-<header id="overview" class="jumbotron subhead" style="padding-bottom: 0px;">
-  <%= image_tag "mrtalogo.png", :height => "10%", :width => "10%", :class=>"pull-right" %>
-  <%= image_tag "mascot.jpg", :height => "5%", :width => "5%", :class=>"pull-right" %>
-  <h2>โครงการรถไฟฟ้าสายสีน้ำเงินส่วนต่อขยาย : MRT - Blue Line Extension Project</h2>
-  <h3  style="color: red;">
+<header id="overview" class="jumbotron subhead" style="padding-bottom: 0px; height:115px; ">
+   <h2 style="text-indent: -9999px">โครงการรถไฟฟ้าสายสีน้ำเงินส่วนต่อขยาย : MRT - Blue Line Extension Project</h2>
+  <h3  style="text-indent: -9999px">
     ช่วงหัวลำโพง-บางแค และช่วงบางซื่อ-ท่าพระ
   </h3>
-  <div class="subnav">
-    <ul class="nav nav-pills">
-      <% @pageroots.each   do |page|%>
-        <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
-      <% end %>
-      <li><%= link_to "ความคืบหน้า",progresses_path, :class => "menuheader" %> </li>
-      <li><a href="/progresses/effect" class="menuheader">ผลกระทบ</a></li>
-      <li><%= link_to "แผนที่",mrtamap_path, :class => "menuheader" %> </li>
-
-    </ul>
-  </div>
 </header>
+
+<ul id="menu" >
+      <% @pageroots.each   do |page|%>
+        <li><%= link_to h(page.title), page  %>
+        <% unless page.children.to_a.empty? %>
+          <ul>
+            <% page.children.asc(:order).each do |subpage| %>
+              <li> <%= link_to h(subpage.title),page %> </li>
+            <% end %>
+          </ul>
+        <% end %>
+         </li>
+      <% end %>
+      <li><%= link_to "ความคืบหน้า",progresses_path %> </li>
+      <li><a href="/progresses/effect" >ผลกระทบ</a></li>
+      <li><%= link_to "แผนที่",mrtamap_path %> </li>
+</ul>
+
