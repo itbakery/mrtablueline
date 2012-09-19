@@ -12,7 +12,7 @@
                 <div class="image">
                   <img src=<%=img_srcs.first %> width="120" height="60" />
                 </div>
-                <h5 class="title"> <a href="activities/<%=activity._id%>"> <%= activity.title %> </a></h5>
+                <h5 class="title"> <%= link_to  activity.title, activity_path(activity)%> </a></h5>
                 <div class="description">
                   <!--
                   <%=raw doc.css("p").first %>

@@ -54,7 +54,7 @@ h2.menuheader {
     font-family: 'THSarabunNew', sans-serif;
     color: white;
     font-size:1.4em;
-    border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 0px 0px;
     height: 40px;
     overflow: hidden;
     font-weight: bold;
@@ -475,8 +475,7 @@ position: relative;
 
 .flex-control-nav {
   position: absolute;
-  right: -300px;
-  bottom: 0;
+  bottom: -20px;
   list-style: none;
   z-index: 99999999999999999999;  /* awesome debugging */
   zoom: 1;
@@ -583,10 +582,10 @@ div.content-box {
 
 
     div.box-header {
-    background: -moz-linear-gradient(center top , #296EB6, #3E87D4) repeat scroll 0 0 transparent;
+    background-color: #3E87D4;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    height: 50px;
+    height: 40px;
     overflow: hidden;
     padding-left: 10px;
     padding-right: 10px;
@@ -1043,7 +1042,7 @@ div.footer-body div#footer-wrapper div#contact-emergency {
 {
     padding: 10px;
 	height: 10px;
-	width: 130px;
+	width: 150px;
 	height: auto;
     line-height: 1;
     display: block;
@@ -1135,3 +1134,51 @@ div.footer-body div#footer-wrapper div#contact-emergency {
 
 * html #menu             { zoom: 1; } /* IE6 */
 *:first-child+html #menu { zoom: 1; } /* IE7 */
+
+.image-lastest {
+    color: #CA0002;
+    display: inline;
+    float: left;
+    height: 70px;
+    overflow: visible;
+    position: relative;
+    width: 120px;
+    margin: 5px;
+}
+
+.content h5.title-lastest {
+    border-bottom: 1px solid #EEEEEE;
+    color: #0C629E;
+    float: left;
+    font-size: 14px;
+    line-height: 1em;
+    margin: 5px 5px 5px 5px;
+    max-width: 230px;
+}
+
+.content-right {
+
+    float: right;
+    margin-top: -4px;
+    width: 230px;
+}
+
+.content .description-lastest {
+    color: #757575;
+    font-family: 'THSarabunNew',sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14px;
+    margin-bottom: 6px;
+    margin-top: 3px;
+
+}
+.content .date-lastest {
+     color: #cccccc;
+    font-family: 'THSarabunNew',sans-serif;
+    font-size: 0.8em;
+    line-height: 14px;
+    margin-bottom: 7px;
+    margin-top: 3px;
+
+}

@@ -4,11 +4,12 @@
   </div>
 
   <div class="box-body">
-    <div class="box-info">
-      <%= @activity.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @activity.created_at%>
-    </div>
     <div class="content-format">
       <%=raw @activity.content %>
+    </div>
+
+    <div class="box-info">
+         <%=t I18n.l(@activity.created_at, :format => :long) %>
     </div>
     <div class="clear"></div>
   </div>
