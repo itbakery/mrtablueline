@@ -22,37 +22,39 @@
   </div>
 </div><!--/span-->
 
-<div class="span8" style="margin-top: 5px;">
+<div class="span8" style="margin-top: 0px;">
   <p id="notice"><%= notice %>
   <div class="well">
-    <h3 style="font-weight: bold; border-bottom: 2px solid #EEEEEE;"> <%= @announce.title %> </h3>
-    <h5>
-    ผลกระทบที่เกี่ยวข้อง :
-    <% @announce.effects.each do |effect| %>
-    <%= effect.name_th %> ,
-  <% end %>
+    <h3 style="font-weigh<Mouse>C!h!/<Mouse>C!j!/t: bold; border-bottom: 2px solid #EEEEEE;"> <%= @announce.title %> </h3>
+    <h5 style="width: 300px; float: left;">
+      ผลกระทบที่เกี่ยวข้อง :
+      <% @announce.effects.each do |effect| %>
+        <%= effect.name_th %> ,
+      <% end %>
     </h5>
 
-    <div class="small"> <%= @announce.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @announce.created_at.strftime(":%m/%d/%Y") %>
-   , จำนวนครั้งที่อ่าน:  <%= @announce.hit_count %> ครั้ง , <%= @announce.hits.last.user_ip if @announce.hits.last %>
+    <div class="small pull-right" style="float: right;">
+      <%=t I18n.l(@announce.created_at, :format => :long) if @announce.created_at.strftime(":%m/%d/%Y") %> , จำนวนครั้งที่อ่าน:  <%= @announce.hit_count %> ครั้ง
+   <!-- <%= @announce.hits.last.user_ip if @announce.hits.last %> -->
+        <div style="clear:both"></div>
+  <br></div>
+<div class="content-p well" style="margin-top: 20px;">
+  <p><%=raw @announce.content %></p>
+</div>
+<div class="small">
+  <%= @announce.geopoint.name %>
+  <%= @announce.geopoint.city%>
+  <%= @announce.geopoint.country %> <br>
+  [ ละติจูด: <%= @announce.geopoint.latitude %> , ลองติจูด:<%= @announce.geopoint.longitude %> ]
+</div>
 
-    <br></div>
-    <div class="small">
-      <%= @announce.geopoint.name %>
-      <%= @announce.geopoint.city%>
-      <%= @announce.geopoint.country %> <br>
-      [ ละติจูด: <%= @announce.geopoint.latitude %> , ลองติจูด:<%= @announce.geopoint.longitude %> ]
-    </div>
-    <div class="content-p well" style="margin-top: 20px;">
-      <p><%=raw @announce.content %></p>
-    </div>
-    <div class="content-p" style="margin-top: 20px;">
-      <h4>ตำแหน่งการรายงานผลกระทบ</h4>
-      <% @json= @announce.geopoint.to_gmaps4rails %>
-      <%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
+<div class="content-p" style="margin-top: 20px;">
+  <h4>ตำแหน่งการรายงานผลกระทบ</h4>
+  <% @json= @announce.geopoint.to_gmaps4rails %>
+  <%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" => false, "zoom" => 15, "auto_adjust" => true }) %>
 
 
-    </div>
+</div>
 
 
   </div>

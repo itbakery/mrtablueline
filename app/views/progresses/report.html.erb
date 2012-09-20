@@ -23,7 +23,7 @@
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
 <div class="well">
-  <h4> รายงานความคืบหน้าโครงการประจำ <%= @station.name  %> </h4>
+  <h4> ความคืบหน้า <%= @station.name  %> </h4>
   <h3 style="font-weight: bold; border-bottom: 2px solid #EEEEEE;"> <%= @report.title %> </h3>
   <div class="small"> <%= @report.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @report.created_at%> <br></div>
   <div class="small">

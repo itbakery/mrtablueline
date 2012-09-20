@@ -75,9 +75,21 @@
           </p>
         </div>
       <% end %>
+
+        <ul class="nav nav-list bs-docs-sidenav ">
       <div id="announces">
         <!-- show search hear  -->
-      </div>
+        <ul class="nav nav-list bs-docs-sidenav ">
+          <% if @announces10 %>
+            <% @announces10.each do |a| %>
+              <li>
+                <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div> <!--announce -->
+    </ul>
     </div>
     <!--extext box -->
   </div>

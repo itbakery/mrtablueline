@@ -4,6 +4,7 @@ class HomeController < ApplicationController
     @pageroots = Page.roots.asc(:order)
     @activities = Activity.all.desc(:created_at).to_a
     @announces = Announce.search(params[:search])
+    @announces10 = Announce.limit(10).to_a
     @traffics = Effect.effect_scope("Traffic").first.announces rescue nil
     @sounds = Effect.effect_scope("Sound").first.announces rescue nil
     @vibrations = Effect.scope("Vibration").first.announces rescue nil
