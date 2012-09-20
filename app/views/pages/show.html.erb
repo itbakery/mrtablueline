@@ -4,13 +4,14 @@
       <!--
       <li class="nav-header">Navigators</li>
         -->
-      <% if @page.children.to_a.empty? %>
-        <% @page.siblings.asc(:order).each   do |page|%>
+        <% @root = @page.root %>
+      <% if @root.children.to_a.empty? %>
+        <% @root.siblings.asc(:order).each   do |page|%>
           <li><%= link_to h(page.title), page, :class => "menuheader" %></li>
         <% end %>
 
       <% else %>
-        <% @page.children.asc(:order).each do |page| %>
+        <% @root.children.asc(:order).each do |page| %>
           <li><%= link_to h(page.title),page , :class => "menuheader" %></li>
           <% page.children.each do |subpage| %>
             <li style="margin-left: 30px;"><%= link_to h(subpage.title),subpage %> </li>
