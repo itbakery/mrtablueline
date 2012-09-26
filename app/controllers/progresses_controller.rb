@@ -6,6 +6,19 @@ class ProgressesController < ApplicationController
     @stations = Station.all
     @station = Station.first
     @reports = @station.reports
+    @effects = Effect.all
+  end
+  def report_latest
+    @stations = Station.all
+    @station = Station.first
+    @reports = Report.all
+    @effects = Effect.all
+  end
+  def report_monthly
+    @stations = Station.all
+    @station = Station.first
+    @reports = Report.all
+    @effects = Effect.all
   end
 
   def fullmap
@@ -16,26 +29,48 @@ class ProgressesController < ApplicationController
     @stations = Station.all
     @station = Station.find(params[:id])
     @reports = @station.reports
+    @effects = Effect.all
   end
   def report
     @stations = Station.all
     @report = Report.find(params[:id])
     @station = Station.where(id: @report.station_id).first
+    @effects = Effect.all
   end
   def announce
     @announce = Announce.find(params[:id])
+    @effects = Effect.all
     @effects = Effect.all
   end
 
   def effect
     @effects = Effect.all
     if params[:id]
-    @effect = Effect.find(params[:id])
+      @effect = Effect.find(params[:id])
     else
       @effect = Effect.first
     end
     @announces = @effect.announces
   end
+  def effect_latest
+    @effects = Effect.all
+    if params[:id]
+      @effect = Effect.find(params[:id])
+    else
+      @effect = Effect.first
+    end
+    @announces = @effect.announces
+  end
+  def effect_monthly
+    @effects = Effect.all
+    if params[:id]
+      @effect = Effect.find(params[:id])
+    else
+      @effect = Effect.first
+    end
+    @announces = @effect.announces
+  end
+
   private
   def log_hit
     @userip = request.env['REMOTE_ADDR']

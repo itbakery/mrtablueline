@@ -9,6 +9,10 @@ Mrtablueline::Application.routes.draw do
   match "/progresses/announce/:id" => "progresses#announce"
   match "/progresses/effect/:id" => "progresses#effect"
   match "/progresses/effect/" => "progresses#effect"
+  match "/progresses/effect_latest/" => "progresses#effect_latest"
+  match "/progresses/effect_monthly/" => "progresses#effect_monthly"
+  match "/progresses/report_latest/" => "progresses#report_latest"
+  match "/progresses/report_monthly/" => "progresses#report_monthly"
   #get "progresses/fullmap"
   match "/fullmap" => "progresses#fullmap"
 

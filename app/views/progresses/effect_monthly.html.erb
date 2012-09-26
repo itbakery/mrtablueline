@@ -25,21 +25,28 @@
 
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
-  <h4> ผลกระทบด้าน <%= @effect.name_th  %> </h4>
   <table class="table table-bordered">
-    <tr>
-      <th style="width: 10%">วันที่</th>
-      <th style="width: 50%">รายงาน</th>
-      <th style="width: 20%">อ่าน(ครั้ง)</th>
-    </tr>
     <% if @announces %>
-      <% @announces.each do |announce| %>
+      <% @announces_month = @announces.group_by{|a| a.created_at.month} %>
+      <% @announces_month.each do |month,announce| %>
+
+        <h4> ประกาศผลรายเดือน: <%= I18n.t("date.month_names")[month] %> </h4>
         <tr>
-          <td><%= announce.created_at.strftime("%m/%d/%Y") %></td>
-          <td><a href="/progresses/announce/<%= announce.id %>"><%= announce.title %></a></td>
-          </td>
-          <td><%= announce.hit_count %> ครั้ง<!--,<%= announce.hits.last.user_ip if announce.hits.last %>--></td>
+          <th style="width: 10%">วันที่</th>
+          <th style="width: 50%">รายงาน</th>
+          <th style="width: 20%">อ่าน(ครั้ง)</th>
         </tr>
+
+          <% announce.each do |a| %>
+            <tr>
+              <td><%= a.created_at.strftime("%m/%d/%Y") %></td>
+              <td><a href="/progresses/announce/<%= a.id %>"><%= a.title %></a></td>
+              </td>
+              <td><%= a.hit_count %>
+                <!-- ,<%= a.hits.last.user_ip if a.hits.last %> -->
+              </td>
+            </tr>
+          <% end %>
       <% end %>
     <% end %>
 

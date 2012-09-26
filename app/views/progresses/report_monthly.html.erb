@@ -22,23 +22,25 @@
 
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
-  <h4> ความคืบหน้า <%= @station.name  %> </h4>
   <table class="table table-bordered">
     <tr>
-      <th style="width: 10%">ลำดับ</th>
-      <th style="width: 50%">รายงาน</th>
-      <th style="width: 20%">สถานี</th>
-      <th style="width: 20%">จำนวนที่อ่าน</th>
+      <th style="width: 10%">วันที่</th>
+      <th style="width: 60%">รายงาน</th>
+      <!-- <th style="width: 20%">สถานี</th> -->
+      <th style="width: 15%">อ่าน(ครั้ง)</th>
     </tr>
     <% if @reports %>
-      <% @reports.each do |report| %>
-        <tr>
-          <td><%= report.created_at.strftime(":%m/%d/%Y") %></td>
-          <td><a href="/progresses/report/<%= report.id %>"><%= report.title %></a></td>
-          <td><%= @station.name %></td>
-          <td><%= report.hit_count %> ครั้ง,<%= report.hits.last.user_ip if report.hits.last %></td>
-        </tr>
-      <% end %>
+      <% @reports_monthly = @reports.group_by {|r| r.created_at.month} %>
+      <% @reports_monthly.each do |month,report| %>
+            <h4> ความคืบหน้าประจำเดือน <%= I18n.t("date.month_names")[month]   %></h4>
+                <% report.each do |r| %>
+                  <tr>
+                    <td><%= r.created_at.strftime("%m/%d/%Y") %></td>
+                    <td><a href="/progresses/report/<%= r.id %>"><%= r.title %></a></td>
+                     <td><%= r.hit_count %></td>
+                  </tr>
+                <% end %>
+              <% end %>
     <% end %>
 
   </table>
