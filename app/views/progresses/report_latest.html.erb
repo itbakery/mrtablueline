@@ -22,14 +22,18 @@
 
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
+  <div class="datable">
+
+  </div>
   <h4> ความคืบหน้าล่าสุด </h4>
-  <table class="table table-bordered">
+  <table class="table table-bordered datatable">
+    <thead>
     <tr>
       <th style="width: 10%">วันที่</th>
       <th style="width: 60%">รายงาน</th>
-      <!-- <th style="width: 20%">สถานี</th> -->
       <th style="width: 15%">อ่าน(ครั้ง)</th>
     </tr>
+  </thead>
     <% if @reports %>
       <% @reports.each do |report| %>
         <tr>
