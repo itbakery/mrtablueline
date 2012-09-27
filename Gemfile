@@ -21,6 +21,7 @@ group :assets do
   gem 'jquery-datatables-rails'
 end
 gem "twitter-bootstrap-rails"
+gem 'jquery-datatables-rails'
 gem 'bundler'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
