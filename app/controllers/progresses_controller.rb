@@ -20,6 +20,24 @@ class ProgressesController < ApplicationController
     @reports = Report.all
     @effects = Effect.all
   end
+  def activity
+    @stations = Station.all
+    @station = Station.first
+    @activities = Activity.all
+    @effects = Effect.all
+  end
+  def activity_latest
+    @stations = Station.all
+    @station = Station.first
+    @activities = Activity.all
+    @effects = Effect.all
+  end
+  def activity_monthly
+    @stations = Station.all
+    @station = Station.first
+    @activities = Activity.all
+    @effects = Effect.all
+  end
 
   def fullmap
     render :layout =>  'fullmap'

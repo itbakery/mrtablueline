@@ -1,0 +1,30 @@
+
+<div class="span8" style="margin-top: 5px;">
+  <div class="well">
+    <ul style="list-style: none outside none; margin: 0 0 9px 15px;">
+          <% @activities.each do |activity| %>
+            <div class="content_pa">
+                <% doc = Nokogiri::HTML(activity.content) %>
+                <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
+                <% doc.xpath("//img").each {|x| x.remove} %>
+                <div class="image_pa">
+                  <img src=<%=img_srcs.first %> width="160" height="80" />
+                </div>
+                <h5 class="title_pa"> <%= link_to  activity.title, activity_path(activity)%> </a></h5>
+                <div class="">
+                  <%= activity.intro %>
+                </div>
+                <div class="date_pa">
+                  <%=t I18n.l(activity.created_at, :format => :long) %>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+          <% end %>
+        </li>
+    </ul>
+  </div>
+</div>
+
+<div class="span4" style="margin-top: 5px;">
+</div><!--/span-->
+

@@ -17,28 +17,35 @@
         <% end %>
          </li>
       <% end %>
+      <li><a href="/progresses/activity"> "ข่าวและกิจกรรม"</a>
+      <ul>
+        <li><a href="/progresses/activity_latest" >ข่าวและกิจกรรมล่าสุด</a></li>
+        <li><a href="/progresses/activity_monthly" >ข่าวและกิจกรรมรายเดือน</a></li>
+      </ul>
 
-      <li><%= link_to "ความคืบหน้า",progresses_path %>
-            <ul>
-          <li><a href="/progresses/report_latest" >ความคืบหน้าล่าสุด</a></li>
-          <li><a href="/progresses/report_monthly" >ความคืบหน้ารายเดือน</a></li>
-        </ul>
+    </li>
 
-      </li>
-      <li><a href="/progresses/effect" >ประกาศผลกระทบ</a>
-        <ul>
-          <li><a href="/progresses/effect_latest" >ประกาศล่าสุด</a></li>
-          <li><a href="/progresses/effect_monthly" >ประกาศรายเดือน</a></li>
-          <% if @effects %>
-            <% @effects.each_with_index   do |effect,index|%>
-              <li>
-                <a href="/progresses/effect/<%= effect.id %>">ด้าน<%= effect.name_th %></a>
-              </li>
-            <% end %>
-          <% end %>
+    <li><%= link_to "ความคืบหน้า",progresses_path %>
+    <ul>
+      <li><a href="/progresses/report_latest" >ความคืบหน้าล่าสุด</a></li>
+      <li><a href="/progresses/report_monthly" >ความคืบหน้ารายเดือน</a></li>
+    </ul>
 
-        </ul>
-      </li>
-      <li><%= link_to "แผนที่",mrtamap_path %> </li>
+  </li>
+  <li><a href="/progresses/effect" >ประกาศผลกระทบ</a>
+    <ul>
+      <li><a href="/progresses/effect_latest" >ประกาศล่าสุด</a></li>
+      <li><a href="/progresses/effect_monthly" >ประกาศรายเดือน</a></li>
+      <% if @effects %>
+        <% @effects.each_with_index   do |effect,index|%>
+          <li>
+            <a href="/progresses/effect/<%= effect.id %>">ด้าน<%= effect.name_th %></a>
+          </li>
+        <% end %>
+      <% end %>
+
+    </ul>
+  </li>
+  <li><%= link_to "แผนที่",mrtamap_path %> </li>
 </ul>
 

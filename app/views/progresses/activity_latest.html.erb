@@ -1,0 +1,46 @@
+<div class="span4" style="margin-top: 5px;">
+  <div style="padding: 8px 0;" class="well">
+    <ul class="nav nav-list">
+      <li class="nav-header"><h4>รายชื่อสถานีรถไฟฟ้า</h4></li>
+      <% if @stations %>
+        <% @stations.each_with_index   do |station,index|%>
+          <li style="line-height: 2em;">
+            <div style="float: left; width: 60%">
+              <a href="/progresses/station/<%= station.id %>" class="menuheader"><%= index +1  %>).<%= station.name %></a>
+            </div>
+            <div class="pull-right">
+              <button class="btn btn-small btn-warning" type="button"> <%= station.reports.count%>  </button>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+      <div style="clear: both;"></div>
+
+    </ul>
+  </div>
+</div><!--/span-->
+
+<div class="span8" style="margin-top: 5px;">
+  <p id="notice"><%= notice %>
+  <h4> ความคืบหน้าล่าสุด </h4>
+  <table class="table table-bordered">
+    <tr>
+      <th style="width: 10%">วันที่</th>
+      <th style="width: 60%">รายงาน</th>
+      <!-- <th style="width: 20%">สถานี</th> -->
+      <th style="width: 15%">อ่าน(ครั้ง)</th>
+    </tr>
+    <% if @reports %>
+      <% @reports.each do |report| %>
+        <tr>
+          <td><%= report.created_at.strftime("%m/%d/%Y") %></td>
+          <td><a href="/progresses/report/<%= report.id %>"><%= report.title %></a></td>
+          <!-- <td><%= @station.name %></td> -->
+          <!-- <td><%= report.hit_count %> ครั้ง <%= report.hits.last.user_ip if report.hits.last %></td> -->
+           <td><%= report.hit_count %></td>
+        </tr>
+      <% end %>
+    <% end %>
+
+  </table>
+</div>

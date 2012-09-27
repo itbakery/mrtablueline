@@ -13,6 +13,9 @@ Mrtablueline::Application.routes.draw do
   match "/progresses/effect_monthly/" => "progresses#effect_monthly"
   match "/progresses/report_latest/" => "progresses#report_latest"
   match "/progresses/report_monthly/" => "progresses#report_monthly"
+  match "/progresses/activity/" => "progresses#activity"
+  match "/progresses/activity_latest/" => "progresses#activity_latest"
+  match "/progresses/activity_monthly/" => "progresses#activity_monthly"
   #get "progresses/fullmap"
   match "/fullmap" => "progresses#fullmap"
 
