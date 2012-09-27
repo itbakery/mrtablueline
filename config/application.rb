@@ -72,7 +72,7 @@ module Mrtablueline
     config.assets.version = '1.0'
     #config.assets.precompile += Ckeditor.assets
     #config.assets.precompile = [/^[-_a-zA-Z0-9]*\..*/]
-    config.assets.precompile += %w(Ckeditor.assets  fonts/thsarabunnew.css jquery.flexslider.js css/jquery.dataTables.css)
+    config.assets.precompile += %w(Ckeditor.assets  fonts/thsarabunnew.css jquery.flexslider.js)
     config.threadsafe!
   end
 end

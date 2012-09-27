@@ -12,15 +12,14 @@ gem 'rails', '3.2.8'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
   gem "twitter-bootstrap-rails"
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
 end
-  gem "twitter-bootstrap-rails"
-  gem 'bundler'
+gem "twitter-bootstrap-rails"
+gem 'bundler'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'fancybox-rails',:git => 'https://github.com/sverigemeny/fancybox-rails'
@@ -47,6 +46,7 @@ gem 'resque'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 #gem 'rails-i18n'
 #gem 'mongoid_i18n'
 # To use ActiveModel has_secure_password
