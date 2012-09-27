@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-jQuery -> $('.datatable').dataTable({
+jQuery -> $('#board').dataTable({
   "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span8'i><'span8'p>>",
   "sPaginationType": "bootstrap"
 })
