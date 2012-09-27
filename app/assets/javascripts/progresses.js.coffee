@@ -6,5 +6,7 @@
 jQuery -> $('#board').dataTable({
   "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span8'i><'span8'p>>",
   "sPaginationType": "bootstrap",
-  "bInfo": false
+  "bInfo": false,
+  "bRetrieve": true,
+   "bDestroy": true
 })
