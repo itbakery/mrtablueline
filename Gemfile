@@ -17,7 +17,8 @@ group :assets do
   gem "twitter-bootstrap-rails"
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  #gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-datatables-rails'
 end
 gem "twitter-bootstrap-rails"
 gem 'bundler'
