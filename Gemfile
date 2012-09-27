@@ -17,6 +17,7 @@ group :assets do
   gem "twitter-bootstrap-rails"
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 end
 gem "twitter-bootstrap-rails"
 gem 'bundler'
@@ -46,7 +47,6 @@ gem 'resque'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
-gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 #gem 'rails-i18n'
 #gem 'mongoid_i18n'
 # To use ActiveModel has_secure_password
