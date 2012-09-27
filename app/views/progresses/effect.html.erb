@@ -26,12 +26,14 @@
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
   <h4> ผลกระทบด้าน <%= @effect.name_th  %> </h4>
-  <table class="table table-bordered">
+  <table class="table table-bordered datatable">
+    <thead>
     <tr>
       <th style="width: 10%">วันที่</th>
       <th style="width: 50%">รายงาน</th>
       <th style="width: 20%">อ่าน(ครั้ง)</th>
     </tr>
+  </thead>
     <% if @announces %>
       <% @announces.each do |announce| %>
         <tr>
