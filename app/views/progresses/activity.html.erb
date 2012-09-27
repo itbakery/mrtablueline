@@ -8,7 +8,8 @@
                 <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
                 <% doc.xpath("//img").each {|x| x.remove} %>
                 <div class="image_pa">
-                  <img src=<%=img_srcs.first %> width="160" height="80" />
+                  <img src=<%=img_srcs.first %> width="160" height="80" style="border:#778888 0px solid; padding:5px; background:#BBDAFF;"/><br/>
+                  <button class="btn btn-small btn-info" type="button" style="margin: 10px 0px 0px 40px">อ่าน: <%=activity.hit_count %> ครั้ง</button>
                 </div>
                 <h5 class="title_pa"> <%= link_to  activity.title, activity_path(activity)%> </a></h5>
                 <div class="">
