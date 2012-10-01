@@ -1,2 +1,6 @@
-$("#announces").html("<%= j render @announces %>");
+<% if @announces %>
+  $("#announcelist").html("<%= j render @announces %>");
+<% else %>
 
+  $("#announcelist").html("<li> <p>ไม่พบรายการที่ค้นหา</p> </li>");
+<%end%>

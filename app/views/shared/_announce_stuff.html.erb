@@ -3,8 +3,8 @@
 
     <div class="traffic" style="margin-left: 10px;">
       <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านจราจร" href="">
-          <span class="count">1234</span>
+        <a rel="nofollow" target="_blank" title="ผลกระทบด้านจราจร" href="/progresses/effect/504372b59bcd4e3708000009">
+          <span class="count"><%= @traffics.size rescue nil || 0 %></span>
           <span class="desc">จราจร</span>
         </a>
       </div>
@@ -13,16 +13,16 @@
 
     <div class="sound">
       <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านเสียง" href="">
-          <span class="count">382</span>
+        <a rel="nofollow" target="_blank" title="ผลกระทบด้านเสียง" href="/progresses/effect/504373d29bcd4e370800000a">
+          <span class="count"><%= @sounds.size rescue nil || 0%></span>
           <span class="desc">เสียงดัง</span></a>
       </div>
     </div>
 
     <div class="vibration">
       <div class="stat">
-        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านแรงสั่น" href="">
-          <span class="count">382</span>
+        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านแรงสั่น" href="/progresses/effect/504374049bcd4e370800000b">
+          <span class="count"><%= @vibrations.size rescue nil || 0%></span>
           <span class="desc">แรงสั่น</span>
         </a>
       </div>
@@ -31,8 +31,8 @@
     </div>
     <div class="dust" style="margin-left: 10px; ">
       <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านฝุ่น" href="">
-          <span class="count">311</span>
+        <a rel="nofollow" target="_blank" title="ผลกระทบด้านฝุ่น" href="/progresses/effect/504374369bcd4e370800000c">
+          <span class="count"><%= @dusts.size rescue nil || 0 %></span>
           <span class="desc">ฝุ่นผง</span>
         </a>
       </div>
@@ -40,8 +40,8 @@
 
     <div class="drain">
       <div class="stat">
-        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านระบายน้ำ" href="">
-          <span class="count">1929</span>
+        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านระบายน้ำ" href="/progresses/effect/504374469bcd4e370800000d">
+          <span class="count"><%= @drains.size rescue nil || 0%></span>
           <span class="desc">ระบายน้ำ</span>
         </a>
       </div>
@@ -49,8 +49,8 @@
 
     <div class="report">
       <div class="stat">
-        <a rel="nofollow" target="_blank" title="รายงานความคืบหน้า" href="">
-          <span class="count">1929</span>
+        <a rel="nofollow" target="_blank" title="รายงานความคืบหน้า" href="/progresses">
+          <span class="count"><%= @reports.size rescue nil  || 0%></span>
           <span class="desc">ความคืบหน้า</span>
         </a>
       </div>
@@ -76,20 +76,20 @@
         </div>
       <% end %>
 
-        <ul class="nav nav-list bs-docs-sidenav ">
       <div id="announces">
         <!-- show search hear  -->
         <ul class="nav nav-list bs-docs-sidenav ">
+          <div id="announcelist" class="nav nav-list bs-docs-sidenav ">
           <% if @announces10 %>
             <% @announces10.each do |a| %>
               <li>
                 <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
               </li>
             <% end %>
-          <% end %>
+          <%end%>
+        </div>
         </ul>
       </div> <!--announce -->
-    </ul>
     </div>
     <!--extext box -->
   </div>

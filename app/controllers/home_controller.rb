@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     @dusts = Effect.scope("Dust").first.announces rescue nil
     @drains = Effect.scope("Drain").first.announces rescue nil
     @effects = Effect.all
+    @reports = Report.all
     respond_to do |format|
       format.html
       format.js

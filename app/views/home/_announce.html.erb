@@ -1,9 +1,8 @@
-<div class="announce">
-  <% unless announce.title.empty? %>
+
+<% unless announce.title.empty? %>
     <a href="/progresses/announce/<%= announce.id %>">
-       <%= announce.title %>
+      <i class="icon-chevron-right"><%= announce.title %>
     </a>
-  <% else %>
-    <p> ไม่พบรายการที่ค้นหา </p>
-  <% end %>
-</div>
+<% else %>
+  <span> ไม่พบรายการที่ค้นหา </span>
+<% end %>
