@@ -66,8 +66,8 @@ class Geopoint
     end
     {
       "picture" => "/images/#{@name}.png",
-      "width" => 32,
-      "height" => 37,
+      "width" => 20,
+      "height" => 23,
       "marker_anchor" => [ 5, 10],
     }
   end
