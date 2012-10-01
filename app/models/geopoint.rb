@@ -13,6 +13,20 @@ class Geopoint
   #def gmaps4rails_address
   #      "#{self.city}, #{self.country}"
   #end
+  def getobject
+      self.geoable_type.constantize
+  end
+  def getid
+      self.geoable_id
+  end
+
+  def getchildobj
+      self.getobject.where(id: self.getid).first
+  end
+  def geteffect
+      @ideffect = self.getchildobj.effect_ids.first
+      Effect.where(id: @ideffect).first.name
+  end
   def gmaps4rails_address
       "#{self.latitude}, #{self.longitude}"
   end
@@ -34,10 +48,27 @@ class Geopoint
        @parentname = @parentclass.constantize.where(id: self.geoable_id).first.title
        @parentid = @parentclass.constantize.where(id: self.geoable_id).first.id
        @url =  "report"
-     end
-     "<h4><a href='/progresses/#{@url}/#{@parentid}'>#{@parentname}</a> </h4> <br> #{self.name} <br> #{self.latitude} #{self.longitude}"
-  end
+     when "Announce"
+       @parentname = @parentclass.constantize.where(id: self.geoable_id).first.title
+       @parentid = @parentclass.constantize.where(id: self.geoable_id).first.id
+       @url =  "announce"
 
+     end
+     "<h4 style='margin-top: 5px;'><a href='/progresses/#{@url}/#{@parentid}'>#{@parentname}</a> </h4> <br> #{self.name} <br> #{self.latitude} #{self.longitude}"
+  end
+  def gmaps4rails_marker_picture
+    if self.geoable_type == "Station"
+      @name = self.geoable_type
+    else
+      @name = self.geteffect
+    end
+    {
+      "picture" => "/images/#{@name}.png",
+      "width" => 32,
+      "height" => 37,
+      "marker_anchor" => [ 5, 10],
+    }
+  end
   #protected
 
   #def update_location_coordinates
