@@ -33,7 +33,8 @@ class HomeController < ApplicationController
     @announce_jsons = Geopoint.where(geoable_type: "Announce").to_a.to_gmaps4rails
     #@jsons = @announce_jsons
     #@jsons = @station_jsons
-    @j = Geopoint.where(geoable_type: "Station").to_a <<  Geopoint.where(geoable_type: "Announce").to_a
+    @j = Geopoint.where(geoable_type: "Station").to_a <<  Geopoint.where(geoable_type: "Announce").to_a << Geopoint.where(geoable_type: "Report").to_a
+
     @jsons = @j.flatten.to_gmaps4rails
     #@json = [@marker1,@marker2].to_gmaps4rails
     respond_to do |format|

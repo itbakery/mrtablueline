@@ -59,6 +59,8 @@ class Geopoint
   def gmaps4rails_marker_picture
     if self.geoable_type == "Station"
       @name = self.geoable_type
+    elsif  self.geoable_type == "Report"
+      @name = self.geoable_type
     else
       @name = self.geteffect
     end
