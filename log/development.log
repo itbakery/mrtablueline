@@ -1,0 +1,501 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-06 00:11:00 +0700
+Processing by HomeController#underconstruction as HTML
+  Rendered home/underconstruction.html.erb within layouts/underconstruction (1.0ms)
+Completed 200 OK in 103ms (Views: 5.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at 2012-11-06 00:11:09 +0700
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.1115ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=activities selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.6907ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=announces selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.6628ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=announces selector={} flags=[] limit=10 skip=0 fields=nil (0.3381ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={"$query"=>{"name"=>"Traffic"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4964ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={"$query"=>{"name"=>"Sound"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4263ms)
+  Rendered home/index.html.erb within layouts/home (0.5ms)
+Compiled jquery.fancybox.css  (0ms)  (pid 26817)
+Compiled bootstrap_and_overrides.css  (1370ms)  (pid 26817)
+Compiled gmaps4rails.css  (0ms)  (pid 26817)
+Compiled fonts/thsarabunnew.css  (0ms)  (pid 26817)
+Compiled flexslider.css  (0ms)  (pid 26817)
+Compiled jquery.ui.core.css  (1ms)  (pid 26817)
+Compiled jquery.ui.theme.css  (377ms)  (pid 26817)
+Compiled jquery.ui.datepicker.css  (404ms)  (pid 26817)
+Compiled dataTables/jquery.dataTables.css  (171ms)  (pid 26817)
+Compiled dataTables/jquery.dataTables.bootstrap.css  (154ms)  (pid 26817)
+Compiled application.css  (2408ms)  (pid 26817)
+  Rendered authen/_loginmenu.html.erb (2.5ms)
+  Rendered authen/_loginmenumodal.html.erb (1.2ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/devise-2.1.2/app/views/devise/shared/_links.erb (3.0ms)
+  Rendered authen/_signup.html.erb (143.5ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered authen/_login.html.erb (10.9ms)
+  Rendered authen/_edit.html.erb (9.5ms)
+  Rendered shared/_navigator.html.erb (205.9ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.7391ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={} flags=[] limit=0 skip=0 fields=nil (0.2840ms)
+  Rendered shared/_progressheader.html.erb (6.4ms)
+  Rendered shared/_message.html.erb (0.7ms)
+  Rendered shared/_mainfeature.html.erb (1.6ms)
+  Rendered shared/_viewactivity.html.erb (2.9ms)
+  Rendered shared/_leftpanel.html.erb (11.4ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"reports", :query=>{}} (0.5147ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={} flags=[] limit=0 skip=0 fields=nil (0.3383ms)
+  Rendered shared/_announce_stuff.html.erb (9.5ms)
+  Rendered shared/_rightpanel.html.erb (12.0ms)
+Compiled jquery.js  (6ms)  (pid 26817)
+Compiled jquery.fancybox.pack.js  (1ms)  (pid 26817)
+Compiled jquery_ujs.js  (0ms)  (pid 26817)
+Compiled jquery.ui.core.js  (3ms)  (pid 26817)
+Compiled jquery.ui.datepicker.js  (12ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 26817)
+Compiled twitter/bootstrap.js  (305ms)  (pid 26817)
+Compiled ckeditor/ckeditor.js  (90ms)  (pid 26817)
+Compiled ckeditor/init.js  (101ms)  (pid 26817)
+Compiled jquery_nested_form.js  (0ms)  (pid 26817)
+Compiled bootstrap.js  (60ms)  (pid 26817)
+Compiled dataTables/jquery.dataTables.js  (3ms)  (pid 26817)
+Compiled dataTables/jquery.dataTables.bootstrap.js  (0ms)  (pid 26817)
+Compiled activities.js  (3ms)  (pid 26817)
+Compiled admin/geonodes.js  (0ms)  (pid 26817)
+Compiled admin/pages.js  (0ms)  (pid 26817)
+Compiled admin/users.js  (1ms)  (pid 26817)
+Compiled announces.js  (2ms)  (pid 26817)
+Compiled backoffice/activities.js  (1ms)  (pid 26817)
+Compiled backoffice/announces.js  (0ms)  (pid 26817)
+Compiled backoffice/application.js  (0ms)  (pid 26817)
+Compiled backoffice/companies.js  (0ms)  (pid 26817)
+Compiled backoffice/effects.js  (1ms)  (pid 26817)
+Compiled backoffice/mediatypes.js  (1ms)  (pid 26817)
+Compiled backoffice/pages.js  (1ms)  (pid 26817)
+Compiled backoffice/profiles.js  (1ms)  (pid 26817)
+Compiled backoffice/reports.js  (0ms)  (pid 26817)
+Compiled backoffice/stations.js  (0ms)  (pid 26817)
+Compiled companies.js  (0ms)  (pid 26817)
+Compiled effects.js  (0ms)  (pid 26817)
+Compiled geopoints.js  (1ms)  (pid 26817)
+Compiled gmaps4rails/gmaps4rails.base.js  (69ms)  (pid 26817)
+Compiled gmaps4rails/gmaps4rails.bing.js  (20ms)  (pid 26817)
+Compiled gmaps4rails/gmaps4rails.googlemaps.js  (33ms)  (pid 26817)
+Compiled gmaps4rails/gmaps4rails.mapquest.js  (11ms)  (pid 26817)
+Compiled gmaps4rails/gmaps4rails.openlayers.js  (26ms)  (pid 26817)
+Compiled home.js  (0ms)  (pid 26817)
+Compiled images.js  (1ms)  (pid 26817)
+Compiled jquery.flexslider.js  (1ms)  (pid 26817)
+Compiled mediatypes.js  (1ms)  (pid 26817)
+Compiled pages.js  (0ms)  (pid 26817)
+Compiled profiles.js  (1ms)  (pid 26817)
+Compiled progresses.js  (1ms)  (pid 26817)
+Compiled reports.js  (2ms)  (pid 26817)
+Compiled stations.js  (1ms)  (pid 26817)
+Compiled welcome.js  (0ms)  (pid 26817)
+Compiled application.js  (1738ms)  (pid 26817)
+Completed 200 OK in 6083ms (Views: 5754.0ms)
+
+
+Started GET "/assets/application-259b942fca5408821cf1c23eb43aacf2.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /application-259b942fca5408821cf1c23eb43aacf2.css - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap_and_overrides-d598027e1355f7e97ac0d5fb88426719.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /bootstrap_and_overrides-d598027e1355f7e97ac0d5fb88426719.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.fancybox-51203e9c5caf55033356befc17349419.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.fancybox-51203e9c5caf55033356befc17349419.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.ui.core-dd24350b21c2f331520903dd5ea686e6.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.ui.core-dd24350b21c2f331520903dd5ea686e6.css - 200 OK (2ms)
+
+
+Started GET "/assets/gmaps4rails-14507388ca07b4b01186e6b50086a431.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /gmaps4rails-14507388ca07b4b01186e6b50086a431.css - 200 OK (0ms)
+
+
+Started GET "/assets/fonts/thsarabunnew-8f4f00f1b8490a678f86efd70a5d8912.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /fonts/thsarabunnew-8f4f00f1b8490a678f86efd70a5d8912.css - 200 OK (0ms)
+
+
+Started GET "/assets/flexslider-1ae0498814b0f058c9db16ec2ff58bf6.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /flexslider-1ae0498814b0f058c9db16ec2ff58bf6.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.theme-727e0cce85cc34da63eee140c6f43e5a.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.ui.theme-727e0cce85cc34da63eee140c6f43e5a.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery.ui.datepicker-23e1dbc343dea8e1b0b7677db8fadfe2.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.ui.datepicker-23e1dbc343dea8e1b0b7677db8fadfe2.css - 200 OK (2ms)
+
+
+Started GET "/assets/dataTables/jquery.dataTables-ba8afef8486a33a4e9f7780cfd9ff77e.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /dataTables/jquery.dataTables-ba8afef8486a33a4e9f7780cfd9ff77e.css - 200 OK (3ms)
+
+
+Started GET "/assets/dataTables/jquery.dataTables.bootstrap-2fa8d7cba106fae7764ec00faf55d7a8.css?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /dataTables/jquery.dataTables.bootstrap-2fa8d7cba106fae7764ec00faf55d7a8.css - 200 OK (3ms)
+
+
+Started GET "/assets/jquery-40f7feeb7295d15541e2f3bcc3f8be40.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery-40f7feeb7295d15541e2f3bcc3f8be40.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.fancybox.pack-f74110e2caf6c5474ed040fe28dfb27a.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.fancybox.pack-f74110e2caf6c5474ed040fe28dfb27a.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.ui.core-3d08a2c6afc7c059ec3cb51039135ff6.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.ui.core-3d08a2c6afc7c059ec3cb51039135ff6.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.ui.datepicker-197ffeea58db20a8bd6071dd4999a3d0.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery.ui.datepicker-197ffeea58db20a8bd6071dd4999a3d0.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs-c40f888f69f2e49c99cff860a797481f.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /jquery_ujs-c40f888f69f2e49c99cff860a797481f.js - 200 OK (2ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-transition-d41889833545e71deffdc0ea31455ee0.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /twitter/bootstrap/bootstrap-transition-d41889833545e71deffdc0ea31455ee0.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-alert-6e40a7800c7c1ae28e8c33e177544c4d.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /twitter/bootstrap/bootstrap-alert-6e40a7800c7c1ae28e8c33e177544c4d.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-dropdown-b085ffc826dafd69a89bfbeb51b76a7a.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /twitter/bootstrap/bootstrap-dropdown-b085ffc826dafd69a89bfbeb51b76a7a.js - 200 OK (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-scrollspy-5bf7221a54ca0b58228bf33b611d6e61.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /twitter/bootstrap/bootstrap-scrollspy-5bf7221a54ca0b58228bf33b611d6e61.js - 200 OK (6ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-modal-0b7cc1077994053e6ed664a7af247385.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:15 +0700
+Served asset /twitter/bootstrap/bootstrap-modal-0b7cc1077994053e6ed664a7af247385.js - 200 OK (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tab-848e6978b0a815e91378f97f70bab7b6.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-tab-848e6978b0a815e91378f97f70bab7b6.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-tooltip-f292df5940ccf04d5ef094337c32c634.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-tooltip-f292df5940ccf04d5ef094337c32c634.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-popover-2aa2690623271f5253a0a782e9af5f30.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-popover-2aa2690623271f5253a0a782e9af5f30.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-button-246e067a9bed52034c5088e6780703dc.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-button-246e067a9bed52034c5088e6780703dc.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-collapse-98556ae56027c463b06f4e2346d601dc.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-collapse-98556ae56027c463b06f4e2346d601dc.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-carousel-13b76e3c62e7ceb2a553e4b605f34a4d.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-carousel-13b76e3c62e7ceb2a553e4b605f34a4d.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-affix-89902f9b632dc6301ae2d57ec2027bb7.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-affix-89902f9b632dc6301ae2d57ec2027bb7.js - 200 OK (4ms)
+
+
+Started GET "/assets/ckeditor/init-e2037836f07cedbe82395cd1061c87cc.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /ckeditor/init-e2037836f07cedbe82395cd1061c87cc.js - 200 OK (1ms)
+
+
+Started GET "/assets/ckeditor/ckeditor-a3eb38210fce546c4b61b5ffbf8a6338.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /ckeditor/ckeditor-a3eb38210fce546c4b61b5ffbf8a6338.js - 200 OK (1ms)
+
+
+Started GET "/assets/twitter/bootstrap/bootstrap-typeahead-57269550932adb5361af8616322463da.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap/bootstrap-typeahead-57269550932adb5361af8616322463da.js - 200 OK (4ms)
+
+
+Started GET "/assets/twitter/bootstrap-99c28907d437fa35f0f33e17137de5f1.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /twitter/bootstrap-99c28907d437fa35f0f33e17137de5f1.js - 200 OK (3ms)
+
+
+Started GET "/assets/jquery_nested_form-76aaf6619feca466ec0fe1d84b515029.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /jquery_nested_form-76aaf6619feca466ec0fe1d84b515029.js - 200 OK (1ms)
+
+
+Started GET "/assets/bootstrap-63a876a29c4a4ea989f5b6ec62bcdd43.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /bootstrap-63a876a29c4a4ea989f5b6ec62bcdd43.js - 200 OK (0ms)
+
+
+Started GET "/assets/dataTables/jquery.dataTables-f3409634f6c70b45773e6b171c857f59.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /dataTables/jquery.dataTables-f3409634f6c70b45773e6b171c857f59.js - 200 OK (3ms)
+
+
+Started GET "/assets/dataTables/jquery.dataTables.bootstrap-eed64997774bb324967300ae864b3d21.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /dataTables/jquery.dataTables.bootstrap-eed64997774bb324967300ae864b3d21.js - 200 OK (3ms)
+
+
+Started GET "/assets/activities-b3d62afd6b17005fbbd4569bc2e5aa2a.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /activities-b3d62afd6b17005fbbd4569bc2e5aa2a.js - 200 OK (1ms)
+
+
+Started GET "/assets/admin/geonodes-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /admin/geonodes-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/admin/users-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /admin/users-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/admin/pages-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /admin/pages-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/announces-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/announces-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/application-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/application-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/announces-dde5e05e63228c5e1a430a3849f56462.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /announces-dde5e05e63228c5e1a430a3849f56462.js - 200 OK (1ms)
+
+
+Started GET "/assets/backoffice/activities-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/activities-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (1ms)
+
+
+Started GET "/assets/backoffice/companies-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/companies-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/effects-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/effects-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/profiles-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/profiles-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/pages-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/pages-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (1ms)
+
+
+Started GET "/assets/backoffice/reports-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/reports-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/stations-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/stations-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/backoffice/mediatypes-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /backoffice/mediatypes-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/companies-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /companies-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/effects-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /effects-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/geopoints-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /geopoints-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.bing-c283af436601502a5b9e9141ad5fd08a.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /gmaps4rails/gmaps4rails.bing-c283af436601502a5b9e9141ad5fd08a.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.googlemaps-c1d44054f3191d79409f78017e13da3f.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /gmaps4rails/gmaps4rails.googlemaps-c1d44054f3191d79409f78017e13da3f.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.mapquest-fe31b0535be6cbfd549d54e72eacbcb5.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /gmaps4rails/gmaps4rails.mapquest-fe31b0535be6cbfd549d54e72eacbcb5.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.base-0fb31cb7797f6d2ed51ba9eb7b691afe.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /gmaps4rails/gmaps4rails.base-0fb31cb7797f6d2ed51ba9eb7b691afe.js - 200 OK (0ms)
+
+
+Started GET "/assets/gmaps4rails/gmaps4rails.openlayers-18ed4864775f16632e9ea4863b097fca.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /gmaps4rails/gmaps4rails.openlayers-18ed4864775f16632e9ea4863b097fca.js - 200 OK (0ms)
+
+
+Started GET "/assets/home-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /home-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/images-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /images-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/mediatypes-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /mediatypes-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/pages-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /pages-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.flexslider-27728df5700cd23194a50eb9341dbc75.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /jquery.flexslider-27728df5700cd23194a50eb9341dbc75.js - 200 OK (0ms)
+
+
+Started GET "/assets/progresses-c24f6386d65d2c18418418e98db4fa8a.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /progresses-c24f6386d65d2c18418418e98db4fa8a.js - 200 OK (0ms)
+
+
+Started GET "/assets/profiles-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /profiles-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/reports-16abb55a87a319b1e978c5f1fdbe9ff0.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /reports-16abb55a87a319b1e978c5f1fdbe9ff0.js - 200 OK (0ms)
+
+
+Started GET "/assets/stations-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /stations-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/welcome-89d8df2ca1f8da865865001ed2815f9b.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /welcome-89d8df2ca1f8da865865001ed2815f9b.js - 200 OK (0ms)
+
+
+Started GET "/assets/fonts/thsarabunnew-webfont.woff" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /fonts/thsarabunnew-webfont.woff - 200 OK (7ms)
+
+
+Started GET "/assets/fonts/thsarabunnew_bold-webfont.woff" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /fonts/thsarabunnew_bold-webfont.woff - 200 OK (9ms)
+
+
+Started GET "/assets/application-58294a62e65ba6a03aba674b8d9b122f.js?body=1" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /application-58294a62e65ba6a03aba674b8d9b122f.js - 200 OK (0ms)
+
+
+Started GET "/assets/home-e33658956ec9256b906bd39718be6244.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /home-e33658956ec9256b906bd39718be6244.png - 200 OK (0ms)
+
+
+Started GET "/assets/undertest-695a74c8f7d43f5e6f535050ffee9baf.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /undertest-695a74c8f7d43f5e6f535050ffee9baf.png - 200 OK (0ms)
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /images/favicon.ico - 404 Not Found (7ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/assets/header.jpg" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /header.jpg - 200 OK (5ms)
+
+
+Started GET "/assets/header-main.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /header-main.png - 200 OK (10ms)
+
+
+Started GET "/assets/darkergrain.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /darkergrain.png - 200 OK (8ms)
+
+
+Started GET "/assets/mrta_footer_logo.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /mrta_footer_logo.png - 200 OK (7ms)
+
+
+Started GET "/assets/announce_icons.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /announce_icons.png - 200 OK (17ms)
+
+
+Started GET "/assets/bg_direction_nav.png" for 127.0.0.1 at 2012-11-06 00:11:16 +0700
+Served asset /bg_direction_nav.png - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bg_direction_nav.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
