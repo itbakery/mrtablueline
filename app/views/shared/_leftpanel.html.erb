@@ -2,7 +2,7 @@
   <div class="pull-right">
     <% t = ->(date){"#{date.year+543}"} %>
     <% y = t.call(Date.today) %>
-    <small style="color: #FFFFFF;"> <%=t I18n.l(Date.today, :format => :long) %>   </small>
+    <!--    <small style="color: #FFFFFF;"> <%=t I18n.l(Date.today, :format => :long) %>   </small> -->
   </div>
 </h2>
 <%= render :partial => 'shared/mainfeature' %>
