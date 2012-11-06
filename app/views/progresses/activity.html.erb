@@ -2,6 +2,7 @@
 <div class="span8" style="margin-top: 5px;">
   <div class="well">
     <ul style="list-style: none outside none; margin: 0 0 9px 15px;">
+          <h4> ข่าวและกิจกรรม </h4>
           <% @activities.each do |activity| %>
             <div class="content_pa">
                 <% doc = Nokogiri::HTML(activity.content) %>

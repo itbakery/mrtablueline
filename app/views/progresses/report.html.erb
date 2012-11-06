@@ -25,13 +25,7 @@
 <div class="well">
   <h4> ความคืบหน้า <%= @station.name  %> </h4>
   <h3 style="font-weight: bold; border-bottom: 2px solid #EEEEEE;"> <%= @report.title %> </h3>
-  <div class="small"> <%= @report.created_at.strftime(" %m/%d/%Y  %I:%M%p") if @report.created_at%> <br></div>
-  <div class="small">
-    <%= @report.geopoint.name %>
-    <%= @report.geopoint.city%>
-    <%= @report.geopoint.country %>
-    [ ละติจูด: <%= @report.geopoint.latitude %> , ลองติจูด:<%= @report.geopoint.longitude %> ]
-  </div>
+  <div class="small"> <%= @report.created_at.strftime(" %d/%m/%Y  %I:%M%p") if @report.created_at%> <br></div>
   <div class="content-p well" style="margin-top: 20px; height: auto;">
     <p><%=raw @report.content %></p>
   <div style="clear: both;"></div>

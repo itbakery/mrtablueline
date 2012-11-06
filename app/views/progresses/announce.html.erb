@@ -34,20 +34,13 @@
     </h5>
 
     <div class="small pull-right" style="float: right;">
-      <%=t I18n.l(@announce.created_at, :format => :long) if @announce.created_at.strftime(":%m/%d/%Y") %> , จำนวนครั้งที่อ่าน:  <%= @announce.hit_count %> ครั้ง
+      <%=t I18n.l(@announce.created_at, :format => :long) if @announce.created_at.strftime(":%d/%m/%Y") %> , จำนวนครั้งที่อ่าน:  <%= @announce.hit_count %> ครั้ง
    <!-- <%= @announce.hits.last.user_ip if @announce.hits.last %> -->
         <div style="clear:both"></div>
   <br></div>
 <div class="content-p well" style="margin-top: 20px;">
   <p><%=raw @announce.content %></p>
 </div>
-<div class="small">
-  <%= @announce.geopoint.name %>
-  <%= @announce.geopoint.city%>
-  <%= @announce.geopoint.country %> <br>
-  [ ละติจูด: <%= @announce.geopoint.latitude %> , ลองติจูด:<%= @announce.geopoint.longitude %> ]
-</div>
-
 <div class="content-p" style="margin-top: 20px;">
   <h4>ตำแหน่งการรายงานผลกระทบ</h4>
   <% @json= @announce.geopoint.to_gmaps4rails %>

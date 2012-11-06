@@ -5,7 +5,8 @@ class ActivitiesController < ApplicationController
   # GET /activities.json
   def index
     @activities = Activity.all
-
+    @announces = Announce.search(params[:search])
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @activities }

@@ -39,7 +39,7 @@
 
           <% announce.each do |a| %>
             <tr>
-              <td><%= a.created_at.strftime("%m/%d/%Y") %></td>
+              <td><%= a.created_at.strftime("%d/%m/%Y") %></td>
               <td><a href="/progresses/announce/<%= a.id %>"><%= a.title %></a></td>
               </td>
               <td><%= a.hit_count %>
