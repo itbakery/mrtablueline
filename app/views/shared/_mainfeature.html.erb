@@ -10,7 +10,9 @@
                 <p class="crop">
                   <img src=<%=img_srcs.first %>  />
                 </p>
-                <p class="flex-caption"> <a href="./activities/<%=activity._id%>" class="featurefont"> <%= activity.title %> </a></p>
+                <p class="flex-caption">
+                  <%= link_to activity.title, activity_path(activity), :class => "featurefont" %>
+                </p>
             </div>
           <% end %>
         </li>
