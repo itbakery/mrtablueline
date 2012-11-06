@@ -1,17 +1,23 @@
 <div class="announce_stuff">
-  <div id="announces">
-    <ul class="nav nav-list bs-docs-sidenav ">
-      <div id="announcelist" class="nav nav-list bs-docs-sidenav ">
-        <% if @announces10 %>
-          <% @announces10.each do |a| %>
-            <li>
-              <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
-            </li>
-        <% end %>
-      <%end%>
+  <div class="widget">
+    <div id="announcesearch" class="well" style="margin-top: 10px; ">
+      <div id="announces">
+        <!-- show search hear  -->
+        <ul class="nav nav-list bs-docs-sidenav ">
+          <div id="announcelist" class="nav nav-list bs-docs-sidenav ">
+          <% if @announces10 %>
+            <% @announces10.each do |a| %>
+              <li>
+                <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
+              </li>
+            <% end %>
+          <%end%>
+        </div>
+        </ul>
+      </div> <!--announce -->
     </div>
-  </ul>
-</div>
+    <!--extext box -->
+  </div>
 </div>
 
 
