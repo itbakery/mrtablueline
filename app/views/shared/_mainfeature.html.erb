@@ -5,12 +5,12 @@
         <li>
           <% row_activity.each do |activity| %>
             <div class="content">
-                <% doc = Nokogiri::HTML(activity.content) %>
+                <% doc = Nokogiri::HTML(activity.ntent) %>
                 <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
                 <p class="crop">
                   <img src=<%=img_srcs.first %>  />
                 </p>
-                <p class="flex-caption"> <a href="activities/<%=activity._id%>" class="featurefont"> <%= activity.title %> </a></p>
+                <p class="flex-caption"> <a href="./activities/<%=activity._id%>" class="featurefont"> <%= activity.title %> </a></p>
             </div>
           <% end %>
         </li>
