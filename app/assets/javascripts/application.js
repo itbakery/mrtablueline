@@ -35,11 +35,11 @@ $(document).ready(function() {
       $("i").css("background-color","white");
     });
     //Flexslider 2
-    //$('#activityflexslider').flexslider({
-    //    animation: "slide",
-    //    animationSpeed: 2000,
-    //    controlsContainer: ".flex-container",
-    //});
+    $('#activityflexslider').flexslider({
+        animation: "slide",
+        animationSpeed: 2000,
+        controlsContainer: ".flex-container",
+    });
     //Flexslider 2
     $('#mainflexslider').flexslider({
         animation: "slide",
