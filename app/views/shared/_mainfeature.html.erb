@@ -5,7 +5,7 @@
         <li>
           <% row_activity.each do |activity| %>
             <div class="content">
-                <% doc = Nokogiri::HTML(activity.ntent) %>
+                <% doc = Nokogiri::HTML(activity.content) %>
                 <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
                 <p class="crop">
                   <img src=<%=img_srcs.first %>  />
