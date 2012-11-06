@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   layout "home"
   def index
     @pageroots = Page.roots.asc(:order)
-    #@activities = Activity.all.desc(:created_at).to_a
-    @activities = Activity.all.desc(:created_at).page(params[:page]).per(5)
+    @activities = Activity.all.desc(:created_at).to_a
+    @pageactivities = Activity.all.desc(:created_at).page(params[:page]).per(5)
     @announces = Announce.search(params[:search])
     @announces10 = Announce.limit(10).to_a
     @traffics = Effect.effect_scope("Traffic").first.announces rescue nil
