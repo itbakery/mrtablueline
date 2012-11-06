@@ -5,37 +5,37 @@ class ProgressesController < ApplicationController
   def index
     @stations = Station.all
     @station = Station.first
-    @reports = @station.reports.desc(:publishon)
+    @reports = @station.reports.desc(:created_at)
     @effects = Effect.all
   end
   def report_latest
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all.desc(:publishon)
+    @reports = Report.all.desc(:created_at)
     @effects = Effect.all
   end
   def report_monthly
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all.desc(:publishon)
+    @reports = Report.all.desc(:created_at)
     @effects = Effect.all
   end
   def activity
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:publishon)
+    @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
   end
   def activity_latest
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:publishon)
+    @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
   end
   def activity_monthly
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:publishon)
+    @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
   end
 
@@ -46,7 +46,7 @@ class ProgressesController < ApplicationController
   def show
     @stations = Station.all
     @station = Station.find(params[:id])
-    @reports = @station.reports.desc(:publishon)
+    @reports = @station.reports.desc(:created_at)
     @effects = Effect.all
   end
   def report
@@ -77,7 +77,7 @@ class ProgressesController < ApplicationController
     else
       @effect = Effect.first
     end
-    @announces = @effect.announces.desc(:publishon)
+    @announces = @effect.announces.desc(:created_at)
   end
   def effect_monthly
     @effects = Effect.all
@@ -86,7 +86,7 @@ class ProgressesController < ApplicationController
     else
       @effect = Effect.first
     end
-    @announces = @effect.announces.desc(:publishon)
+    @announces = @effect.announces.desc(:created_at)
   end
 
   private
