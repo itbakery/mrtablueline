@@ -5,37 +5,37 @@ class ProgressesController < ApplicationController
   def index
     @stations = Station.all
     @station = Station.first
-    @reports = @station.reports
+    @reports = @station.reports.desc(:publishon)
     @effects = Effect.all
   end
   def report_latest
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all
+    @reports = Report.all.desc(:publishon)
     @effects = Effect.all
   end
   def report_monthly
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all
+    @reports = Report.all.desc(:publishon)
     @effects = Effect.all
   end
   def activity
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all
+    @activities = Activity.all.desc(:publishon)
     @effects = Effect.all
   end
   def activity_latest
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all
+    @activities = Activity.all.desc(:publishon)
     @effects = Effect.all
   end
   def activity_monthly
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all
+    @activities = Activity.all.desc(:publishon)
     @effects = Effect.all
   end
 
@@ -46,7 +46,7 @@ class ProgressesController < ApplicationController
   def show
     @stations = Station.all
     @station = Station.find(params[:id])
-    @reports = @station.reports
+    @reports = @station.reports.desc(:publishon)
     @effects = Effect.all
   end
   def report
@@ -77,7 +77,7 @@ class ProgressesController < ApplicationController
     else
       @effect = Effect.first
     end
-    @announces = @effect.announces
+    @announces = @effect.announces.desc(:publishon)
   end
   def effect_monthly
     @effects = Effect.all
@@ -86,7 +86,7 @@ class ProgressesController < ApplicationController
     else
       @effect = Effect.first
     end
-    @announces = @effect.announces
+    @announces = @effect.announces.desc(:publishon)
   end
 
   private

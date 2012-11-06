@@ -33,7 +33,7 @@
     <% if @reports %>
       <% @reports.each do |report| %>
         <tr>
-          <td><%= report.created_at.strftime("%m/%d/%Y") %></td>
+          <td><%= report.created_at.strftime("%d/%m/%Y") %></td>
           <td><a href="/progresses/report/<%= report.id %>"><%= report.title %></a></td>
           <!-- <td><%= @station.name %></td> -->
           <!-- <td><%= report.hit_count %> ครั้ง <%= report.hits.last.user_ip if report.hits.last %></td> -->
