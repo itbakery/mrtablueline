@@ -19,7 +19,7 @@ class HomeController < ApplicationController
     end
   end
   def mrtamap
-    @json = '[{"lng": "100.4938889", "lat": "13.7522222"}]'
+    @json = '[{"lng": "100.5032", "lat": "13.7452"}]'
 
     @stations = Station.all
 #    @station_jsons =  Geopoint.where(geoable_type: "Station").to_a.to_gmaps4rails
