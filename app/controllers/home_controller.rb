@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @pageroots = Page.roots.asc(:order)
     @activities = Activity.all.desc(:created_at).to_a
-    @pageactivities = Activity.desc(:created_at).page(params[:page]).per(5)
+    @pageactivities = Activity.all.desc(:created_at).page(params[:page]).per(5)
     @pageactivities.instance_eval <<-EVAL
       def current_page
         #{params[:page] || 1}
