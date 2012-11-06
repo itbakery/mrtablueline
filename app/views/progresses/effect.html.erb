@@ -37,7 +37,7 @@
     <% if @announces %>
       <% @announces.each do |announce| %>
         <tr>
-          <td><%= announce.created_at.strftime("%m/%d/%Y") %></td>
+          <td><%= announce.created_at.strftime("%d/%m/%Y") %></td>
           <td><a href="/progresses/announce/<%= announce.id %>"><%= announce.title %></a></td>
           </td>
           <td><%= announce.hit_count %> ครั้ง<!--,<%= announce.hits.last.user_ip if announce.hits.last %>--></td>

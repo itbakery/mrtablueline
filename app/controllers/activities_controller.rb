@@ -18,6 +18,8 @@ class ActivitiesController < ApplicationController
   def show
     @activities = Activity.all.desc(:created_at).to_a
     @activity = Activity.find(params[:id])
+    @announces = Announce.search(params[:search])
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
     @traffics = Effect.where(name: "Traffic").first.announces  rescue nil
     @sounds = Effect.where(name: "Sound").first.announces  rescue nil
     @vibrations = Effect.where(name: "Vibration").first.announces rescue nil
