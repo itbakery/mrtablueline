@@ -16,7 +16,7 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
-    @activities = Activity.all.desc(:created_at).to_a
+    @activities = Activity.all.desc(:created_at)
     @activity = Activity.find(params[:id])
     @announces = Announce.search(params[:search])
     @announces10 = Announce.desc(:created_at).limit(25).to_a
