@@ -1,98 +1,17 @@
 <div class="announce_stuff">
-  <div class="widget">
-
-    <div class="traffic" style="margin-left: 10px;">
-      <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านจราจร" href="/progresses/effect/5052d1e4d0fc7a4a16000001">
-          <span class="count"><%= @traffics.size rescue nil || 0 %></span>
-          <span class="desc">จราจร</span>
-        </a>
-      </div>
+  <div id="announces">
+    <ul class="nav nav-list bs-docs-sidenav ">
+      <div id="announcelist" class="nav nav-list bs-docs-sidenav ">
+        <% if @announces10 %>
+          <% @announces10.each do |a| %>
+            <li>
+              <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
+            </li>
+        <% end %>
+      <%end%>
     </div>
-
-
-    <div class="sound">
-      <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านเสียง" href="/progresses/effect/5052d20ed0fc7a4a16000002">
-          <span class="count"><%= @sounds.size rescue nil || 0%></span>
-          <span class="desc">เสียงดัง</span></a>
-      </div>
-    </div>
-
-    <div class="vibration">
-      <div class="stat">
-        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านแรงสั่น" href="/progresses/effect/5052d22dd0fc7a4a16000003">
-          <span class="count"><%= @vibrations.size rescue nil || 0%></span>
-          <span class="desc">แรงสั่น</span>
-        </a>
-      </div>
-    </div>
-    <div class="clear">
-    </div>
-    <div class="dust" style="margin-left: 10px; ">
-      <div class="stat">
-        <a rel="nofollow" target="_blank" title="ผลกระทบด้านฝุ่น" href="/progresses/effect/5052d25ed0fc7ab622000001">
-          <span class="count"><%= @dusts.size rescue nil || 0 %></span>
-          <span class="desc">ฝุ่นละออง</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="drain">
-      <div class="stat">
-        <a rel="nofollow" target="_blank"  title="ผลกระทบด้านระบายน้ำ" href="/progresses/effect/5052d272d0fc7ab622000002">
-          <span class="count"><%= @drains.size rescue nil || 0%></span>
-          <span class="desc">ระบายน้ำ</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="report">
-      <div class="stat">
-        <a rel="nofollow" target="_blank" title="รายงานความคืบหน้า" href="/progresses">
-          <span class="count"><%= @reports.size rescue nil  || 0%></span>
-          <span class="desc">ความคืบหน้า</span>
-        </a>
-      </div>
-    </div>
-
-    <!--extext box -->
-    <div style="clear: both;">
-
-    </div>
-    <div id="announcesearch" class="well" style="margin-top: 10px; ">
-      <%= form_tag home_index_path, :method => :get , :remote => true  do %>
-        <div class="collapse-group">
-          <div class="input-append pull-rigth">
-            <%= text_field_tag :search, params[:search], :class => "input-medium" %>
-            <button class="btn" type="submit">Search</button>
-            <button class="btn advancesearch" type="button">Options</button>
-          </div>
-          <p class="collapse">
-            <% Effect.all.to_a.each do |effect| %>
-              <%= check_box_tag "search[effect_ids][]", effect.id %> <%= effect.name_th %>
-            <% end %>
-          </p>
-        </div>
-      <% end %>
-
-      <div id="announces">
-        <!-- show search hear  -->
-        <ul class="nav nav-list bs-docs-sidenav ">
-          <div id="announcelist" class="nav nav-list bs-docs-sidenav ">
-          <% if @announces10 %>
-            <% @announces10.each do |a| %>
-              <li>
-                <i class="icon-chevron-right"></i><%= link_to a.title, {controller: "progresses", action: "announce",id: a} %>
-              </li>
-            <% end %>
-          <%end%>
-        </div>
-        </ul>
-      </div> <!--announce -->
-    </div>
-    <!--extext box -->
-  </div>
+  </ul>
+</div>
 </div>
 
 
