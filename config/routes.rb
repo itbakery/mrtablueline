@@ -41,7 +41,7 @@ Mrtablueline::Application.routes.draw do
   get "home/index"
   get "home/underconstruction"
   get "welcome/index"
-  root to: "home#underconstruction"
+  root to: "home#index"
   mount Sidekiq::Web, at: 'sidekiq'
 
 
