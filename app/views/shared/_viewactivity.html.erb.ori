@@ -1,7 +1,7 @@
 <div class="flex-container">
   <div id="activityflexslider" class="flexslider">
     <ul class="slides">
-      <% @activities.each do |row_activity|  %>
+      <% @activities.in_groups_of(5,false) do |row_activity|  %>
         <li>
           <% row_activity.each do |activity| %>
             <div class="content">
@@ -33,9 +33,4 @@
       <% end  %>
     </ul>
   </div>
-
-
-  <%= paginate @activities %>
-
-
 </div>

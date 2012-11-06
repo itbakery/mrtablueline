@@ -2,7 +2,8 @@ class HomeController < ApplicationController
   layout "home"
   def index
     @pageroots = Page.roots.asc(:order)
-    @activities = Activity.all.desc(:created_at).to_a
+    #@activities = Activity.all.desc(:created_at).to_a
+    @activities = Activity.all.desc(:created_at).page(param[:page]).per(5)
     @announces = Announce.search(params[:search])
     @announces10 = Announce.limit(10).to_a
     @traffics = Effect.effect_scope("Traffic").first.announces rescue nil
@@ -13,11 +14,11 @@ class HomeController < ApplicationController
     @effects = Effect.all
     @reports = Report.all
     respond_to do |format|
-      format.html
+      format.
       format.js
-    end
+    d
   end
-  def mrtamap
+  def
     @json = '[{"lng": "100.4938889", "lat": "13.7522222"}]'
 
     @stations = Station.all
