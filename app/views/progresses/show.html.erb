@@ -35,8 +35,7 @@
     <% if @reports %>
       <% @reports.each do |report| %>
         <tr>
-          <td>
-           <%=t I18n.l(report.created_at, :format => :long) %>
+          <td><%= report.created_at.strftime("%d/%m/%Y") %>
         </td>
           <td><a href="/progresses/report/<%= report.id %>"><%= report.title %></a></td>
           <td><%= @station.name %></td>

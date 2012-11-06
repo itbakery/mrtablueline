@@ -35,9 +35,7 @@
             <h4> ความคืบหน้าประจำเดือน <%= I18n.t("date.month_names")[month]   %></h4>
                 <% report.each do |r| %>
                   <tr>
-                    <td>
-                      <%=t I18n.l(report.created_at, :format => :long) %>
-                    </td>
+                    <td><%= r.created_at.strftime("%d/%m/%Y") %></td>
                     <td><a href="/progresses/report/<%= r.id %>"><%= r.title %></a></td>
                      <td><%= r.hit_count %></td>
                   </tr>
