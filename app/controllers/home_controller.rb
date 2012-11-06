@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   def index
     @pageroots = Page.roots.asc(:order)
     #@activities = Activity.all.desc(:created_at).to_a
-    @activities = Activity.all.desc(:created_at).page(param[:page]).per(5).to_a
+    @activities = Activity.all.desc(:created_at).page(params[:page]).per(5).to_a
     @announces = Announce.search(params[:search])
     @announces10 = Announce.limit(10).to_a
     @traffics = Effect.effect_scope("Traffic").first.announces rescue nil
