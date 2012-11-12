@@ -5,7 +5,7 @@ class Backoffice::StationsController < ApplicationController
   before_filter :authenticate_user!
   def index
 
-    @stations = Station.page(params[:page]).per(5)
+    @stations = Station.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
