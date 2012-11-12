@@ -2,6 +2,8 @@ require 'sidekiq/web'
 Mrtablueline::Application.routes.draw do
 
 
+  resources :sections
+
   #get "progresses/index"
   match "/progresses"  => "progresses#index"
   match "/progresses/station/:id" => "progresses#show"
@@ -76,6 +78,7 @@ Mrtablueline::Application.routes.draw do
 
     resources :mediatypes
     resources :effects
+    resources :sections
     resources :announces do
       get 'approve', :on => :member
     end

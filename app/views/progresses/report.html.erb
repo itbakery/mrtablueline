@@ -2,19 +2,24 @@
   <div style="padding: 8px 0;" class="well">
     <ul class="nav nav-list">
       <li class="nav-header"><h4>รายชื่อสถานีรถไฟฟ้า</h4></li>
-      <% if @stations %>
-        <% @stations.each_with_index   do |station,index|%>
-          <li style="line-height: 2em;">
+      <%  @sections.each do |section| %>
+        <%= section.name %>
+        <% if @stations %>
+          <% section.stations.asc(:order).each_with_index   do |station,index|%>
+           <li style="line-height: 2em;">
             <div style="float: left; width: 60%">
               <a href="/progresses/station/<%= station.id %>" class="menuheader"><%= index +1  %>).<%= station.name %></a>
             </div>
-            <div class="pull-right">
-              <button class="btn btn-small btn-warning" type="button"> <%= station.reports.count%>  </button>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
+               <div class="pull-right">
+                <button class="btn btn-small btn-warning" type="button"> <%= station.reports.count%>  </button>
+              </div>
+            </li>
+          <% end %>
+          <% end %>
+         <div style="clear: both;"></div>
+      <%end%>
       <div style="clear: both;"></div>
+
 
     </ul>
   </div>

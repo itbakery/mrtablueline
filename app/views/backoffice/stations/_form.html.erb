@@ -10,12 +10,25 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
+     <%= f.label :section %>
+      <% if @section %>
+         <% @sectionid = @section._id  %>
+       <% else %>
+         <% @sectionid = ""  %>
+       <% end %>
+      <%= f.collection_select :section_id, @sections, :id, :name, {:selected => @sectionid,:include_blank => "No section"} %>
+  </div>
 
   <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
+   <div class="field">
+    <%= f.label :order %><br />
+    <%= f.text_field :order %>
+  </div>
+ <div class="field">
     <%= f.label :mapicon %><br />
     <%= f.file_field :mapicon %>
   </div>
