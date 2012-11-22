@@ -1246,3 +1246,80 @@ div.footer-body div#footer-wrapper div#contact-emergency {
     float: left;
     font-size: 0.9em;
 }
+
+
+.login * {
+    margin: 0;
+    padding: 0;
+}
+.title{
+    font:  26px Georgia;
+    margin-bottom: 20px;
+     margin:  auto 0;
+}
+.login{
+    width: 320px;
+    padding: 20px 0 0;
+    margin: auto;
+}
+.login label {
+    color: #777;
+    font-size: 14px;
+    cursor: pointer;
+}
+.login form {
+    margin-left: 8px;
+    padding: 24px 20px 46px;
+    font-weight: normal;
+    background: white;
+    border: 1px solid #E5E5E5;
+    /* add login box shadow  */
+    -moz-box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;  /*for Mozilla*/
+    -webkit-box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px; /*for Chrome and Safari*/
+    box-shadow: rgba(200,200,200,0.7) 0 4px 10px -1px;
+}
+.login form .input {
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 1;
+    width: 100%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #E5E5E5;
+    background: #FBFBFB;
+    outline: none;
+
+    /* add input box a inset shadow  */
+    -moz-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2); /*for Mozilla*/
+    -webkit-box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2); /*for Chrome and Safari*/
+    box-shadow: inset 1px 1px 2px rgba(200,200,200,0.2);
+}
+input.submit-button {
+    float: right;
+    border: 1px solid #298CBA;
+    font-weight: bold;
+    color: white;
+    background: #21759B;
+    text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+    padding: 3px 10px;
+    cursor: pointer;
+
+    /* add submit button a rounded corner */
+    -o-border-radius: 10em;  /*for opera*/
+    -khtml-border-radius: 10em;
+    -webkit-border-radius: 10em;
+    border-radius: 10em;
+
+
+    /* add background gradient effet */
+    /*for Chrome and Safari*/
+    background: -webkit-gradient(linear, left top, left bottom, from(#298CBA), to(#217096));
+    /*for Mozilla*/
+    background: -moz-linear-gradient(top,  #298CBA,  #217096);
+    /*for IE*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#298CBA', endColorstr='#217096');
+}
+input.submit-button:hover { border: 1px solid #000; }
+
