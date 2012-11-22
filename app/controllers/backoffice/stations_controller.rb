@@ -5,7 +5,7 @@ class Backoffice::StationsController < ApplicationController
   before_filter :authenticate_user!
   def index
 
-    @stations = Station.page(params[:page]).per(5)
+    @stations = Station.page(params[:page]).per(15)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -31,6 +31,8 @@ class Backoffice::StationsController < ApplicationController
     @station.build_geopoint
     @lat = 13.7522222
     @lng = 100.4938889
+    @sections = Section.all
+    @section = Section.all.to_a.first
     @json = '[{"lng": "100.4938889", "lat": "13.7522222"}]'
     respond_to do |format|
       format.html # new.html.erb
@@ -41,14 +43,15 @@ class Backoffice::StationsController < ApplicationController
   # GET /stations/1/edit
   def edit
     @station = Station.find(params[:id])
-    @json = @station.geopoint.to_gmaps4rails
+     @json = @station.geopoint.to_gmaps4rails
+    @sections = Section.all
+    @section = @station.section
   end
 
   # POST /stations
   # POST /stations.json
   def create
     @station = Station.new(params[:station])
-
     respond_to do |format|
       if @station.save
         format.html { redirect_to backoffice_stations_path, notice: 'Station was successfully created.' }

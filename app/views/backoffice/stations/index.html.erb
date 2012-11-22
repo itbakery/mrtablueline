@@ -23,6 +23,7 @@
 <table class="table table-bordered">
   <tr>
     <th>Name</th>
+    <th>Order</th>
     <th></th>
     <th></th>
     <th></th>
@@ -31,6 +32,7 @@
 <% @stations.each do |station| %>
   <tr>
     <td><%= station.name %></td>
+    <td><%= station.order %></td>
     <td><%= link_to 'Show', [:backoffice,station] %></td>
     <td><%= link_to 'Edit', edit_backoffice_station_path(station) %></td>
     <td><%= link_to 'Destroy', [:backoffice,station], method: :delete, data: { confirm: 'Are you sure?' } %></td>
