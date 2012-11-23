@@ -8,6 +8,7 @@ class ProgressesController < ApplicationController
     @reports = @station.reports.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def report_latest
     @stations = Station.all
@@ -15,6 +16,7 @@ class ProgressesController < ApplicationController
     @reports = Report.all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def report_monthly
     @stations = Station.all
@@ -22,6 +24,7 @@ class ProgressesController < ApplicationController
     @reports = Report.all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def activity
     @stations = Station.all
@@ -29,6 +32,7 @@ class ProgressesController < ApplicationController
     @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def activity_latest
     @stations = Station.all
@@ -36,6 +40,7 @@ class ProgressesController < ApplicationController
     @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def activity_monthly
     @stations = Station.all
@@ -43,6 +48,7 @@ class ProgressesController < ApplicationController
     @activities = Activity.all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
 
   def fullmap
@@ -62,11 +68,13 @@ class ProgressesController < ApplicationController
     @station = Station.where(id: @report.station_id).first
     @effects = Effect.all
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def announce
     @announce = Announce.find(params[:id])
     @effects = Effect.all
     @effects = Effect.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
     @sections = Section.all
   end
 
@@ -79,6 +87,7 @@ class ProgressesController < ApplicationController
     end
     @announces = @effect.announces
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def effect_latest
     @effects = Effect.all
@@ -89,6 +98,7 @@ class ProgressesController < ApplicationController
     end
     @announces = @effect.announces.desc(:created_at)
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
   def effect_monthly
     @effects = Effect.all
@@ -99,6 +109,7 @@ class ProgressesController < ApplicationController
     end
     @announces = @effect.announces.desc(:created_at)
     @sections = Section.all
+    @announces10 = Announce.desc(:created_at).limit(25).to_a
   end
 
   private
