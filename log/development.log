@@ -58919,3 +58919,1013 @@ http://localhost:3000/backoffice/reports/50b05ac35c09041053000007
   MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"author"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7234ms)
   MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000003"]}}]} flags=[] limit=0 skip=0 fields=nil (0.7601ms)
   Rendered notifications_mailer/new_message.html.erb (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-24 15:46:44 +0700
+Processing by HomeController#index as HTML
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (59.4125ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.6163ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=activities selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.7265ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=announces selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.5054ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=announces selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=25 skip=0 fields=nil (0.4425ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={"$query"=>{"name"=>"Traffic"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7234ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={"$query"=>{"name"=>"Sound"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4430ms)
+  Rendered home/index.html.erb within layouts/home (0.6ms)
+  Rendered authen/_loginmenu.html.erb (2.3ms)
+  Rendered authen/_loginmenumodal.html.erb (1.3ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (3.3ms)
+  Rendered authen/_signup.html.erb (37.0ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered authen/_login.html.erb (8.5ms)
+  Rendered authen/_edit.html.erb (6.4ms)
+  Rendered shared/_navigator.html.erb (62.6ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6523ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=effects selector={} flags=[] limit=0 skip=0 fields=nil (0.3309ms)
+  Rendered shared/_progressheader.html.erb (4.6ms)
+  Rendered shared/_message.html.erb (0.9ms)
+  Rendered shared/_mainfeature.html.erb (0.9ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=activities selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=5 skip=0 fields=nil (0.6263ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"activities", :query=>{}} (0.4797ms)
+  Rendered shared/_viewactivity.html.erb (5.4ms)
+  Rendered shared/_leftpanel.html.erb (78.2ms)
+  Rendered shared/_announce_stuff.html.erb (0.7ms)
+  Rendered shared/_rightpanel.html.erb (2.0ms)
+Completed 200 OK in 1218ms (Views: 808.5ms)
+
+
+Started GET "/assets/bg_direction_nav.png" for 127.0.0.1 at 2012-11-24 15:46:46 +0700
+Served asset /bg_direction_nav.png - 404 Not Found (11ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/bg_direction_nav.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/backoffice/announces" for 127.0.0.1 at 2012-11-24 15:46:50 +0700
+Processing by Backoffice::AnnouncesController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.6340ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.6928ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8028ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=announces selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.5333ms)
+  Rendered backoffice/announces/index.html.erb within layouts/backoffice (4.7ms)
+  Rendered authen/_loginmenu.html.erb (0.9ms)
+  Rendered authen/_loginmenumodal.html.erb (0.4ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered authen/_signup.html.erb (7.5ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered authen/_login.html.erb (5.7ms)
+  Rendered authen/_edit.html.erb (3.9ms)
+  Rendered shared/_navigator.html.erb (21.7ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6676ms)
+  Rendered shared/_progressheader.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.8ms)
+Completed 200 OK in 264ms (Views: 127.7ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:46:51 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (5ms)
+
+
+Started GET "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:46:53 +0700
+Processing by Backoffice::ReportsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8054ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.9141ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8667ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.5701ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7088ms)
+  Rendered backoffice/reports/index.html.erb within layouts/backoffice (17.6ms)
+  Rendered authen/_loginmenu.html.erb (0.7ms)
+  Rendered authen/_loginmenumodal.html.erb (0.3ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered authen/_signup.html.erb (7.5ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.8ms)
+  Rendered authen/_login.html.erb (6.3ms)
+  Rendered authen/_edit.html.erb (3.9ms)
+  Rendered shared/_navigator.html.erb (22.1ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.5958ms)
+  Rendered shared/_progressheader.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.1ms)
+Completed 200 OK in 143ms (Views: 115.9ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:46:53 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started DELETE "/backoffice/reports/50b05ac35c09041053000007" for 127.0.0.1 at 2012-11-24 15:46:59 +0700
+Processing by Backoffice::ReportsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wLVltkj7UM94gJ5L/TLA+2PPykPdzl+jsy1RfRdc3J8=", "id"=>"50b05ac35c09041053000007"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7396ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"_id"=>"50b05ac35c09041053000007"} flags=[] limit=0 skip=0 fields=nil (0.6113ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8361ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"_id"=>"50b05ac35c09041053000007"} flags=[] limit=0 skip=0 fields=nil (0.6526ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=geopoints selector={"$query"=>{"geoable_id"=>"50b05ac35c09041053000007", "geoable_type"=>"Report", "geoable_field"=>{"$in"=>[:geopoint, nil]}}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7920ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b05ac35c09041053000007"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5324ms)
+  MOPED: 127.0.0.1:27017 DELETE       database=mrtablueline_development collection=geopoints selector={"_id"=>"50b05ac45c09041053000008"} flags=[:remove_first] (0.1352ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=hits selector={"hitable_id"=>"50b05ac35c09041053000007", "hitable_type"=>"Report", "hitable_field"=>{"$in"=>[:hits, nil]}} flags=[] limit=0 skip=0 fields=nil (0.8647ms)
+  MOPED: 127.0.0.1:27017 DELETE       database=mrtablueline_development collection=reports selector={"_id"=>"50b05ac35c09041053000007"} flags=[:remove_first] (0.1318ms)
+Redirected to http://localhost:3000/backoffice/reports
+Completed 302 Found in 605ms
+
+
+Started GET "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:47:00 +0700
+Processing by Backoffice::ReportsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7131ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.7026ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8409ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.3572ms)
+  Rendered backoffice/reports/index.html.erb within layouts/backoffice (0.5ms)
+  Rendered authen/_loginmenu.html.erb (0.7ms)
+  Rendered authen/_loginmenumodal.html.erb (0.4ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.1ms)
+  Rendered authen/_signup.html.erb (8.1ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered authen/_login.html.erb (6.7ms)
+  Rendered authen/_edit.html.erb (79.2ms)
+  Rendered shared/_navigator.html.erb (99.1ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6142ms)
+  Rendered shared/_progressheader.html.erb (2.2ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.2ms)
+Completed 200 OK in 211ms (Views: 181.7ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:47:00 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/backoffice/reports/new" for 127.0.0.1 at 2012-11-24 15:47:08 +0700
+Processing by Backoffice::ReportsController#new as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7460ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.7198ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b0898c5c0904c01e000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5164ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=stations selector={} flags=[] limit=0 skip=0 fields=nil (0.5414ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=stations selector={} flags=[] limit=0 skip=0 fields=nil (0.4966ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (2.4ms)
+  Rendered backoffice/reports/_form.html.erb (104.9ms)
+  Rendered backoffice/reports/new.html.erb within layouts/backoffice (106.7ms)
+  Rendered authen/_loginmenu.html.erb (0.7ms)
+  Rendered authen/_loginmenumodal.html.erb (0.3ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.9ms)
+  Rendered authen/_signup.html.erb (7.4ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered authen/_login.html.erb (5.6ms)
+  Rendered authen/_edit.html.erb (3.8ms)
+  Rendered shared/_navigator.html.erb (21.0ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6149ms)
+  Rendered shared/_progressheader.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.1ms)
+Completed 200 OK in 266ms (Views: 204.8ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:47:08 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:09 +0700
+Served asset /ckeditor/config.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/editor.css?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:09 +0700
+Served asset /ckeditor/skins/kama/editor.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:09 +0700
+Served asset /ckeditor/lang/en.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/plugin.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:09 +0700
+Served asset /ckeditor/plugins/embed/plugin.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/plugin.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:09 +0700
+Served asset /ckeditor/plugins/attachment/plugin.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/plugins/embed/lang/en.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/plugins/attachment/lang/en.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/images/sprites.png" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/skins/kama/images/sprites.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/icons.png" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/skins/kama/icons.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/images/attachment.png?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/plugins/attachment/images/attachment.png - 304 Not Modified (88ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/images/embed.png?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/plugins/embed/images/embed.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/ckeditor/contents.css" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/contents.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/ckeditor/plugins/styles/styles/default.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:47:10 +0700
+Served asset /ckeditor/plugins/styles/styles/default.js - 304 Not Modified (6ms)
+
+
+Started POST "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:47:16 +0700
+Processing by Backoffice::ReportsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wLVltkj7UM94gJ5L/TLA+2PPykPdzl+jsy1RfRdc3J8=", "report"=>{"station_id"=>"", "title"=>"ssss", "content"=>"<p>\r\n\tssss</p>\r\n", "publishon"=>"", "publishoff"=>"", "geopoint_attributes"=>{"name"=>"Thanon Kalayana Maitri, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200, Thailand", "city"=>"Bangkok", "country"=>"Thailand", "latitude"=>"13.750971644150546", "longitude"=>"100.4938889", "gmaps_zoom"=>"15", "gmaps"=>""}}, "commit"=>"สร้างReport"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8314ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b089945c0904c01e000002"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4787ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.9482ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b089945c0904c01e000003"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4690ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=mrtablueline_development collection=reports documents=[{"_id"=>"50b089945c0904c01e000003", "effect_ids"=>[], "station_id"=>nil, "title"=>"ssss", "content"=>"<p>\r\n\tssss</p>\r\n", "publishon"=>nil, "publishoff"=>nil, "user_id"=>"50ae74a05c09046c0f000001", "updated_at"=>2012-11-24 08:47:17 UTC, "created_at"=>2012-11-24 08:47:17 UTC}] flags=[] (0.3281ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=mrtablueline_development collection=geopoints documents=[{"_id"=>"50b089955c0904c01e000004", "name"=>"Thanon Kalayana Maitri, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200, Thailand", "city"=>"Bangkok", "country"=>"Thailand", "latitude"=>13.7511305, "longitude"=>100.494939, "gmaps_zoom"=>15.0, "gmaps"=>false, "geoable_id"=>"50b089945c0904c01e000003", "geoable_type"=>"Report"}] flags=[] (0.5538ms)
+Redirected to http://localhost:3000/backoffice/reports
+Completed 302 Found in 1052ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.4828ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b089945c0904c01e000003"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4547ms)
+
+
+Started GET "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:47:17 +0700
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"admin"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5236ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a05c09046c0f000001", "50ae74a15c09046c0f000002"]}}]} flags=[] limit=0 skip=0 fields=nil (0.5486ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"author"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.3211ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000003"]}}]} flags=[] limit=0 skip=0 fields=nil (0.3748ms)
+Processing by Backoffice::ReportsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.9372ms)
+ERROR: compiling _app_views_notifications_mailer_new_message_html_erb__4007529683510443254_69955154250000 RAISED /home/lookmee/Webapp/mrtablueline/app/views/notifications_mailer/new_message.html.erb:23: syntax error, unexpected tLABEL
+...;@output_buffer.append= ( http://www.mrta-blueline.com/"#{@u...
+...                               ^
+/home/lookmee/Webapp/mrtablueline/app/views/notifications_mailer/new_message.html.erb:23: unknown regexp options - www
+Function body:           def _app_views_notifications_mailer_new_message_html_erb__4007529683510443254_69955154250000(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "notifications_mailer/new_message";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+'); @title =  @obj.title 
+ @name  =  User.find(@obj.user_id).name 
+ resource = @obj.class.name.downcase  
+@output_buffer.append= (
+ case resource
+   when "activity" then   @url = backoffice_activity_path(ll@obj)
+   when "report"   then   @url = backoffice_report_path(@obj)
+   when "announce" then   @url = backoffice_announce_path(@obj)
+   else  "error"
+   end
+);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <h1>Request to Approve title:  ');@output_buffer.append= ( @title );@output_buffer.safe_concat('</h1>
+    <p>
+      khun ');@output_buffer.append= ( @name );@output_buffer.safe_concat(' has been create this content<br/>
+    </p>
+    <p>
+      To Approve, just follow this link: ');@output_buffer.append= ( http://www.mrta-blueline.com/"#{@url}" );@output_buffer.safe_concat('.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `module_eval'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `compile'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:232:in `compile!'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:144:in `block in render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:125:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:143:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:88:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:701:in `block in collect_responses_and_parts_order'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:712:in `each'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:712:in `each_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:697:in `collect_responses_and_parts_order'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:636:in `mail'
+/home/lookmee/Webapp/mrtablueline/app/mailers/notifications_mailer.rb:17:in `new_message'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:167:in `process_action'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:121:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:45:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:457:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:452:in `initialize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:439:in `new'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:439:in `method_missing'
+/home/lookmee/Webapp/mrtablueline/app/workers/approve_system.rb:5:in `perform'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:43:in `block (3 levels) in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:79:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:79:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/logging.rb:22:in `with_context'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:84:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:84:in `invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:42:in `block (2 levels) in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:77:in `stats'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:41:in `block in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/calls.rb:57:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/calls.rb:57:in `dispatch'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/future.rb:18:in `block in initialize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/internal_pool.rb:48:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/internal_pool.rb:48:in `block in create'
+  Rendered notifications_mailer/new_message.html.erb (1.7ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.6948ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8023ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.6413ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.7877ms)
+  Rendered backoffice/reports/index.html.erb within layouts/backoffice (9.4ms)
+  Rendered authen/_loginmenu.html.erb (0.9ms)
+  Rendered authen/_loginmenumodal.html.erb (0.4ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.9ms)
+  Rendered authen/_signup.html.erb (8.0ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered authen/_login.html.erb (5.8ms)
+  Rendered authen/_edit.html.erb (4.1ms)
+  Rendered shared/_navigator.html.erb (22.7ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6442ms)
+  Rendered shared/_progressheader.html.erb (2.0ms)
+  Rendered shared/_message.html.erb (0.2ms)
+  Rendered shared/_backofficeyield.html.erb (0.2ms)
+Completed 200 OK in 223ms (Views: 191.0ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:47:18 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7122ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b089945c0904c01e000003"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (1.0278ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"admin"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8121ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a05c09046c0f000001", "50ae74a15c09046c0f000002"]}}]} flags=[] limit=0 skip=0 fields=nil (1.0164ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"author"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5143ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000003"]}}]} flags=[] limit=0 skip=0 fields=nil (0.6728ms)
+ERROR: compiling _app_views_notifications_mailer_new_message_html_erb__4007529683510443254_69955154250000 RAISED /home/lookmee/Webapp/mrtablueline/app/views/notifications_mailer/new_message.html.erb:23: syntax error, unexpected tLABEL
+...;@output_buffer.append= ( http://www.mrta-blueline.com/"#{@u...
+...                               ^
+/home/lookmee/Webapp/mrtablueline/app/views/notifications_mailer/new_message.html.erb:23: unknown regexp options - www
+Function body:           def _app_views_notifications_mailer_new_message_html_erb__4007529683510443254_69955154250000(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "notifications_mailer/new_message";_old_output_buffer = @output_buffer;;@output_buffer = output_buffer || ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+'); @title =  @obj.title 
+ @name  =  User.find(@obj.user_id).name 
+ resource = @obj.class.name.downcase  
+@output_buffer.append= (
+ case resource
+   when "activity" then   @url = backoffice_activity_path(ll@obj)
+   when "report"   then   @url = backoffice_report_path(@obj)
+   when "announce" then   @url = backoffice_announce_path(@obj)
+   else  "error"
+   end
+);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    <h1>Request to Approve title:  ');@output_buffer.append= ( @title );@output_buffer.safe_concat('</h1>
+    <p>
+      khun ');@output_buffer.append= ( @name );@output_buffer.safe_concat(' has been create this content<br/>
+    </p>
+    <p>
+      To Approve, just follow this link: ');@output_buffer.append= ( http://www.mrta-blueline.com/"#{@url}" );@output_buffer.safe_concat('.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+
+Backtrace: /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `module_eval'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:297:in `compile'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:244:in `block in compile!'
+<internal:prelude>:10:in `synchronize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:232:in `compile!'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:144:in `block in render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:125:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/template.rb:143:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:47:in `block (2 levels) in render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `block in instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/activesupport-3.2.8/lib/active_support/notifications.rb:123:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:46:in `block in render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/template_renderer.rb:18:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_view/renderer/renderer.rb:17:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:110:in `_render_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:103:in `render_to_body'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:88:in `render'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:701:in `block in collect_responses_and_parts_order'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:712:in `each'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:712:in `each_template'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:697:in `collect_responses_and_parts_order'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:636:in `mail'
+/home/lookmee/Webapp/mrtablueline/app/mailers/notifications_mailer.rb:17:in `new_message'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:167:in `process_action'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/base.rb:121:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/abstract_controller/rendering.rb:45:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:457:in `process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:452:in `initialize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:439:in `new'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionmailer-3.2.8/lib/action_mailer/base.rb:439:in `method_missing'
+/home/lookmee/Webapp/mrtablueline/app/workers/approve_system.rb:5:in `perform'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:43:in `block (3 levels) in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:79:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:79:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/timeout.rb:14:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/active_record.rb:6:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/retry_jobs.rb:49:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/logging.rb:11:in `block in call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/logging.rb:22:in `with_context'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/server/logging.rb:7:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:81:in `block in invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:84:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/middleware/chain.rb:84:in `invoke'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:42:in `block (2 levels) in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:77:in `stats'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/sidekiq-2.5.3/lib/sidekiq/processor.rb:41:in `block in process'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/calls.rb:57:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/calls.rb:57:in `dispatch'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/future.rb:18:in `block in initialize'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/internal_pool.rb:48:in `call'
+/home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/celluloid-0.12.3/lib/celluloid/internal_pool.rb:48:in `block in create'
+  Rendered notifications_mailer/new_message.html.erb (1.3ms)
+
+
+Started GET "/sidekiq" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.js" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.timeago.js" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/bootstrap.js" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+
+Started GET "/images/status-sd8051fd480.png" for 127.0.0.1 at 2012-11-24 15:48:28 +0700
+
+ActionController::RoutingError (No route matches [GET] "/images/status-sd8051fd480.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.js" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.timeago.js" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/bootstrap.js" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+
+Started GET "/images/status-sd8051fd480.png" for 127.0.0.1 at 2012-11-24 15:48:32 +0700
+
+ActionController::RoutingError (No route matches [GET] "/images/status-sd8051fd480.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/sidekiq/retries/1353746927.9914865" for 127.0.0.1 at 2012-11-24 15:48:38 +0700
+
+
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.js" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.timeago.js" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/bootstrap.js" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+
+Started GET "/images/status-sd8051fd480.png" for 127.0.0.1 at 2012-11-24 15:48:39 +0700
+
+ActionController::RoutingError (No route matches [GET] "/images/status-sd8051fd480.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started POST "/sidekiq/retries/1353746927.9914865" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/retries" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.js" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.timeago.js" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/bootstrap.js" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+
+Started GET "/images/status-sd8051fd480.png" for 127.0.0.1 at 2012-11-24 15:49:30 +0700
+
+ActionController::RoutingError (No route matches [GET] "/images/status-sd8051fd480.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/sidekiq/retries" for 127.0.0.1 at 2012-11-24 15:49:32 +0700
+
+
+Started POST "/sidekiq/retries" for 127.0.0.1 at 2012-11-24 15:51:16 +0700
+
+
+Started GET "/sidekiq/" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/stylesheets/bootstrap.css" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/stylesheets/application.css" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.js" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/jquery.timeago.js" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/javascripts/vendor/bootstrap.js" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/sidekiq/javascripts/application.js" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+
+Started GET "/images/status-sd8051fd480.png" for 127.0.0.1 at 2012-11-24 15:51:20 +0700
+
+ActionController::RoutingError (No route matches [GET] "/images/status-sd8051fd480.png"):
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  thin (1.5.0) lib/thin/connection.rb:81:in `block in pre_process'
+  thin (1.5.0) lib/thin/connection.rb:79:in `catch'
+  thin (1.5.0) lib/thin/connection.rb:79:in `pre_process'
+  thin (1.5.0) lib/thin/connection.rb:54:in `process'
+  thin (1.5.0) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run_machine'
+  eventmachine (1.0.0) lib/eventmachine.rb:187:in `run'
+  thin (1.5.0) lib/thin/backends/base.rb:63:in `start'
+  thin (1.5.0) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.8) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.8) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.8) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.8) lib/rails/commands.rb:50:in `<top (required)>'
+  script/rails:6:in `require'
+  script/rails:6:in `<main>'
+
+
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.0564ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50afdf345c0904464200000f"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4735ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"admin"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8283ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a05c09046c0f000001", "50ae74a15c09046c0f000002"]}}]} flags=[] limit=0 skip=0 fields=nil (0.8173ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"author"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5426ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000003"]}}]} flags=[] limit=0 skip=0 fields=nil (0.6301ms)
+  Rendered notifications_mailer/new_message.html.erb (1.9ms)
+
+
+Started DELETE "/backoffice/reports/50b089945c0904c01e000003" for 127.0.0.1 at 2012-11-24 15:51:51 +0700
+Processing by Backoffice::ReportsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"wLVltkj7UM94gJ5L/TLA+2PPykPdzl+jsy1RfRdc3J8=", "id"=>"50b089945c0904c01e000003"}
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (0.7575ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (1.2403ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"_id"=>"50b089945c0904c01e000003"} flags=[] limit=0 skip=0 fields=nil (0.6015ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8316ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"_id"=>"50b089945c0904c01e000003"} flags=[] limit=0 skip=0 fields=nil (0.5641ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=geopoints selector={"$query"=>{"geoable_id"=>"50b089945c0904c01e000003", "geoable_type"=>"Report", "geoable_field"=>{"$in"=>[:geopoint, nil]}}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8755ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b089945c0904c01e000003"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5839ms)
+  MOPED: 127.0.0.1:27017 DELETE       database=mrtablueline_development collection=geopoints selector={"_id"=>"50b089955c0904c01e000004"} flags=[:remove_first] (0.2012ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=hits selector={"hitable_id"=>"50b089945c0904c01e000003", "hitable_type"=>"Report", "hitable_field"=>{"$in"=>[:hits, nil]}} flags=[] limit=0 skip=0 fields=nil (0.7317ms)
+  MOPED: 127.0.0.1:27017 DELETE       database=mrtablueline_development collection=reports selector={"_id"=>"50b089945c0904c01e000003"} flags=[:remove_first] (0.0837ms)
+Redirected to http://localhost:3000/backoffice/reports
+Completed 302 Found in 38ms
+
+
+Started GET "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:51:51 +0700
+Processing by Backoffice::ReportsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5119ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.6545ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.7374ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.4334ms)
+  Rendered backoffice/reports/index.html.erb within layouts/backoffice (0.9ms)
+  Rendered authen/_loginmenu.html.erb (0.6ms)
+  Rendered authen/_loginmenumodal.html.erb (0.3ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.8ms)
+  Rendered authen/_signup.html.erb (7.0ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered authen/_login.html.erb (5.2ms)
+  Rendered authen/_edit.html.erb (3.6ms)
+  Rendered shared/_navigator.html.erb (19.8ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6192ms)
+  Rendered shared/_progressheader.html.erb (1.7ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.1ms)
+Completed 200 OK in 211ms (Views: 184.2ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:51:52 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/backoffice/reports/new" for 127.0.0.1 at 2012-11-24 15:51:55 +0700
+Processing by Backoffice::ReportsController#new as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (1.1795ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.8533ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b08aab5c0904c01e000005"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4697ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=stations selector={} flags=[] limit=0 skip=0 fields=nil (0.4952ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=stations selector={} flags=[] limit=0 skip=0 fields=nil (0.3219ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/gmaps4rails-1.5.6/app/views/gmaps4rails/_gmaps4rails.html.erb (1.1ms)
+  Rendered backoffice/reports/_form.html.erb (16.6ms)
+  Rendered backoffice/reports/new.html.erb within layouts/backoffice (17.6ms)
+  Rendered authen/_loginmenu.html.erb (0.7ms)
+  Rendered authen/_loginmenumodal.html.erb (0.3ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.8ms)
+  Rendered authen/_signup.html.erb (6.8ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.7ms)
+  Rendered authen/_login.html.erb (5.2ms)
+  Rendered authen/_edit.html.erb (3.5ms)
+  Rendered shared/_navigator.html.erb (19.6ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.6764ms)
+  Rendered shared/_progressheader.html.erb (1.8ms)
+  Rendered shared/_message.html.erb (0.1ms)
+  Rendered shared/_backofficeyield.html.erb (0.1ms)
+Completed 200 OK in 142ms (Views: 113.1ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:51:55 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/config.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:55 +0700
+Served asset /ckeditor/config.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/editor.css?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/skins/kama/editor.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/lang/en.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/plugin.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/embed/plugin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/plugin.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/attachment/plugin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/embed/lang/en.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/lang/en.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/attachment/lang/en.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/images/sprites.png" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/skins/kama/images/sprites.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/skins/kama/icons.png" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/skins/kama/icons.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/attachment/images/attachment.png?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/attachment/images/attachment.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/embed/images/embed.png?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:56 +0700
+Served asset /ckeditor/plugins/embed/images/embed.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/contents.css" for 127.0.0.1 at 2012-11-24 15:51:57 +0700
+Served asset /ckeditor/contents.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/ckeditor/plugins/styles/styles/default.js?t=C6HH5UF" for 127.0.0.1 at 2012-11-24 15:51:57 +0700
+Served asset /ckeditor/plugins/styles/styles/default.js - 304 Not Modified (0ms)
+
+
+Started POST "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:52:08 +0700
+Processing by Backoffice::ReportsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wLVltkj7UM94gJ5L/TLA+2PPykPdzl+jsy1RfRdc3J8=", "report"=>{"station_id"=>"", "title"=>"หหห", "content"=>"<p>\r\n\tหหหห</p>\r\n", "publishon"=>"", "publishoff"=>"", "geopoint_attributes"=>{"name"=>"Thanon Sanam Chai, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200, Thailand", "city"=>"Bangkok", "country"=>"Thailand", "latitude"=>"13.751180070589326", "longitude"=>"100.49376015396729", "gmaps_zoom"=>"15", "gmaps"=>""}}, "commit"=>"สร้างReport"}
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5543ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b08ab85c0904c01e000006"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4337ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.7219ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b08ab85c0904c01e000007"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5367ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=mrtablueline_development collection=reports documents=[{"_id"=>"50b08ab85c0904c01e000007", "effect_ids"=>[], "station_id"=>nil, "title"=>"หหห", "content"=>"<p>\r\n\tหหหห</p>\r\n", "publishon"=>nil, "publishoff"=>nil, "user_id"=>"50ae74a05c09046c0f000001", "updated_at"=>2012-11-24 08:52:08 UTC, "created_at"=>2012-11-24 08:52:08 UTC}] flags=[] (0.5403ms)
+  MOPED: 127.0.0.1:27017 INSERT       database=mrtablueline_development collection=geopoints documents=[{"_id"=>"50b08ab85c0904c01e000008", "name"=>"Thanon Sanam Chai, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200, Thailand", "city"=>"Bangkok", "country"=>"Thailand", "latitude"=>13.751607, "longitude"=>100.4936899, "gmaps_zoom"=>15.0, "gmaps"=>false, "geoable_id"=>"50b08ab85c0904c01e000007", "geoable_type"=>"Report"}] flags=[] (0.4454ms)
+Redirected to http://localhost:3000/backoffice/reports
+Completed 302 Found in 755ms
+  MOPED: 127.0.0.1:27017 COMMAND      database=admin command={:ismaster=>1} (1.2045ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{"_id"=>"50b08ab85c0904c01e000007"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.6630ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"admin"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (1.0297ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a05c09046c0f000001", "50ae74a15c09046c0f000002"]}}]} flags=[] limit=0 skip=0 fields=nil (1.1771ms)
+
+
+Started GET "/backoffice/reports" for 127.0.0.1 at 2012-11-24 15:52:08 +0700
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=roles selector={"$query"=>{"name"=>"author"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.8314ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000003"]}}]} flags=[] limit=0 skip=0 fields=nil (0.8910ms)
+Processing by Backoffice::ReportsController#index as HTML
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.5620ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.5796ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"_id"=>"50ae74a05c09046c0f000001"} flags=[] limit=0 skip=0 fields=nil (0.4823ms)
+  Rendered notifications_mailer/new_message.html.erb (2.8ms)
+  MOPED: 127.0.0.1:27017 COMMAND      database=mrtablueline_development command={:count=>"roles", :query=>{"$and"=>[{"_id"=>{"$in"=>["50ae74a15c09046c0f000004"]}}], "$or"=>[{"name"=>"admin", "resource_type"=>nil, "resource_id"=>nil}]}} (0.6273ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=reports selector={"$query"=>{}, "$orderby"=>{"created_at"=>-1}} flags=[] limit=0 skip=0 fields=nil (0.4325ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=users selector={"$query"=>{"_id"=>"50ae74a05c09046c0f000001"}, "$orderby"=>{:_id=>1}} flags=[] limit=-1 skip=0 fields=nil (0.4764ms)
+  Rendered backoffice/reports/index.html.erb within layouts/backoffice (4.9ms)
+  Rendered authen/_loginmenu.html.erb (0.7ms)
+  Rendered authen/_loginmenumodal.html.erb (0.4ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (1.0ms)
+  Rendered authen/_signup.html.erb (8.5ms)
+  Rendered /home/lookmee/.rvm/gems/ruby-1.9.3-p286@mrtablueline/gems/devise-2.1.2/app/views/devise/shared/_links.erb (0.9ms)
+  Rendered authen/_login.html.erb (7.6ms)
+  Rendered authen/_edit.html.erb (7.0ms)
+  Rendered shared/_navigator.html.erb (116.6ms)
+  MOPED: 127.0.0.1:27017 QUERY        database=mrtablueline_development collection=pages selector={"$query"=>{"ancestry"=>nil}, "$orderby"=>{"order"=>1}} flags=[] limit=0 skip=0 fields=nil (0.5231ms)
+  Rendered shared/_progressheader.html.erb (1.9ms)
+  Rendered shared/_message.html.erb (0.2ms)
+  Rendered shared/_backofficeyield.html.erb (0.2ms)
+Completed 200 OK in 236ms (Views: 207.8ms)
+
+
+Started GET "/assets/fontawesome-webfont.woff" for 127.0.0.1 at 2012-11-24 15:52:09 +0700
+Served asset /fontawesome-webfont.woff - 304 Not Modified (0ms)
+
+Sent mail to rhcsa2012@gmail.com (5331ms)
+Date: Sat, 24 Nov 2012 15:52:09 +0700
+From: no-reply@mrta-blueline.com
+To: rhcsa2012@gmail.com
+Message-ID: <50b08ab9284bd_1c271c5825c706@itbfedora.local.mail>
+Subject: New message
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content=3D"text/html; charset=3DUTF-8" http-equiv=3D"Content-Ty=
+pe" />
+  </head>
+  <body>
+/backoffice/reports/50b08ab85c0904c01e000007
+    <h1>Request to Approve title:  =E0=B8=AB=E0=B8=AB=E0=B8=AB</h1>
+    <p>
+      khun sawangpong has been create this content<br/>
+    </p>
+    <p>
+      To Approve, just follow this link: http://www.mrta-blueline.com//ba=
+ckoffice/reports/50b08ab85c0904c01e000007.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
+
