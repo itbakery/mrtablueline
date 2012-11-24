@@ -1,4 +1,5 @@
 require "bundler/capistrano"
+require 'sidekiq/capistrano'
 default_run_options[:pty] = true
 set :application, "mrtablueline"
 set :keep_releases, 5
@@ -23,6 +24,9 @@ ssh_options[:forward_agent] = true
 role :web, "203.146.127.169"
 role :app, "203.146.127.169"
 role :db, "203.146.127.169", :primary => true
+
+set :sidekiq_role, :sidekiq
+role :sidekiq, "203.146.127.169"
 
 after "deploy:update_code", "deploy:bundle_install"
 after :deploy, "deploy:rvm:trust_rvmrc"
@@ -61,5 +65,5 @@ namespace :deploy do
   task :trust_rvmrc do
     run "rvm rvmrc trust #{release_path}"
   end
-end
+  end
 end
