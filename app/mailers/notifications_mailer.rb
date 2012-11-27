@@ -14,6 +14,7 @@ class NotificationsMailer < ActionMailer::Base
     @author_recipients = User.role_users(:author).map(&:email)
     @recipients = @admin_recipients
     emails = @recipients.join(",")
-    mail to: "rhcsa2012@gmail.com"
+    m = ["rhcsa2012@gmail.com","sawangpongm@gmail.com"].join(",")
+    mail to: m
   end
 end

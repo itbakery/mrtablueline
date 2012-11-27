@@ -1,27 +1,151 @@
-<!DOCTYPE html>
+<!DOCTYPE htvml>
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
   </head>
   <body>
-<% @title =  @obj.title %>
-<% @name  =  User.find(@obj.user_id).name %>
-<% resource = @obj.class.name.downcase  %>
-<%=
- case resource
-   when "activity" then   @url = backoffice_activity_path(ll@obj)
-   when "report"   then   @url = backoffice_report_path(@obj)
-   when "announce" then   @url = backoffice_announce_path(@obj)
-   else  "error"
-   end
-%>
-    <h1>Request to Approve title:  <%= @title %></h1>
-    <p>
-      khun <%= @name %> has been create this content<br/>
-    </p>
-    <p>
-      To Approve, just follow this link: http://www.mrta-blueline.com/<%= @url %>.
-    </p>
-    <p>Thanks for joining and have a great day!</p>
-  </body>
+    <% @title =  @obj.title %>
+    <% @name  =  User.find(@obj.user_id).name %>
+    <% resource = @obj.class.name.downcase  %>
+    <%=
+      case resource
+      when "activity" then   @url = backoffice_activity_path(ll@obj)
+      when "report"   then   @url = backoffice_report_path(@obj)
+      when "announce" then   @url = backoffice_announce_path(@obj)
+      else  "error"
+      end
+    %>
+
+
+
+  <div style="margin:0px">
+    <table width="100%" cellspacing="0" cellpadding="0" bgcolor="#fafafa" style="font-family:Arial,sans-serif;background:#fafafa">
+      <tbody>
+        <tr>
+          <td style="padding:40px 60px 40px 60px">
+
+            <table width="670" cellspacing="0" cellpadding="0" bgcolor="white" style="border-top:1px solid #e8e8e8;background:#ffffff">
+              <tbody>
+                <tr>
+                  <td width="80" height="10px" bgcolor="#5690a5" style="font-size:6px">&nbsp;</td>
+                  <td width="90" height="10px" bgcolor="#2e849d" style="font-size:6px">&nbsp;</td>
+                  <td width="100" height="10px" bgcolor="#286686" style="font-size:6px">&nbsp;</td>
+                  <td width="95" height="10px" bgcolor="#0b5a82" style="font-size:6px">&nbsp;</td>
+                  <td width="305" height="10px" bgcolor="#23436e" style="font-size:6px">&nbsp;</td>
+                </tr>
+
+              </tbody>
+            </table>
+            <table width="670" cellspacing="0" cellpadding="0" style="border:1px solid #ccc;border-top:none">
+              <tbody>
+                <tr>
+                  <td width="668" valign="top" height="87" bgcolor="white">
+                    <img src="http://www.mrta.co.th/eng/images/index_02.jpg" width="668" height="85" border="0" alt="mrta">
+
+
+                  </td>
+
+                </tr>
+                <tr>
+                  <td width="668" valign="top" bgcolor="white" style="padding:10px 30px 15px 42px">
+                    <b style="color:#4f5f6f;font-size:20px;font-family:Tahoma,sans-serif">
+                      Hello, Mrta Admin
+                    </b>
+
+
+                    <span style="color:#445566;font-size:13px">
+                      khun <%= @name %> has been create this content , title:  <%= @title %> <br/>
+                      To Approve, just follow this link: http://www.mrta-blueline.com/<%= @url %>.
+
+                    </span>
+
+
+
+                  </td>
+                </tr>
+                <tr>
+                  <td width="668" valign="top" bgcolor="white" style="padding:3px 30px 20px 42px">
+                    <span style="color:#4f5f6f;font-size:13px">
+
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="668" valign="top" bgcolor="white" style="padding:0px 30px 0px 42px">
+                    <table width="100%" cellspacing="0" cellpadding="0">
+                      <tbody>
+                        <tr>
+                          <td>
+                            <span style="color:#445566;font-size:13px">
+                              กรุณา <a href="http://mrta-blueline.com/users/sign_in" target="_blank">Login</a> สู่ระบบก่อนทีทำการ อนุมัต หารมีปัญหาการอนุมัต กรุณาติดต่อ sawangpongm@gmail.com
+                            </span>
+                          </td>
+
+                        </tr>
+                        <tr>
+                          <td style="padding:15px 0px 2px 2px;font-size:10px">
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom:20px"><br><i style="color:#8a8a8a;font-size:13px">Mrta Blue line Team </i></td>
+                        </tr>
+
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="668" valign="top" height="" bgcolor="white" style="padding:0px 30px 0px 42px">
+                    <table width="100%" cellspacing="0" cellpadding="0" style="border-top:1px dotted #e1e2e3">
+                      <tbody>
+                        <tr>
+
+                          <td style="padding:15px 0px">
+                            <span style="color:#8a8a8a;font-size:11px">
+
+                            </span>
+                          </td>
+
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table width="670" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+
+                  <td style="padding:35px 0 35px 25px">
+                    <a target="_blank" style="border:0px aqua none" href="http://4sync.com">
+                      <img src="http://www.geocities.ws/railsthai/logo_mrta.jpg" width="90" height="50" border="0" alt="4sync">
+                    </a>
+                  </td>
+                  <td style="padding:35px 25px 35px 20px">
+                    <a target="_blank" style="color:#7a7979;font-size:11px;line-height:16px;text-decoration:none" href="http://4sync.com">
+                      Mass Rapid Transit Authority of Thailand 175 Rama IX Rd., Huay Khwang, Bangkok 10320
+
+                    </a>
+
+                  </td>
+                </tr>
+            </tbody></table>
+
+            <table width="670" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td align="left" style="padding-top:10px;border-top:1px #dfdfdf solid">
+                    <span style="color:#7a7a7a;font-size:11px;font-family:Tahoma,sans-serif">&copy;2012 MRTA . ALL RIGHTS RESERVED.</span>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+      </table>  </div></div>
+</body>
 </html>

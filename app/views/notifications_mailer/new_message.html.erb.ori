@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+<% @title =  @obj.title %>
+<% @name  =  User.find(@obj.user_id).name %>
+<% resource = @obj.class.name.downcase  %>
+<%=
+ case resource
+   when "activity" then   @url = backoffice_activity_path(ll@obj)
+   when "report"   then   @url = backoffice_report_path(@obj)
+   when "announce" then   @url = backoffice_announce_path(@obj)
+   else  "error"
+   end
+%>
+    <h1>Request to Approve title:  <%= @title %></h1>
+    <p>
+      khun <%= @name %> has been create this content<br/>
+    </p>
+    <p>
+      To Approve, just follow this link: http://www.mrta-blueline.com/<%= @url %>.
+    </p>
+    <p>Thanks for joining and have a great day!</p>
+  </body>
+</html>
