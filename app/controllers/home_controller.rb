@@ -10,7 +10,7 @@ class HomeController < ApplicationController
     @sounds = Effect.where(approved: 1).effect_scope("Sound").first.announces rescue nil
     @vibrations = Effect.where(approved: 1).scope("Vibration").first.announces rescue nil
     @dusts = Effect.where(approved: 1).scope("Dust").first.announces rescue nil
-    @drains = Effect.where(approved: 1)scope("Drain").first.announces rescue nil
+    @drains = Effect.where(approved: 1).scope("Drain").first.announces rescue nil
     @effects = Effect.all
     @reports = Report.all
     respond_to do |format|

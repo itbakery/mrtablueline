@@ -97,8 +97,8 @@
 <h3 id="myModalLabel"></h3>
 </div>
 <div class="modal-body">
-  <!-- <%= image_tag  url_for("undertest.png") %> -->
-  <%= image_tag  url_for("king.png") %>
+  <!-- <%= image_tag  url_for("undertest.png") %> 
+  <%= image_tag  url_for("king.png") %>  -->
 </div>
 <div class="modal-footer">
 <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -131,7 +131,7 @@
       $("#myModal").modal({
         "backdrop" : "static",
         "keyboard" : true,
-        "show" : true // this parameter ensures the modal is shown immediately
+        "show" : false // this parameter ensures the modal is shown immediately
       });
 
           if ($.browser.msie && $.browser.version.substr(0,1)<7)
