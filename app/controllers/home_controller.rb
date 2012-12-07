@@ -3,14 +3,14 @@ class HomeController < ApplicationController
   def index
     @pageroots = Page.roots.asc(:order)
     @activities = Activity.all.desc(:created_at).to_a
-    @pageactivities = Activity.desc(:created_at).page(params[:page]).per(5)
-    @announces = Announce.search(params[:search])
-    @announces10 = Announce.desc(:created_at).limit(25).to_a
-    @traffics = Effect.effect_scope("Traffic").first.announces rescue nil
-    @sounds = Effect.effect_scope("Sound").first.announces rescue nil
-    @vibrations = Effect.scope("Vibration").first.announces rescue nil
-    @dusts = Effect.scope("Dust").first.announces rescue nil
-    @drains = Effect.scope("Drain").first.announces rescue nil
+    @pageactivities = Activity.where(approved: 1).desc(:created_at).page(params[:page]).per(5)
+    @announces = Announce.where(approved: 1).search(params[:search])
+    @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a
+    @traffics = Effect.where(approved: 1).effect_scope("Traffic").first.announces rescue nil
+    @sounds = Effect.where(approved: 1).effect_scope("Sound").first.announces rescue nil
+    @vibrations = Effect.where(approved: 1).scope("Vibration").first.announces rescue nil
+    @dusts = Effect.where(approved: 1).scope("Dust").first.announces rescue nil
+    @drains = Effect.where(approved: 1)scope("Drain").first.announces rescue nil
     @effects = Effect.all
     @reports = Report.all
     respond_to do |format|
