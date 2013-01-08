@@ -1,0 +1,22 @@
+rails generate controller backend/application
+      create  app/controllers/backend/application_controller.rb
+      invoke  erb
+      create    app/views/backend/application
+      invoke  helper
+      create    app/helpers/backend/application_helper.rb
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/backend/application.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/backend/application.css.scss
+
+
+rails generate controller backend/dashboard index
+rails generate controller backend/users
+
+
+class Backend::ApplicationController < ActionController::Base
+  protect_from_forgery
+end
+
+
