@@ -13,7 +13,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'libv8', '3.11.8.11', :platform => :ruby
   gem 'therubyracer', :platform => :ruby
   gem "twitter-bootstrap-rails"
   #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
