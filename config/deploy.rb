@@ -12,7 +12,7 @@ set :scm_verbose,true
 set :branch, "master"
 
 #==== intetration with capistrano
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 #set :rvm_type, :system
 set :rvm_ruby_string, "1.9.3"
