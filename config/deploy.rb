@@ -29,7 +29,8 @@ role :db, "203.146.127.169", :primary => true
 set :sidekiq_role, :sidekiq
 role :sidekiq, "203.146.127.169"
 
-after "deploy:update_code", "deploy:bundle_install"
+#after "deploy:update_code", "deploy:bundle_install"
+after  "deploy:bundle_install"
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
 
