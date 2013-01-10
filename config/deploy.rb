@@ -29,22 +29,33 @@ role :db, "203.146.127.169", :primary => true
 set :sidekiq_role, :sidekiq
 role :sidekiq, "203.146.127.169"
 
-after "deploy:update_code", "deploy:bundle_install"
+#after "deploy:update_code", "deploy:bundle_install"
+after "deploy:update_code", "deploy:rvm:setup"
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
-# desc "Skipping asset compilation with Capistrano"
-#  namespace :assets do
-#    task :precompile, :roles => :web, :except => { :no_release => true } do
-#      from = source.next_revision(current_revision)
-#      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-#        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-#      else
-#        logger.info "Skipping asset pre-compilation because there were no asset changes"
-#      end
-#    end
-#  end
+  # desc "Skipping asset compilation with Capistrano"
+  #  namespace :assets do
+  #    task :precompile, :roles => :web, :except => { :no_release => true } do
+  #      from = source.next_revision(current_revision)
+  #      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+  #        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+  #      else
+  #        logger.info "Skipping asset pre-compilation because there were no asset changes"
+  #      end
+  #    end
+  #  end
+  namespace :rvm do
+    # Set up .rvmrc
+    # Note, not using method described in:
+    #   https://rvm.beginrescueend.com/integration/capistrano/
+    # We want to use RVM only on the app server, so better to set up and bless an .rvmrc file
+    task :setup, :roles => :app do
+      run "cd #{latest_release}; rvm use 1.9.2@#{application} --rvmrc --create && rvm rvmrc trust"
+    end
+  end
+
   desc "install the necessary prerequisites"
   task :bundle_install, :roles => :app do
     #run "cd #{release_path} && bundle install"
@@ -65,8 +76,8 @@ namespace :deploy do
   end
   desc "trust rvm"
   namespace :rvm do
-  task :trust_rvmrc do
-    run "rvm rvmrc trust #{release_path}"
-  end
+    task :trust_rvmrc do
+      run "rvm rvmrc trust #{release_path}"
+    end
   end
 end
