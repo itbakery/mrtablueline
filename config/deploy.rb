@@ -12,12 +12,13 @@ set :scm_verbose,true
 set :branch, "master"
 
 #==== intetration with capistrano
+$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
-set :rvm_type, :user
 #set :rvm_type, :system
-#set :rvm_ruby_string, "1.9.3"
-set :rvm_bin_path, "/home/deploy/.rvm/bin"
-set :rvm_ruby_string, "ruby-1.9.3-p194@mrtablueline"
+set :rvm_ruby_string, "1.9.3"
+set :rvm_type, :user
+#set :rvm_bin_path, "/home/deploy/.rvm/bin"
+#set :rvm_ruby_string, "ruby-1.9.3-p194@mrtablueline"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 #set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
 
