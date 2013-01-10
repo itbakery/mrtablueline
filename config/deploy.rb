@@ -52,7 +52,7 @@ namespace :deploy do
     #   https://rvm.beginrescueend.com/integration/capistrano/
     # We want to use RVM only on the app server, so better to set up and bless an .rvmrc file
     task :setup, :roles => :app do
-      run "cd #{latest_release}; rvm use 1.9.2@#{application} --rvmrc --create && rvm rvmrc trust"
+      run "cd #{latest_release}; rvm use 1.9.3@#{application} --rvmrc --create && rvm rvmrc trust"
     end
   end
 
