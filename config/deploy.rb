@@ -15,7 +15,8 @@ set :branch, "master"
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
 #set :rvm_type, :system
-set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+#set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
+set :rvm_ruby_string, 'ruby-1.9.2-p194'
 set :rvm_type, :user
 #before 'deploy', 'rvm:create_gemset'
 #set :rvm_bin_path, "/home/deploy/.rvm/bin"
