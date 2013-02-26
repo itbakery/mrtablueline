@@ -2,7 +2,7 @@
   <ul  class="nav nav-tabs nav-stacked">
       <% @pageactivities.each do |activity|  %>
         <li>
-          <div class="content">
+          <div class="content width470">
             <% doc = Nokogiri::HTML(activity.content) %>
             <% img_srcs = doc.css('img').map{ |i| i['src'] } %>
             <% doc.xpath("//img").each {|x| x.remove} %>
