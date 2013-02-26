@@ -76,6 +76,7 @@ namespace :deploy do
     run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install"
     run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
     run "ln -nfs #{shared_path}/transport #{release_path}/public/transport"
+    run "ln -nfs #{shared_path}/tmp #{release_path}/tmp"
   end
 
   desc "Restarting mod_rails with restart.txt"
