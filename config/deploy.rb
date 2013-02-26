@@ -20,8 +20,8 @@ require 'rvm/capistrano'
 set :rvm_type, :user
 set :rvm_bin_path, "/home/deploy/.rvm/bin"
 #before 'deploy', 'rvm:create_gemset'
-#set :rvm_ruby_string, "ruby-1.9.3-p194@mrtablueline"
-set :rvm_ruby_string, "ruby-1.9.3-p392"
+set :rvm_ruby_string, "ruby-1.9.3-p392@mrtablueline"
+#set :rvm_ruby_string, "ruby-1.9.3-p392"
 #set :rvm_ruby_string, ENV['GEM_HOME'].gsub(/.*\//,"")
 #set :bundle_cmd , "/home/deploy/.rvm/gems/ruby-1.9.3-p194@mrtablueline/bin/bundle"
 
