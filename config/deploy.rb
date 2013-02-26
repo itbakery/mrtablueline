@@ -34,6 +34,7 @@ role :web, "203.146.127.169"
 role :app, "203.146.127.169"
 role :db, "203.146.127.169", :primary => true
 
+set :bundle_cmd, "bundle"
 set :sidekiq_role, :sidekiq
 role :sidekiq, "203.146.127.169"
 set :sidekiq_cmd, "#{bundle_cmd} exec sidekiq"
