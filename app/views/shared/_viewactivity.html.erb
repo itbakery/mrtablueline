@@ -10,7 +10,9 @@
             <div class="image">
               <img src=<%=img_srcs.first %> width="120" height="60" />
             </div>
-            <h5 class="title"> <%= link_to  activity.title, activity_path(activity)%> </a></h5>
+            <div style="float: right;">
+                <h5 class="title"> <%= link_to  activity.title, activity_path(activity)%> </a></h5>
+            </div>
           <div class="description">
             <!--
             <%=raw doc.css("p").first %>
