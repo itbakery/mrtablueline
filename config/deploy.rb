@@ -38,11 +38,16 @@ set :sidekiq_role, :sidekiq
 role :sidekiq, "203.146.127.169"
 
 #after "deploy:update_code", "deploy:bundle_install"
-after "deploy:update_code", "deploy:rvm:setup"
+#after "deploy:update_code", "deploy:rvm:setup"
 after :deploy, "deploy:rvm:trust_rvmrc"
+after :deploy, "deploy:bundle_install"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
 
 namespace :deploy do
+  desc "install the necessary prerequisite"
+  task :bundle_install, :roles => :app do
+    run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install"
+  end
   # desc "Skipping asset compilation with Capistrano"
   #  namespace :assets do
   #    task :precompile, :roles => :web, :except => { :no_release => true } do
