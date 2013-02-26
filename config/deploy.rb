@@ -1,5 +1,4 @@
 require "bundler/capistrano"
-require 'sidekiq/capistrano'
 default_run_options[:pty] = true
 set :application, "mrtablueline"
 set :keep_releases, 5
@@ -53,6 +52,8 @@ set :sidekiq_processes, 1
 after :deploy, "deploy:rvm:trust_rvmrc"
 after :deploy, "deploy:bundle_install"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
+
+require 'sidekiq/capistrano'
 
 namespace :deploy do
   desc "install the necessary prerequisite"
