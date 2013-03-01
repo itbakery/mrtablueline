@@ -5,31 +5,31 @@ class ProgressesController < ApplicationController
   def index
     @stations = Station.all
     @station = Station.first
-    @reports = @station.reports.desc(:created_at)
+    @reports = @station.reports.where(approved: 1).desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
-    @announces10 = Announce.desc(:created_at).limit(25).to_a
+    @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a
   end
   def report_latest
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all.desc(:created_at)
+    @reports = Report.where(approved: 1).all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
-    @announces10 = Announce.desc(:created_at).limit(25).to_a
+    @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a
   end
   def report_monthly
     @stations = Station.all
     @station = Station.first
-    @reports = Report.all.desc(:created_at)
+    @reports = Report.where(approved: 1).all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
-    @announces10 = Announce.desc(:created_at).limit(25).to_a
+    @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a
   end
   def activity
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:created_at)
+    @activities = Activity.where(approved: 1).all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
     @announces10 = Announce.desc(:created_at).limit(25).to_a
@@ -37,7 +37,7 @@ class ProgressesController < ApplicationController
   def activity_latest
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:created_at)
+    @activities = Activity.where(approved: 1).all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
     @announces10 = Announce.desc(:created_at).limit(25).to_a
@@ -45,7 +45,7 @@ class ProgressesController < ApplicationController
   def activity_monthly
     @stations = Station.all
     @station = Station.first
-    @activities = Activity.all.desc(:created_at)
+    @activities = Activity.where(approved: 1).all.desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
     @announces10 = Announce.desc(:created_at).limit(25).to_a
