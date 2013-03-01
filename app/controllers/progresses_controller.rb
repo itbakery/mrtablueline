@@ -58,7 +58,7 @@ class ProgressesController < ApplicationController
   def show
     @stations = Station.all
     @station = Station.find(params[:id])
-    @reports = @station.reports.desc(:created_at)
+    @reports = @station.reports.where(approved: 1).desc(:created_at)
     @effects = Effect.all
     @sections = Section.all
   end
