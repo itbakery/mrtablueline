@@ -67,5 +67,7 @@ gem 'slim'
 # Deploy with Capistrano
 gem 'capistrano'
 gem 'kaminari'
+gem "stringex", "~> 1.5.1"
+gem 'mongoid_slug'
 # To use debugger
 # gem 'debugger'

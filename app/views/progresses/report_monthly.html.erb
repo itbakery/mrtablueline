@@ -8,7 +8,7 @@
           <% section.stations.asc(:order).each_with_index   do |station,index|%>
            <li style="line-height: 2em;">
             <div style="float: left; width: 90%">
-              <a href="/progresses/station/<%= station.id %>" class="menuheader"><%= index +1  %>).<%= station.name %></a>
+              <a href="/progresses/station/<%= station.name %>" class="menuheader"><%= index +1  %>).<%= station.name %></a>
             </div>
                <div class="pull-right">
                 <button class="btn btn-small btn-warning" type="button"> <%= station.reports.count%>  </button>

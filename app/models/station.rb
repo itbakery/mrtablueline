@@ -1,6 +1,7 @@
 class Station
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Mongoid::Slug
   has_many :reports
   belongs_to :section
   has_one :geopoint, as: :geoable, dependent: :destroy
@@ -9,4 +10,5 @@ class Station
   field :order, type: Integer
   field :content, type: String
   mount_uploader :mapicon, MapiconUploader
+  slug :name
 end
