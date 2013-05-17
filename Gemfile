@@ -66,6 +66,6 @@ gem 'slim'
 
 # Deploy with Capistrano
 gem 'capistrano'
-
+gem 'kaminari'
 # To use debugger
 # gem 'debugger'

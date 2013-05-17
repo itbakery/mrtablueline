@@ -21,7 +21,7 @@ class ProgressesController < ApplicationController
   def report_monthly
     @stations = Station.all
     @station = Station.first
-    @reports = Report.where(approved: 1).all.desc(:created_at)
+    @reports = Report.where(approved: 1).all.desc(:created_at).page(params[:page]).per(10)
     @effects = Effect.all
     @sections = Section.all
     @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a

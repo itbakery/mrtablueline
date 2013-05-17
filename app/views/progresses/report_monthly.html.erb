@@ -34,6 +34,7 @@
       <th style="width: 15%">อ่าน(ครั้ง)</th>
     </tr>
     <% if @reports %>
+      <%= paginate @reports %>
       <% @reports_monthly = @reports.group_by {|r| r.created_at.month} %>
       <% @reports_monthly.each do |month,report| %>
         <!--  <h4> ความคืบหน้าประจำเดือน <%= I18n.t("date.month_names")[month]   %></h4> -->
