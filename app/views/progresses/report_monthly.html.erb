@@ -36,7 +36,7 @@
     <% if @reports %>
       <% @reports_monthly = @reports.group_by {|r| r.created_at.month} %>
       <% @reports_monthly.each do |month,report| %>
-            <h4> ความคืบหน้าประจำเดือน <%= I18n.t("date.month_names")[month]   %></h4>
+        <!--  <h4> ความคืบหน้าประจำเดือน <%= I18n.t("date.month_names")[month]   %></h4> -->
                 <% report.each do |r| %>
                   <tr>
                     <td><%= r.created_at.strftime("%d/%m/%Y") %></td>
