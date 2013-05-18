@@ -3,9 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 
-jQuery -> $('#board').dataTable({
-  "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span8'i><'span8'p>>",
-  "sPaginationType": "bootstrap",
-  "bInfo": false,
-  "bRetrieve": true,
-})
+#jQuery -> $('#board').dataTable({
+#  "sDom": "<'row'<'span4'l><'span4'f>r>t<'row'<'span8'i><'span8'p>>",
+#  "sPaginationType": "bootstrap",
+#  "bInfo": false,
+#  "bRetrieve": true,
+#})

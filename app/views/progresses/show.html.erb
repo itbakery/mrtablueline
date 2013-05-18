@@ -27,6 +27,7 @@
 <div class="span8" style="margin-top: 5px;">
   <p id="notice"><%= notice %>
   <h4> ความคืบหน้า <%= @station.name  %> </h4>
+  <%= paginate @reports %>
   <table id="board" class="table table-bordered">
     <thead>
     <tr>
