@@ -1,0 +1,33 @@
+<%- model_class = Track -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:_type) %>:</strong></dt>
+  <dd><%= @track._type %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:_id) %>:</strong></dt>
+  <dd><%= @track._id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_id) %>:</strong></dt>
+  <dd><%= @track.project_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:atmonth) %>:</strong></dt>
+  <dd><%= @track.atmonth %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:projection) %>:</strong></dt>
+  <dd><%= @track.projection %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:actual) %>:</strong></dt>
+  <dd><%= @track.actual %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:reportnote) %>:</strong></dt>
+  <dd><%= @track.reportnote %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              tracks_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_track_path(@track), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              track_path(@track),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

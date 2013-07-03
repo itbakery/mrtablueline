@@ -2,6 +2,15 @@ require 'sidekiq/web'
 Mrtablueline::Application.routes.draw do
 
 
+    resources :reports
+  namespace :mrta do
+    resources :tracks
+    resources :projects do
+      get 'gentracks', on: :member
+      get 'showtracks', on: :member
+    end
+  end
+
   resources :sections
 
   #get "progresses/index"
@@ -44,6 +53,7 @@ Mrtablueline::Application.routes.draw do
   get "home/underconstruction"
   get "welcome/index"
   root to: "home#index"
+  get '/graph', to: "home#graph"
   mount Sidekiq::Web, at: 'sidekiq'
 
 

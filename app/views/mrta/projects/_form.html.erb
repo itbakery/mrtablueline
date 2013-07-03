@@ -1,0 +1,45 @@
+<%= form_for [:mrta,@project], :html => { :class => 'form-horizontal' } do |f| %>
+  <!--
+  <div class="control-group">
+    <%= f.label :_type, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :_type, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :_id, :class => 'text_field' %>
+    </div>
+  </div> -->
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :startat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :startat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :endat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :endat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                mrta_projects_path, :class => 'btn' %>
+  </div>
+<% end %>

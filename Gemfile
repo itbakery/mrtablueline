@@ -69,5 +69,6 @@ gem 'capistrano'
 gem 'kaminari'
 gem "stringex", "~> 1.5.1"
 gem 'mongoid_slug'
+gem 'best_in_place'
 # To use debugger
 # gem 'debugger'

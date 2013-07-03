@@ -42,6 +42,14 @@ class HomeController < ApplicationController
       format.html  {render :layout => "mapdisplay"}
     end
   end
+
+  def graph
+    @projects = Project.all
+    respond_to do |format|
+      format.html  {render :layout => "graph"}
+    end
+  end
+
   def underconstruction
     render :layout => "underconstruction"
 

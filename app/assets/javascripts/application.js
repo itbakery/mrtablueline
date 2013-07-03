@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery.fancybox.pack
 //= require jquery_ujs
+//= require raphael
+//= require morris
 //= require jquery.ui.datepicker
 //= require twitter/bootstrap
 //= require ckeditor/init
@@ -20,6 +22,8 @@
 //= require bootstrap
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .
 
 $(document).ready(function() {
