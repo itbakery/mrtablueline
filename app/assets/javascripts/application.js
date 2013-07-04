@@ -26,6 +26,7 @@
 //= require raphael
 //= require morris
 //= require_tree .
+$.noConflict();
 jQuery(document).ready(function() {
 
    if ($('textarea').length > 0) {
