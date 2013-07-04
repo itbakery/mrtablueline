@@ -23,11 +23,8 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.purr
 //= require best_in_place
-//= require raphael
-//= require morris
 //= require_tree .
-$.noConflict();
-jQuery(document).ready(function() {
+$(document).ready(function() {
 
    if ($('textarea').length > 0) {
      var data = $('textarea');
