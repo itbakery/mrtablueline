@@ -106,6 +106,16 @@ namespace :deploy do
     run "ln -nfs #{shared_path}/transport #{release_path}/public/transport"
     run "ln -nfs #{shared_path}/tmp #{release_path}/tmp"
   end
+  desc "install the necessary prerequisites"
+  task :link , :roles => :app do
+    #run "cd #{release_path} && bundle install"
+    #run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install --deployment --without test"
+    #run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install"
+    run "ln -nfs #{shared_path}/uploads #{release_path}/public/uploads"
+    run "ln -nfs #{shared_path}/transport #{release_path}/public/transport"
+    run "ln -nfs #{shared_path}/tmp #{release_path}/tmp"
+  end
+
 
   desc "Restarting mod_rails with restart.txt"
   task :restart, :roles => :app, :except => { :no_release => true } do
