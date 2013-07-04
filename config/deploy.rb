@@ -49,8 +49,8 @@ set :sidekiq_processes, 1
 
 #after "deploy:update_code", "deploy:bundle_install"
 #after "deploy:update_code", "deploy:rvm:setup"
-after :deploy, "deploy:rvm:trust_rvmrc"
-after :deploy, "deploy:bundle_install"
+#after :deploy, "deploy:rvm:trust_rvmrc"
+#after :deploy, "deploy:bundle_install"
 after :deploy, "deploy:cleanup" # keep only the last 5 releases
 
 require 'sidekiq/capistrano'
@@ -60,6 +60,22 @@ namespace :deploy do
   task :bundle_install, :roles => :app do
     run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle install"
   end
+
+  desc "reload the database with seed data"
+  task :seed do
+    run "cd #{current_path} && bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+
+  desc "reload the database with seed data"
+  task :assets_precompile do
+    run "cd #{current_path} && bundle exec rake  assets:precompile              ...RAILS_ENV=#{rails_env}"
+  end
+
+  desc "Update the necessary prerequisite"
+  task :bundle_update, :roles => :app do
+    run "cd #{current_path} && LC_ALL='en_US.UTF-8' bundle update"
+  end
+
   # desc "Skipping asset compilation with Capistrano"
   #  namespace :assets do
   #    task :precompile, :roles => :web, :except => { :no_release => true } do
