@@ -2,8 +2,8 @@ class HomeController < ApplicationController
   layout "home"
   def index
     @pageroots = Page.roots.asc(:order)
-    #@activities = Activity.where(approved: 1).desc(:created_at).limit(20).to_a
-    @activities = Activity.desc(:created_at).limit(20).to_a
+    @activities = Activity.where(approved: 1).desc(:created_at).limit(20).to_a
+    #@activities = Activity.desc(:created_at).limit(20).to_a
     @pageactivities = Activity.where(approved: 1).desc(:created_at).page(params[:page]).per(5)
     @announces = Announce.where(approved: 1).search(params[:search])
     @announces10 = Announce.where(approved: 1).desc(:created_at).limit(25).to_a
