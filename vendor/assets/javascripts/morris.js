@@ -1,4 +1,4 @@
-jQuery.noConflict()
+jQuery.noConflict();
 (function() {
   var $, Morris, minutesSpecHelper, secondsSpecHelper,
     __slice = [].slice,
