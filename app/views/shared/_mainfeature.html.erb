@@ -1,6 +1,7 @@
 <div class="flex-container">
   <div id="mainflexslider" class="flexslider">
     <ul class="slides">
+      <%= @activities %>
       <% @activities.in_groups_of(1,false) do |row_activity|  %>
         <li>
           <% row_activity.each do |activity| %>
