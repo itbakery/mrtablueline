@@ -9,12 +9,11 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
+// raphael  morris
 //
 //= require jquery
 //= require jquery.fancybox.pack
 //= require jquery_ujs
-//= require raphael
-//= require morris
 //= require jquery.ui.datepicker
 //= require twitter/bootstrap
 //= require ckeditor/init
