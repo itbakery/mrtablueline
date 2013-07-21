@@ -24,8 +24,8 @@
 //= require jquery.purr
 //= require best_in_place
 //= require flexslider 
-//= require raphael
-//= require morris
+// require raphael
+// require morris
 //= require_tree .
 $(document).ready(function() {
 
