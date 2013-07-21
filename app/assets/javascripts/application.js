@@ -26,6 +26,28 @@
 //= require raphael
 //= require morris
 //= require_tree .
+
+jQuery.noConflict();
+
+$(window).load(function() {
+    //Flexslider 2
+  jQuery('#activityflexslider').flexslider({
+    animation: "slide",
+    animationSpeed: 2000,
+    controlsContainer: ".flex-container",
+  });
+    //Flexslider 2
+  jQuery('#mainflexslider').flexslider({
+    animation: "slide",
+    controlsContainer: ".flex-container",
+    slideshow: false,
+    start: function(slider) {
+           setTimeout(slider.resume, 3000);
+        }
+  });
+});
+
+
 $(document).ready(function() {
 
    if ($('textarea').length > 0) {
@@ -38,21 +60,7 @@ $(document).ready(function() {
     $("i").mouseover(function(){
       $("i").css("background-color","white");
     });
-    //Flexslider 2
-    $('#activityflexslider').flexslider({
-        animation: "slide",
-        animationSpeed: 2000,
-        controlsContainer: ".flex-container",
-    });
-    //Flexslider 2
-    $('#mainflexslider').flexslider({
-        animation: "slide",
-        controlsContainer: ".flex-container",
-        slideshow: false,
-        start: function(slider) {
-           setTimeout(slider.resume, 3000);
-        }
-    });
+
 
     //tab
     $('#effectTab a:first').tab('show');
