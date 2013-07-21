@@ -1,0 +1,2 @@
+module Mrta::GraphsHelper
+end

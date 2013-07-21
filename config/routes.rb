@@ -2,6 +2,8 @@ require 'sidekiq/web'
 Mrtablueline::Application.routes.draw do
 
 
+  get "graphs/index"
+
     resources :reports
   namespace :mrta do
     resources :tracks
@@ -9,6 +11,7 @@ Mrtablueline::Application.routes.draw do
       get 'gentracks', on: :member
       get 'showtracks', on: :member
     end
+    resources :graphs
   end
 
   resources :sections
