@@ -21,7 +21,6 @@ group :assets do
   #gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
   gem 'jquery-datatables-rails'
 end
-gem 'flexslider', :git => 'https://github.com/constantm/Flexslider-2-Rails-Gem.git'
 gem "twitter-bootstrap-rails"
 gem 'less-rails'
 gem 'jquery-datatables-rails'

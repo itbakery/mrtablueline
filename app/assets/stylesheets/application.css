@@ -7,7 +7,7 @@
  *
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
- * require 'flexslider.css'
+ *
  * require_tree .
  *
  *= require_self
@@ -15,7 +15,7 @@
  *= require 'bootstrap_and_overrides'
  *= require 'gmaps4rails'
  *= require 'fonts/thsarabunnew.css'
- *= require flexslider.css
+ *= require 'flexslider.css'
  *= require 'jquery.ui.datepicker'
  *= require dataTables/jquery.dataTables
  *= require dataTables/jquery.dataTables.bootstrap
