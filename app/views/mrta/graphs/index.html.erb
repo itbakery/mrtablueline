@@ -1,1 +1,3 @@
-<div id="annual"></div>
+<p> Please Select project <%= collection_select :track, :project_id, Project.all , :id, :name, :promt=>true %> </p>
+<%= content_tag :div, "", id: "tracks_chart", data: {tracks: tracks_chart_data} %>
+

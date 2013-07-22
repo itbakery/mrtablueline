@@ -16,6 +16,7 @@
  *= require 'gmaps4rails'
  *= require 'fonts/thsarabunnew.css'
  *= require 'flexslider.css'
+ *= require 'morris.css'
  *= require 'jquery.ui.datepicker'
  *= require dataTables/jquery.dataTables
  *= require dataTables/jquery.dataTables.bootstrap
