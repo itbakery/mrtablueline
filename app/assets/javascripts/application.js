@@ -45,10 +45,16 @@ $(window).load(function() {
            setTimeout(slider.resume, 3000);
         }
   });
+
+  jQuery('#project_startat').datepicker();
+  jQuery('#project_endat').datepicker();
+  jQuery('.best_in_place').best_in_place()
+
 });
 
 
 $(document).ready(function() {
+
 
    if ($('textarea').length > 0) {
      var data = $('textarea');
