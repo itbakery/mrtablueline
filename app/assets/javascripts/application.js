@@ -46,8 +46,8 @@ $(window).load(function() {
         }
   });
 
-  jQuery('#project_startat').datepicker();
-  jQuery('#project_endat').datepicker();
+  jQuery('#project_startat').datepicker({ dateFormat: 'yy-mm-dd' } );
+  jQuery('#project_endat').datepicker({ dateFormat: 'yy-mm-dd' });
   jQuery('.best_in_place').best_in_place()
 
 });
