@@ -2,11 +2,4 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #
-#jQuery ->
-#  Morris.Line
-#    element: 'projects_chart'
-#    data: $('#projects_chart').data('tracks')
-#    xkey: 'atmonth'
-#    ykeys: ['projection', 'actual']
-#    labels: ['Projection', 'Actual']
-#    preUnits: '$'
+
