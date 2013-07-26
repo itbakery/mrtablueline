@@ -25,7 +25,7 @@
 //= require best_in_place
 //= require raphael
 //= require morris
-//= require_tree .
+// require_tree .
 
 jQuery.noConflict();
 
