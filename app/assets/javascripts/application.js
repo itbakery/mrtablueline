@@ -9,8 +9,6 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
-// raphael  morris
-//
 //= require jquery
 //= require jquery.fancybox.pack
 //= require jquery_ujs
@@ -23,9 +21,9 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require jquery.purr
 //= require best_in_place
-//= require raphael
-//= require morris
-// require_tree .
+// require raphael
+// require morris
+//= require_tree .
 
 jQuery.noConflict();
 
