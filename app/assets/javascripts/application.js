@@ -50,6 +50,15 @@ $(window).load(function() {
   jQuery('#project_endat').datepicker({ dateFormat: 'yy-mm-dd' });
   jQuery('.best_in_place').best_in_place()
 
+
+   if (jQuery('textarea').length > 0) {
+     var data = jQuery('textarea');
+     jQuery.each(data, function(i) {
+       CKEDITOR.replace(data[i].id);
+     });
+   }
+
+
 });
 
 
