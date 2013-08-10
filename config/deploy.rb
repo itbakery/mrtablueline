@@ -55,6 +55,15 @@ after :deploy, "deploy:cleanup" # keep only the last 5 releases
 
 require 'sidekiq/capistrano'
 
+namespace :cache do
+  desc 'Clear memcache'
+  task :clear , :roles => :app  do
+    Rails.cache.clear
+    CACHE.flush
+  end
+end
+
+
 namespace :deploy do
   desc "install the necessary prerequisite"
   task :bundle_install, :roles => :app do
