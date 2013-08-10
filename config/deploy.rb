@@ -10,7 +10,7 @@ set :run_method, :run
 set :deploy_to, "/home/deploy/#{application}"
 set :scm_verbose,true
 set :branch, "master"
-
+set :deploy_via, :remote_cache
 #==== intetration with capistrano
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 #set :rvm_type, :system
