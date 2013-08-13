@@ -21,11 +21,15 @@ class Geopoint
   end
 
   def getchildobj
-      self.getobject.where(id: self.getid).first ||= "5052d1e4d0fc7a4a16000001"
+      self.getobject.where(id: self.getid).first
   end
   def geteffect
-      @ideffect = self.getchildobj.effect_ids.first ||= "5052d1e4d0fc7a4a16000001"
-      Effect.where(id: @ideffect).first.name
+      @ideffect = self.getchildobj.effect_ids.first
+      unless @ideffect.nil?
+        Effect.where(id: @ideffect).first.name
+      else
+        "Traffic"
+      end
   end
   def gmaps4rails_address
       "#{self.latitude}, #{self.longitude}"
