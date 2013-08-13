@@ -25,7 +25,7 @@ class Geopoint
   end
   def geteffect
       @ideffect = self.getchildobj.effect_ids.first
-      Effect.where(id: @ideffect).first.name
+      Effect.where(id: @ideffect).first.name ||= "Traffic"
   end
   def gmaps4rails_address
       "#{self.latitude}, #{self.longitude}"

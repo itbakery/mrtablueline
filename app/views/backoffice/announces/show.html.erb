@@ -59,7 +59,8 @@
     <%= @announce.geopoint.latitude %>
     <%= @announce.geopoint.longitude %>
     <%= @announce.geopoint.gmaps %>
-
+  <% @json= @announce.geopoint.to_gmaps4rails %>
+  <%= gmaps("markers" => {"data" => @json}, "map_options" => {"processing" => "json", "auto_zoom" =>  ...false, "zoom" => 15, "auto_adjust" => true }) %>
 
 <% if can? :update, @announce %>
   <%= link_to 'Edit', edit_backoffice_announce_path(@announce) %> |
