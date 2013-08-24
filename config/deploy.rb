@@ -1,5 +1,5 @@
-require "bundler/capistrano"
 require 'rvm/capistrano'
+require "bundler/capistrano"
 require 'sidekiq/capistrano'
 
 default_run_options[:pty] = true
