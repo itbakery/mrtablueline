@@ -15,7 +15,7 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 
 set :rvm_type, :system
-set :rvm_ruby_string, "/usr/local/rvm/bin"
+set :rvm_ruby_string, "/usr/local/rvm/bin/"
 ssh_options[:forward_agent] = true
 
 role :web, "203.146.127.169"                          # Your HTTP server, Apache/etc
