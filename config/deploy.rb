@@ -14,7 +14,7 @@ set :deploy_via, :remote_cache
 #==== intetration with capistrano
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 set :rvm_type, :user
-set :rvm_bin_path, "/home/deploy/.rvm/bin"
+#set :rvm_bin_path, "/home/deploy/.rvm/bin"
 #before 'deploy', 'rvm:create_gemset'
 set :rvm_ruby_string, "ruby-1.9.3-p448@mrtablueline"
 
