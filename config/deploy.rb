@@ -70,7 +70,7 @@ namespace :deploy do
 
   desc "reload the database with seed data"
   task :assets_precompile do
-    run "cd #{current_path} && bundle exec rake  assets:precompile              ...RAILS_ENV=#{rails_env}"
+    run "cd #{current_path} && bundle exec rake  assets:precompile  RAILS_ENV=#{rails_env}"
   end
 
   desc "Update the necessary prerequisite"
