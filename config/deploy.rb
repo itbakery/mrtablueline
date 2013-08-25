@@ -1,4 +1,4 @@
-require 'rvm/capistrano'
+#require 'rvm/capistrano'
 require "bundler/capistrano"
 require 'sidekiq/capistrano'
 load 'deploy/assets'
