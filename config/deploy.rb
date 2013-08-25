@@ -1,4 +1,4 @@
-#require 'rvm/capistrano'
+require 'rvm/capistrano'
 require "bundler/capistrano"
 require 'sidekiq/capistrano'
 load 'deploy/assets'
@@ -18,6 +18,7 @@ set :rvm_type, :user
 set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
 ssh_options[:forward_agent] = true
 
+
 role :web, "203.146.127.169"                          # Your HTTP server, Apache/etc
 role :app, "203.146.127.169"                          # This may be the same as your `Web` server
 role :db,  "203.146.127.169", :primary => true # This is where Rails migrations will run
@@ -32,6 +33,9 @@ set :sidekiq_role, :app
 set :sidekiq_pid, "#{current_path}/tmp/pids/sidekiq.pid"
 set :sidekiq_processes, 1
 
+before 'deploy:setup', 'rvm:install_rvm' # install RVM
+before 'deploy:setup', 'rvm:install_ruby' # install Ruby and create gemset, OR:
+before 'deploy:setup', 'rvm:create_gemset' # only create gemset
 
 # if you want to clean up old releases on each deploy uncomment this:
 after "deploy:restart", "deploy:cleanup"
