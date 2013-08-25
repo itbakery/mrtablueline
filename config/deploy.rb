@@ -1,7 +1,7 @@
 require 'rvm/capistrano'
 require "bundler/capistrano"
 require 'sidekiq/capistrano'
-
+load 'deploy/assets'
 default_run_options[:pty] = true
 set :application, "mrtablueline"
 set :keep_releases, 5
