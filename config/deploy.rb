@@ -1,4 +1,3 @@
-#require 'rvm/capistrano'
 require "bundler/capistrano"
 require 'sidekiq/capistrano'
 load 'deploy/assets'
@@ -17,7 +16,7 @@ set :deploy_via, :remote_cache
 set :rvm_type, :user
 set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
 ssh_options[:forward_agent] = true
-
+require 'rvm/capistrano'
 
 role :web, "203.146.127.169"                          # Your HTTP server, Apache/etc
 role :app, "203.146.127.169"                          # This may be the same as your `Web` server
