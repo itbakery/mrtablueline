@@ -16,6 +16,7 @@ ssh_options[:forward_agent] = true
 
 set :rvm_type, :user
 set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
+set :rvm_gemset, 'mrtablueline'
 require 'rvm/capistrano'
 
 before 'deploy:setup', 'rvm:install_rvm'
