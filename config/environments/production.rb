@@ -80,5 +80,5 @@ Mrtablueline::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   # auto rotate log files, keep 2 of 5MB each
-  config.logger = Logger.new(config.paths.log.first, 1, 5.megabytes)
+  #config.logger = Logger.new(config.paths.log.first, 1, 5.megabytes)
 end
