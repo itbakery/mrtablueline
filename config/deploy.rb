@@ -14,7 +14,7 @@ set :scm_verbose,true
 set :branch, "master"
 set :deploy_via, :remote_cache
 
-set :rvm_type, :system
+set :rvm_type, :user
 set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
 ssh_options[:forward_agent] = true
 
