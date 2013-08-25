@@ -14,10 +14,10 @@ set :branch, "master"
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 
-set :rvm_type, :user
-set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
-set :rvm_gemset, 'mrtablueline'
 require 'rvm/capistrano'
+set :rvm_type, :local
+#set :rvm_ruby_string, "1.9.3-p448@mrtablueline"
+#set :rvm_gemset, 'mrtablueline'
 
 before 'deploy:setup', 'rvm:install_rvm'
 before 'deploy:setup', 'rvm:install_ruby'
