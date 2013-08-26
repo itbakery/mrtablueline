@@ -36,7 +36,7 @@ gem 'cancan'
 gem 'rolify'
 gem 'thin'
 #gem 'ckeditor', :git => 'git://github.com/galetahub/ckeditor.git'
-gem 'ckeditor'
+gem 'ckeditor',"4.0.0.rc2"
 gem 'carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem 'mini_magick'

@@ -57,7 +57,7 @@ GEM
     celluloid (0.12.4)
       facter (>= 1.6.12)
       timers (>= 1.0.0)
-    ckeditor (4.0.2)
+    ckeditor (4.0.0.rc2)
       mime-types
       orm_adapter
     coffee-rails (3.2.2)
@@ -245,7 +245,7 @@ DEPENDENCIES
   capistrano
   carrierwave
   carrierwave-mongoid
-  ckeditor
+  ckeditor (= 4.0.0.rc2)
   coffee-rails (~> 3.2.1)
   devise
   fancybox-rails
