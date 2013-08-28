@@ -96,10 +96,8 @@
     <%= yield :scripts %>
     <script>
   //<![CDATA[
-  $(function() {
+  jQuery(function() {
       // wire up the buttons to dismiss the modal when shown
-
-
       if ($.browser.msie && $.browser.version.substr(0,1)<7)
       {
         $('li').has('ul').mouseover(function(){
@@ -112,6 +110,18 @@
     });
   //]]>
   </script>
-
+<div class="modal fade" id="underconstruct_modal">
+  <div class="modal-header">
+    <a class="close" data-dismiss="modal">&times;</a>
+    <h3>ขออภัยในความไม่สะดวก</h3>
+  </div>
+  <div class="modal-body">
+    <h3> ขณะนี้เวปไซด์ อยู่ในระหว่างการดำเนินการ ปรับปรุงข้อมูล </h3>
+    <p> <br/> <p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn" data-dismiss="modal">Close</a>
+  </div>
+</div>
 </body>
 </html>

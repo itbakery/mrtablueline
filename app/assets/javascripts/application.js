@@ -25,7 +25,7 @@
 //= require morris
 //= require_tree .
 
-jQuery.noConflict();
+// jQuery.noConflict();
 
 $(window).load(function() {
     //Flexslider 2
@@ -119,7 +119,9 @@ $(document).ready(function() {
 
    //tootip
 
-    $("a").tooltip();
+   $("a").tooltip();
+   //pop up
+   $('#underconstruct_modal').modal('show');
 
 });
 
