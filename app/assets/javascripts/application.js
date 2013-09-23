@@ -121,7 +121,7 @@ $(document).ready(function() {
 
    $("a").tooltip();
    //pop up
-   $('#underconstruct_modal').modal('show');
+   //$('#underconstruct_modal').modal('show');
 
 });
 
